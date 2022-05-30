@@ -1,7 +1,10 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
+import { App } from './App';
 
 import './index.css';
-import {App} from './App';
 
-render(() => <App />, document.getElementById('root') as HTMLElement);
+const container = document.getElementById('root');
+if (container != null) {
+  render(() => <App />, container);
+}

@@ -1,19 +1,33 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
+  "name": "todo-app-solid-ts",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "eslint src/**/*.{ts,tsx} --quiet",
+    "lint:fix": "eslint --fix --ext src/**/*.{ts,tsx}",
+    "prettier": "prettier --check src"
   },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
     "babel-plugin-solid-undestructure": "^0.0.15",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-solid": "^0.5.0",
     "husky": "^8.0.1",
+    "prettier": "^2.6.2",
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
     "vite-plugin-solid": "^2.2.6"
