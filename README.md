@@ -1,3 +1,5 @@
+![license](https://img.shields.io/github/license/manoldonev/todo-app-solid-ts?style=plastic)
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
