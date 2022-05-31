@@ -2,9 +2,14 @@
   "*.{html,css}": [
     "prettier --write"
   ],
+  "src/**/*.test.{ts,tsx}": [
+    "prettier --write",
+    "pnpm run lint:jest --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
+  ],
   "src/**/*.!(test).{ts,tsx}": [
     "prettier --write",
-    "pnpm run lint:fix --cache --cache-location ./node_modules/.cache/.eslintcache",
-    "tsc-files --noEmit"
+    "pnpm run lint:src --cache --fix --cache-location ./node_modules/.cache/.eslintcache",
+    "tsc-files --noEmit",
+    "pnpm run test:related"
   ]
 }
