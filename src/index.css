@@ -1,3 +1,82 @@
 @tailwind base;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  #root {
+    isolation: isolate;
+  }
+  h1 {
+    @apply text-xl font-semibold;
+  }
+  h2 {
+    @apply my-3 text-lg font-medium;
+  }
+  [type='search'] {
+    -webkit-appearance: none;
+    -webkit-border-radius: initial;
+  }
+
+  /* material theme colors generated with https://material-foundation.github.io/material-theme-builder/#/custom */
+  :root {
+    --color-primary: 0 102 136;
+    --color-primary-variant: 0 73 104;
+    --color-on-primary: 255 255 255;
+    --color-primary-container: 224 243 255; /* 190 232 255; */
+    --color-on-primary-container: 0 30 43;
+    --color-secondary: 184 32 0;
+    --color-secondary-variant: 142 18 0;
+    --color-on-secondary: 255 255 255;
+    --color-secondary-container: 255 218 209;
+    --color-on-secondary-container: 63 4 0;
+    --color-tertiary: 152 65 99;
+    --color-on-tertiary: 255 255 255;
+    --color-tertiary-container: 255 216 228;
+    --color-on-tertiary-container: 62 0 29;
+    --color-error: 179 38 30;
+    --color-on-error: 255 255 255;
+    --color-error-container: 249 222 220;
+    --color-on-error-container: 65 14 11;
+    --color-background: 255 251 247;
+    --color-on-background: 29 27 22;
+    --color-surface: 255 251 254;
+    --color-on-surface: 29 27 22;
+    --color-outline: 121 116 126;
+    --color-surface-variant: 231 224 236;
+    --color-on-surface-variant: 73 69 79;
+  }
+
+  :root.dark {
+    --color-primary: 110 210 255;
+    --color-primary-variant: 190 232 255;
+    --color-on-primary: 0 53 73;
+    --color-primary-container: 0 77 104;
+    --color-on-primary-container: 190 232 255;
+    --color-secondary: 255 180 162;
+    --color-secondary-variant: 255 138 111;
+    --color-on-secondary: 101 11 0;
+    --color-secondary-container: 141 20 0;
+    --color-on-secondary-container: 255 218 209;
+    --color-tertiary: 255 176 203;
+    --color-on-tertiary: 93 17 52;
+    --color-tertiary-container: 122 41 75;
+    --color-on-tertiary-container: 255 216 228;
+    --color-error: 242 184 181;
+    --color-on-error: 96 20 16;
+    --color-error-container: 140 29 24;
+    --color-on-error-container: 249 222 220;
+    --color-background: 44 44 44;
+    --color-on-background: 232 226 217;
+    --color-surface: 44 44 44;
+    --color-on-surface: 232 226 217;
+    --color-outline: 147 143 153;
+    --color-surface-variant: 73 69 79;
+    --color-on-surface-variant: 202 196 208;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

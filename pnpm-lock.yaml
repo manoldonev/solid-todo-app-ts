@@ -6,6 +6,7 @@ specifiers:
   '@babel/preset-typescript': ^7.17.12
   '@commitlint/cli': ^17.0.1
   '@commitlint/config-conventional': ^17.0.0
+  '@tailwindcss/line-clamp': ^0.4.0
   '@testing-library/jest-dom': ^5.16.4
   '@types/babel__core': ^7.1.19
   '@types/jest': ^27.5.1
@@ -57,6 +58,7 @@ devDependencies:
   '@babel/preset-typescript': 7.17.12_@babel+core@7.17.8
   '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
+  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@testing-library/jest-dom': 5.16.4
   '@types/babel__core': 7.1.19
   '@types/jest': 27.5.1
@@ -2128,6 +2130,14 @@ packages:
     resolution: {integrity: sha512-BPS4ynJW/o92PUR4wgriz2Ud5gpST5vz6GQfMixEDK0Z8ZCUv2M7SkBLykH56T++Xs+8ln9zTGbOvNGIe02/jw==}
     dependencies:
       '@sinonjs/commons': 1.8.3
+    dev: true
+
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.0.24:
+    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.0.24
     dev: true
 
   /@testing-library/dom/7.31.2:

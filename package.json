@@ -25,6 +25,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@types/babel__core": "^7.1.19",
     "@types/jest": "^27.5.1",
