@@ -1,2 +1,3 @@
+/src/generated/**/*.ts
 *.config.ts
 *.config.js

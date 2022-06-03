@@ -16,7 +16,8 @@
     "prettier": "prettier --check src",
     "prepare": "husky install",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "graphql:codegen": "graphql-codegen --config .graphqlrc.yml"
   },
   "license": "MIT",
   "devDependencies": {
@@ -25,6 +26,13 @@
     "@babel/preset-typescript": "^7.17.12",
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
+    "@graphql-codegen/add": "^3.1.1",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/introspection": "^2.1.1",
+    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript-msw": "^1.0.10",
+    "@graphql-codegen/typescript-operations": "^2.4.0",
+    "@graphql-codegen/typescript-react-query": "^3.5.12",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@types/babel__core": "^7.1.19",
@@ -51,6 +59,7 @@
     "eslint-plugin-solid": "^0.5.0",
     "eslint-plugin-testing-library": "^5.5.1",
     "gh-pages": "^4.0.0",
+    "graphql": "^16.5.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
@@ -65,10 +74,27 @@
     "tsc-files": "^1.1.3",
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
-    "vite-plugin-solid": "^2.2.6"
+    "vite-plugin-solid": "^2.2.6",
+    "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
+    "msw": "^0.42.0",
+    "react-query": "^3.39.1",
     "solid-js": "^1.4.2"
   },
-  "packageManager": "pnpm@7.1.5"
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react",
+        "react-dom"
+      ],
+      "allowedVersions": {
+        "graphql": "16"
+      }
+    }
+  },
+  "packageManager": "pnpm@7.1.5",
+  "msw": {
+    "workerDirectory": "public"
+  }
 }
