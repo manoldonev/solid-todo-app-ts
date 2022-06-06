@@ -50,6 +50,7 @@ specifiers:
   prettier: ^2.6.2
   react-query: ^3.39.1
   regenerator-runtime: ^0.13.9
+  solid-icons: ^0.4.13
   solid-jest: ^0.2.0
   solid-js: ^1.4.2
   solid-testing-library: ^0.3.0
@@ -64,6 +65,7 @@ specifiers:
 dependencies:
   msw: 0.42.0_typescript@4.6.4
   react-query: 3.39.1
+  solid-icons: 0.4.13_solid-js@1.4.2
   solid-js: 1.4.2
   solid-toast: 0.1.4_solid-js@1.4.2
 
@@ -8676,6 +8678,14 @@ packages:
       dot-case: 3.0.4
       tslib: 2.4.0
     dev: true
+
+  /solid-icons/0.4.13_solid-js@1.4.2:
+    resolution: {integrity: sha512-1ZbXaR0XEeI0wluWm1k5ziI/OrWqGN6DxAnvJXqi5ZXSmDwlNtLzf1rgyHxprbGbyybvO1uj7vozaCmoAgZBlg==}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.4.2
+    dev: false
 
   /solid-jest/0.2.0_cls56o6vbiateakwn33a47skri:
     resolution: {integrity: sha512-1ILtAj+z6bh1vTvaDlcT8501vmkzkVZMk2aiexJy+XWTZ+sb9B7IWedvWadIhOwwL97fiW4eMmN6SrbaHjn12A==}
