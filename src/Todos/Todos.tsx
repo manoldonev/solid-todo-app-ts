@@ -1,17 +1,15 @@
 import type { Component } from 'solid-js';
 import { For, Switch, Match } from 'solid-js';
+import { NoItems } from './NoItems';
 import { useTodos } from './query/useTodos';
 
 const Todos: Component = () => {
   const query = useTodos();
 
   return (
-    <Switch fallback={<div>No items found</div>}>
+    <Switch fallback={<NoItems />}>
       <Match when={query.isLoading}>
-        <span>Loading...</span>
-      </Match>
-      <Match when={query.isError}>
-        <div>An error has occurred</div>
+        <span class="text-on-background">Loading...</span>
       </Match>
       <Match when={query.data?.todos && query.data.todos.length > 0}>
         <ul>

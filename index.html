@@ -9,7 +9,7 @@
     <!-- Start Dark Mode Initialization -->
     <script>
       if (
-        localStorage.getItem('color-mode') === 'dark' ||
+        localStorage.getItem('color-mode') === '"dark"' ||
         (!('color-mode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark');
