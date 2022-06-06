@@ -1,12 +1,10 @@
 /* @refresh reload */
-import { QueryClient } from 'react-query/core';
 import { render } from 'solid-js/web';
+import { Toaster } from 'solid-toast';
 import { App } from './App';
-
 import './index.css';
+import { queryClient } from './queryClient';
 import { QueryClientProvider } from './solid-query/QueryClientProvider';
-
-const queryClient = new QueryClient();
 
 const main = async (): Promise<void> => {
   if (import.meta.env.VITE_API_MOCKING === 'enabled') {
@@ -34,6 +32,7 @@ const main = async (): Promise<void> => {
     () => (
       <QueryClientProvider client={queryClient}>
         <App />
+        <Toaster position="top-center" />
       </QueryClientProvider>
     ),
     container,

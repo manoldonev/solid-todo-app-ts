@@ -80,7 +80,8 @@
   "dependencies": {
     "msw": "^0.42.0",
     "react-query": "^3.39.1",
-    "solid-js": "^1.4.2"
+    "solid-js": "^1.4.2",
+    "solid-toast": "^0.1.4"
   },
   "pnpm": {
     "peerDependencyRules": {
