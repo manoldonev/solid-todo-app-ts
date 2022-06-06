@@ -24,6 +24,11 @@ function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
       throw new Error(message);
     }
 
+    // HACK: 424 fakeQL response threw a raw error not following the JSON API spec
+    if (json.error) {
+      throw new Error(json.error);
+    }
+
     return json.data;
   }
 }
