@@ -16,7 +16,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.0
   '@testing-library/jest-dom': ^5.16.4
   '@types/babel__core': ^7.1.19
-  '@types/jest': ^27.5.1
+  '@types/jest': ^28.0.0
   '@types/testing-library__jest-dom': ^5.14.3
   '@typescript-eslint/eslint-plugin': ^5.26.0
   '@typescript-eslint/parser': ^5.26.0
@@ -85,7 +85,7 @@ devDependencies:
   '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@testing-library/jest-dom': 5.16.4
   '@types/babel__core': 7.1.19
-  '@types/jest': 27.5.1
+  '@types/jest': 28.1.1
   '@types/testing-library__jest-dom': 5.14.3
   '@typescript-eslint/eslint-plugin': 5.26.0_gu4clceiw6ditaem5r577qrdpi
   '@typescript-eslint/parser': 5.26.0_utdtartgf6fqqgkivzeynh76la
@@ -2688,8 +2688,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/27.5.1:
-    resolution: {integrity: sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==}
+  /@types/jest/28.1.1:
+    resolution: {integrity: sha512-C2p7yqleUKtCkVjlOur9BWVA4HgUQmEj/HWCt5WzZ5mLXrWnyIfl0wGuArc+kBXsy0ZZfLp+7dywB4HtSVYGVA==}
     dependencies:
       jest-matcher-utils: 27.5.1
       pretty-format: 27.5.1
@@ -2777,7 +2777,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.3:
     resolution: {integrity: sha512-oKZe+Mf4ioWlMuzVBaXQ9WDnEm1+umLx0InILg+yvZVBBDmzV5KfZyLrCvadtWcx8+916jLmHafcmqqffl+iIw==}
     dependencies:
-      '@types/jest': 27.5.1
+      '@types/jest': 28.1.1
     dev: true
 
   /@types/tough-cookie/4.0.2:
