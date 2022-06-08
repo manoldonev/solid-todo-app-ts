@@ -36,7 +36,7 @@ specifiers:
   eslint-plugin-jest-dom: ^4.0.2
   eslint-plugin-jsx-a11y: ^6.5.1
   eslint-plugin-prettier: ^4.0.0
-  eslint-plugin-solid: ^0.5.0
+  eslint-plugin-solid: ^0.6.0
   eslint-plugin-testing-library: ^5.5.1
   gh-pages: ^4.0.0
   graphql: ^16.5.0
@@ -67,7 +67,7 @@ dependencies:
   react-query: 3.39.1
   solid-icons: 0.4.13_solid-js@1.4.2
   solid-js: 1.4.2
-  solid-toast: 0.1.4_solid-js@1.4.2
+  solid-toast: 0.1.4_fepjxluhrcpibqwliludvf76qu
 
 devDependencies:
   '@babel/core': 7.18.2
@@ -76,7 +76,7 @@ devDependencies:
   '@commitlint/cli': 17.0.1
   '@commitlint/config-conventional': 17.0.0
   '@graphql-codegen/add': 3.1.1_graphql@16.5.0
-  '@graphql-codegen/cli': 2.6.2_46emjsxzfxj3xgw6p37zzdssd4
+  '@graphql-codegen/cli': 2.6.2_ac67nr7wihyngw4kfl6q6lt6oi
   '@graphql-codegen/introspection': 2.1.1_graphql@16.5.0
   '@graphql-codegen/typescript': 2.4.11_graphql@16.5.0
   '@graphql-codegen/typescript-msw': 1.0.10_graphql@16.5.0
@@ -92,7 +92,7 @@ devDependencies:
   autoprefixer: 10.4.7_postcss@8.4.14
   babel-core: 6.26.3
   babel-jest: 28.1.0_@babel+core@7.18.2
-  babel-plugin-solid-undestructure: 0.0.15_aknmkfhor4gyt2mmpiioap6254
+  babel-plugin-solid-undestructure: 0.0.15_yxbqprozrcwv3i6twzwnvpp6rm
   babel-preset-jest: 28.0.2_@babel+core@7.18.2
   babel-preset-solid: 1.4.2_@babel+core@7.18.2
   eslint: 8.16.0
@@ -105,12 +105,12 @@ devDependencies:
   eslint-plugin-jest-dom: 4.0.2_eslint@8.16.0
   eslint-plugin-jsx-a11y: 6.5.1_eslint@8.16.0
   eslint-plugin-prettier: 4.0.0_j7rsahgqtkecno6yauhsgsglf4
-  eslint-plugin-solid: 0.5.0_utdtartgf6fqqgkivzeynh76la
+  eslint-plugin-solid: 0.6.1_utdtartgf6fqqgkivzeynh76la
   eslint-plugin-testing-library: 5.5.1_utdtartgf6fqqgkivzeynh76la
   gh-pages: 4.0.0
   graphql: 16.5.0
   husky: 8.0.1
-  jest: 28.1.0
+  jest: 28.1.0_@types+node@17.0.36
   jest-environment-jsdom: 28.1.0
   jsdom: 19.0.0
   lint-staged: 13.0.0
@@ -1629,7 +1629,7 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /@graphql-codegen/cli/2.6.2_46emjsxzfxj3xgw6p37zzdssd4:
+  /@graphql-codegen/cli/2.6.2_ac67nr7wihyngw4kfl6q6lt6oi:
     resolution: {integrity: sha512-UO75msoVgvLEvfjCezM09cQQqp32+mR8Ma1ACsBpr7nroFvHbgcu2ulx1cMovg4sxDBCsvd9Eq/xOOMpARUxtw==}
     hasBin: true
     peerDependencies:
@@ -1644,8 +1644,8 @@ packages:
       '@graphql-tools/graphql-file-loader': 7.3.14_graphql@16.5.0
       '@graphql-tools/json-file-loader': 7.3.14_graphql@16.5.0
       '@graphql-tools/load': 7.5.13_graphql@16.5.0
-      '@graphql-tools/prisma-loader': 7.1.22_graphql@16.5.0
-      '@graphql-tools/url-loader': 7.9.23_graphql@16.5.0
+      '@graphql-tools/prisma-loader': 7.1.22_ityxxy5v4vff74gvrsl2bjop6m
+      '@graphql-tools/url-loader': 7.9.23_ityxxy5v4vff74gvrsl2bjop6m
       '@graphql-tools/utils': 8.6.12_graphql@16.5.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
@@ -1659,7 +1659,7 @@ packages:
       glob: 7.2.3
       globby: 11.1.0
       graphql: 16.5.0
-      graphql-config: 4.3.1_46emjsxzfxj3xgw6p37zzdssd4
+      graphql-config: 4.3.1_ac67nr7wihyngw4kfl6q6lt6oi
       inquirer: 8.2.4
       is-glob: 4.0.3
       json-to-pretty-yaml: 1.2.2
@@ -1989,12 +1989,12 @@ packages:
       tslib: 2.3.1
     dev: true
 
-  /@graphql-tools/prisma-loader/7.1.22_graphql@16.5.0:
+  /@graphql-tools/prisma-loader/7.1.22_ityxxy5v4vff74gvrsl2bjop6m:
     resolution: {integrity: sha512-5hBWon0XD300CUY02lWHD0PrpVUoijazupLX+fryNJfo0pPwCFdgwBvwmgh+lOV/bfTgRkJ2XhnHP3nkVUgAUA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || 16
     dependencies:
-      '@graphql-tools/url-loader': 7.9.23_graphql@16.5.0
+      '@graphql-tools/url-loader': 7.9.23_ityxxy5v4vff74gvrsl2bjop6m
       '@graphql-tools/utils': 8.6.12_graphql@16.5.0
       '@types/js-yaml': 4.0.5
       '@types/json-stable-stringify': 1.0.34
@@ -2049,7 +2049,7 @@ packages:
       value-or-promise: 1.0.11
     dev: true
 
-  /@graphql-tools/url-loader/7.9.23_graphql@16.5.0:
+  /@graphql-tools/url-loader/7.9.23_ityxxy5v4vff74gvrsl2bjop6m:
     resolution: {integrity: sha512-6IYn5bIaqlWHQksvuPCEPqr8pIuuXBaF8/XbcVdT7otPkyGIQjTxoOkLiWIQj5682aEgZ9Ky21KKcp7qOTWmDQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || 16
@@ -2065,7 +2065,7 @@ packages:
       graphql: 16.5.0
       graphql-ws: 5.8.2_graphql@16.5.0
       isomorphic-ws: 4.0.1_ws@8.7.0
-      meros: 1.2.0
+      meros: 1.2.0_@types+node@17.0.36
       sync-fetch: 0.3.1
       tslib: 2.4.0
       value-or-promise: 1.0.11
@@ -3435,18 +3435,18 @@ packages:
       - supports-color
     dev: true
 
-  /babel-plugin-solid-undestructure/0.0.15_aknmkfhor4gyt2mmpiioap6254:
+  /babel-plugin-solid-undestructure/0.0.15_yxbqprozrcwv3i6twzwnvpp6rm:
     resolution: {integrity: sha512-V/IGQPd8ORjvOT+vVbadKp/ZO6lmbh/4qy8Bw26qMDWOxEJQGrhG4AMlgxW0fTKSoZ+jl4e0Zg1aHBnqmMFDlw==}
     peerDependencies:
       solid-js: ^1.2.4
     dependencies:
       '@rollup/plugin-babel': 5.3.1_qiowehxoppr3qc4zl3bhqbqxsy
       remeda: 0.0.32
-      rollup: 2.74.1
       solid-js: 1.4.2
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/babel__core'
+      - rollup
     dev: true
 
   /babel-plugin-syntax-trailing-function-commas/7.0.0-beta.0:
@@ -4945,7 +4945,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.26.0_gu4clceiw6ditaem5r577qrdpi
       '@typescript-eslint/utils': 5.26.0_utdtartgf6fqqgkivzeynh76la
       eslint: 8.16.0
-      jest: 28.1.0
+      jest: 28.1.0_@types+node@17.0.36
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -4989,8 +4989,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-solid/0.5.0_utdtartgf6fqqgkivzeynh76la:
-    resolution: {integrity: sha512-OXd2Tb/QaO+rBxskHZBQeBY7He4u+YLlLyyEUptcFc8UDwSvIkeTPQ5uUbf6kEqHmB+h6nKGchOJBj1alumpEQ==}
+  /eslint-plugin-solid/0.6.1_utdtartgf6fqqgkivzeynh76la:
+    resolution: {integrity: sha512-zThVPpmVPzESBpLyzNoYo8/UViTDfE6j6RxQGzQUE81uF33lHL5g5rrgqkON/KbDLCKMOLYJEBc34AbgK2rcxw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -5631,7 +5631,7 @@ packages:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: true
 
-  /graphql-config/4.3.1_46emjsxzfxj3xgw6p37zzdssd4:
+  /graphql-config/4.3.1_ac67nr7wihyngw4kfl6q6lt6oi:
     resolution: {integrity: sha512-czBWzJSGaLJfOHBLuUTZVRTjfgohPfvlaeN1B5nXBVptFARpiFuS7iI4FnRhCGwm6qt1h2j1g05nkg0OIGA6bg==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -5642,7 +5642,7 @@ packages:
       '@graphql-tools/json-file-loader': 7.3.14_graphql@16.5.0
       '@graphql-tools/load': 7.5.13_graphql@16.5.0
       '@graphql-tools/merge': 8.2.13_graphql@16.5.0
-      '@graphql-tools/url-loader': 7.9.23_graphql@16.5.0
+      '@graphql-tools/url-loader': 7.9.23_ityxxy5v4vff74gvrsl2bjop6m
       '@graphql-tools/utils': 8.6.12_graphql@16.5.0
       cosmiconfig: 7.0.1
       cosmiconfig-toml-loader: 1.0.0
@@ -6311,7 +6311,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-cli/28.1.0:
+  /jest-cli/28.1.0_@types+node@17.0.36:
     resolution: {integrity: sha512-fDJRt6WPRriHrBsvvgb93OxgajHHsJbk4jZxiPqmZbMDRcHskfJBBfTyjFko0jjfprP544hOktdSi9HVgl4VUQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -6328,7 +6328,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.10
       import-local: 3.1.0
-      jest-config: 28.1.0
+      jest-config: 28.1.0_@types+node@17.0.36
       jest-util: 28.1.0
       jest-validate: 28.1.0
       prompts: 2.4.2
@@ -6337,44 +6337,6 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
-    dev: true
-
-  /jest-config/28.1.0:
-    resolution: {integrity: sha512-aOV80E9LeWrmflp7hfZNn/zGA4QKv/xsn2w8QCBP0t0+YqObuCWTSgNbHJ0j9YsTuCO08ZR/wsvlxqqHX20iUA==}
-    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
-    peerDependencies:
-      '@types/node': '*'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      ts-node:
-        optional: true
-    dependencies:
-      '@babel/core': 7.18.2
-      '@jest/test-sequencer': 28.1.0
-      '@jest/types': 28.1.0
-      babel-jest: 28.1.0_@babel+core@7.18.2
-      chalk: 4.1.2
-      ci-info: 3.3.1
-      deepmerge: 4.2.2
-      glob: 7.2.3
-      graceful-fs: 4.2.10
-      jest-circus: 28.1.0
-      jest-environment-node: 28.1.0
-      jest-get-type: 28.0.2
-      jest-regex-util: 28.0.2
-      jest-resolve: 28.1.0
-      jest-runner: 28.1.0
-      jest-util: 28.1.0
-      jest-validate: 28.1.0
-      micromatch: 4.0.5
-      parse-json: 5.2.0
-      pretty-format: 28.1.0
-      slash: 3.0.0
-      strip-json-comments: 3.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /jest-config/28.1.0_@types+node@17.0.36:
@@ -6798,7 +6760,7 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest/28.1.0:
+  /jest/28.1.0_@types+node@17.0.36:
     resolution: {integrity: sha512-TZR+tHxopPhzw3c3560IJXZWLNHgpcz1Zh0w5A65vynLGNcg/5pZ+VildAd7+XGOu6jd58XMY/HNn0IkZIXVXg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -6810,7 +6772,7 @@ packages:
     dependencies:
       '@jest/core': 28.1.0
       import-local: 3.1.0
-      jest-cli: 28.1.0
+      jest-cli: 28.1.0_@types+node@17.0.36
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -7400,7 +7362,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros/1.2.0:
+  /meros/1.2.0_@types+node@17.0.36:
     resolution: {integrity: sha512-3QRZIS707pZQnijHdhbttXRWwrHhZJ/gzolneoxKVz9N/xmsvY/7Ls8lpnI9gxbgxjcHsAVEW3mgwiZCo6kkJQ==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -7408,6 +7370,8 @@ packages:
     peerDependenciesMeta:
       '@types/node':
         optional: true
+    dependencies:
+      '@types/node': 17.0.36
     dev: true
 
   /micromatch/4.0.5:
@@ -8725,14 +8689,15 @@ packages:
       solid-js: 1.4.2
     dev: true
 
-  /solid-toast/0.1.4_solid-js@1.4.2:
+  /solid-toast/0.1.4_fepjxluhrcpibqwliludvf76qu:
     resolution: {integrity: sha512-7RBkSg7KMdNQLGb92AlKhfU/UggRrrHISwqa1bHqksb/WqFFzo6G9LghfcLPb/WFzBEUTCmwefH8CnQ04FBl7g==}
     peerDependencies:
       solid-js: ^1.4.2
     dependencies:
-      csstype: 3.1.0
       goober: 2.1.9_csstype@3.1.0
       solid-js: 1.4.2
+    transitivePeerDependencies:
+      - csstype
     dev: false
 
   /source-map-js/1.0.2:
