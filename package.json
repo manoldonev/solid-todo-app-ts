@@ -37,6 +37,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@types/babel__core": "^7.1.19",
     "@types/jest": "^28.0.0",
+    "@types/masonry-layout": "^4.2.5",
     "@types/testing-library__jest-dom": "^5.14.3",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
@@ -78,6 +79,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
+    "masonry-layout": "^4.2.2",
     "msw": "^0.42.0",
     "react-query": "^3.39.1",
     "solid-icons": "^0.4.13",

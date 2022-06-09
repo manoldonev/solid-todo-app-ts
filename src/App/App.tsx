@@ -3,8 +3,8 @@ import { Todos } from '../Todos';
 
 const App: Component = () => {
   return (
-    <div class="min-h-screen bg-background">
-      <h1 class="text-on-background">Todo App</h1>
+    <div class="min-h-screen bg-background mx-auto">
+      <h1 class="text-on-background text-center">Todo App</h1>
       <Todos />
     </div>
   );
