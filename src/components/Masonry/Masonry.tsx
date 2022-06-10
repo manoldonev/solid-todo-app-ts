@@ -18,19 +18,11 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
   });
 
   onCleanup(() => {
-    if (masonry.destroy) {
-      masonry.destroy();
-    }
+    masonry.destroy?.();
   });
 
   return (
-    <Dynamic
-      component={props.elementType ?? 'div'}
-      class={props.class}
-      ref={(element: HTMLElement) => {
-        masonryContainer = element;
-      }}
-    >
+    <Dynamic component={props.elementType ?? 'div'} class={props.class} ref={masonryContainer!}>
       {props.children}
     </Dynamic>
   );

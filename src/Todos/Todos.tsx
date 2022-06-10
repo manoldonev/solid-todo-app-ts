@@ -23,7 +23,7 @@ const Todos: Component = () => {
         </Match>
         <Match when={query.data?.todos && query.data.todos.length > 0}>
           <Masonry elementType="ul" options={masonryOptions}>
-            <For each={query.data?.todos}>{(todo) => (todo != null ? <TodoItem data={todo} /> : null)}</For>
+            <For each={query.data!.todos}>{(todo) => <TodoItem data={todo!} />}</For>
           </Masonry>
         </Match>
       </Switch>
