@@ -23,3 +23,11 @@ jest.mock('solid-icons/hi', () => {
     },
   };
 });
+
+jest.mock('solid-icons/ai', () => {
+  return {
+    AiOutlineLoading: () => {
+      return null;
+    },
+  };
+});
