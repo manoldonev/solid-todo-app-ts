@@ -2,37 +2,33 @@
 
 Latest deployment available at https://manoldonev.github.io/todo-app-solid-ts/
 
-## Usage
+# SolidJS Todo App
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+Based on the standard SolidJS TypeScript [template](https://github.com/solidjs/templates/tree/master/ts):
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+- Vite
+- TypeScript
+- ESLint
+- Prettier
+- pre-commit hooks
+- CI / deployment GitHub workflows
+- Dependency management via [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/)
+- Package management via [pnpm](https://pnpm.io/)
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## UX & Theming
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+- Mobile-first design
+- Tailwind (utility-first CSS framework)
+- Dark Mode Support (utilizing tailwind "class" strategy)
+- Branding via custom "material design" palette (vs generic tailwind colors scheme)
 
-## Available Scripts
+## Data (Async State Management)
 
-In the project directory, you can run:
+- GraphQL
+- [WIP] `solid-query` (custom PoC port of [react-query](https://react-query.tanstack.com/) with semi-automatic query generation based on the GraphQL schema (currently using the React [codegen utilities](https://www.graphql-code-generator.com/) hence the semi-automatic part)
 
-### `npm dev` or `npm start`
+## Testing
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+- [WIP] Unit & Integration testing: Jest with Solid Testing Library setup
+- Static Analysis: TypeScript & ESLint
+- [MSW](https://mswjs.io/) (Mock Service Worker) API mocking (intercepting requests on the network level)
