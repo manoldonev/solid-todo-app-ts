@@ -1,0 +1,7 @@
+mutation createTodo($input: CreateTodoInput!) {
+  createTodo(input: $input) {
+    id
+    task
+    done
+  }
+}
