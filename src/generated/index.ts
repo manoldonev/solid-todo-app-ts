@@ -10,7 +10,7 @@ export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Mayb
 
 function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
   return async (): Promise<TData> => {
-    const res = await fetch("https://fakeql.com/graphql/4f25a174ecbddf03ebb05e5ddb88ee9a", {
+    const res = await fetch("https://fakeql.com/graphql/a84889379bf38e69400ee9ba6ad07c58", {
     method: "POST",
     ...({"headers":{"Content-Type":"application/json"}}),
       body: JSON.stringify({ query, variables }),
@@ -47,7 +47,6 @@ export type Scalars = {
 
 export type CreateTodoInput = {
   done: Scalars['Boolean'];
-  note: Scalars['String'];
   task: Scalars['String'];
   user_id: Scalars['ID'];
 };
@@ -174,7 +173,6 @@ export type Todo = {
   _string: Scalars['String'];
   done: Scalars['Boolean'];
   id: Scalars['ID'];
-  note: Scalars['String'];
   task: Scalars['String'];
   user: User;
 };
@@ -210,11 +208,6 @@ export type Todo_StringArgs = {
 };
 
 
-export type TodoNoteArgs = {
-  length?: InputMaybe<Scalars['Int']>;
-};
-
-
 export type TodoTaskArgs = {
   length?: InputMaybe<Scalars['Int']>;
 };
@@ -233,14 +226,6 @@ export type TodosWhere = {
   id_nin?: InputMaybe<Array<Scalars['ID']>>;
   like?: InputMaybe<Scalars['String']>;
   not?: InputMaybe<Array<TodosWhere>>;
-  note_contains?: InputMaybe<Scalars['String']>;
-  note_endswith?: InputMaybe<Scalars['String']>;
-  note_eq?: InputMaybe<Scalars['String']>;
-  note_exists?: InputMaybe<Scalars['Boolean']>;
-  note_in?: InputMaybe<Array<Scalars['String']>>;
-  note_neq?: InputMaybe<Scalars['String']>;
-  note_nin?: InputMaybe<Array<Scalars['String']>>;
-  note_startswith?: InputMaybe<Scalars['String']>;
   or?: InputMaybe<Array<TodosWhere>>;
   search?: InputMaybe<Scalars['String']>;
   task_contains?: InputMaybe<Scalars['String']>;
@@ -277,7 +262,6 @@ export type TodosWhere = {
 
 export type UpdateTodoInput = {
   done?: InputMaybe<Scalars['Boolean']>;
-  note?: InputMaybe<Scalars['String']>;
   task?: InputMaybe<Scalars['String']>;
   user_id?: InputMaybe<Scalars['ID']>;
 };
@@ -374,15 +358,93 @@ export type _Service = {
   sdl?: Maybe<Scalars['String']>;
 };
 
-export type TodosQueryVariables = Exact<{ [key: string]: never; }>;
+export type CreateTodoMutationVariables = Exact<{
+  input: CreateTodoInput;
+}>;
+
+
+export type CreateTodoMutation = { __typename?: 'Mutation', createTodo: { __typename?: 'Todo', id: string, task: string, done: boolean } };
+
+export type DeleteTodoMutationVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type DeleteTodoMutation = { __typename?: 'Mutation', deleteTodo: string };
+
+export type UpdateTodoMutationVariables = Exact<{
+  id: Scalars['ID'];
+  input: UpdateTodoInput;
+}>;
+
+
+export type UpdateTodoMutation = { __typename?: 'Mutation', updateTodo: { __typename?: 'Todo', id: string, task: string, done: boolean } };
+
+export type TodosQueryVariables = Exact<{
+  page?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  input?: InputMaybe<TodosWhere>;
+  sort?: InputMaybe<Scalars['String']>;
+  direction?: InputMaybe<Scalars['String']>;
+}>;
 
 
 export type TodosQuery = { __typename?: 'Query', todos?: Array<{ __typename?: 'Todo', id: string, task: string, done: boolean } | null> | null };
 
 
+export const CreateTodoDocument = `
+    mutation createTodo($input: CreateTodoInput!) {
+  createTodo(input: $input) {
+    id
+    task
+    done
+  }
+}
+    `;
+export const useCreateTodoMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>) =>
+    useMutation<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>(
+      ['createTodo'],
+      (variables?: CreateTodoMutationVariables) => fetcher<CreateTodoMutation, CreateTodoMutationVariables>(CreateTodoDocument, variables)(),
+      options
+    );
+export const DeleteTodoDocument = `
+    mutation deleteTodo($id: ID!) {
+  deleteTodo(id: $id)
+}
+    `;
+export const useDeleteTodoMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>) =>
+    useMutation<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>(
+      ['deleteTodo'],
+      (variables?: DeleteTodoMutationVariables) => fetcher<DeleteTodoMutation, DeleteTodoMutationVariables>(DeleteTodoDocument, variables)(),
+      options
+    );
+export const UpdateTodoDocument = `
+    mutation updateTodo($id: ID!, $input: UpdateTodoInput!) {
+  updateTodo(id: $id, input: $input) {
+    id
+    task
+    done
+  }
+}
+    `;
+export const useUpdateTodoMutation = <
+      TError = unknown,
+      TContext = unknown
+    >(options?: UseMutationOptions<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>) =>
+    useMutation<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>(
+      ['updateTodo'],
+      (variables?: UpdateTodoMutationVariables) => fetcher<UpdateTodoMutation, UpdateTodoMutationVariables>(UpdateTodoDocument, variables)(),
+      options
+    );
 export const TodosDocument = `
-    query Todos {
-  todos {
+    query Todos($page: Int, $limit: Int, $input: TodosWhere, $sort: String, $direction: String) {
+  todos(page: $page, limit: $limit, where: $input, sort: $sort, dir: $direction) {
     id
     task
     done
@@ -420,7 +482,59 @@ export const useInfiniteTodosQuery = <
  * @param resolver a function that accepts a captured request and may return a mocked response.
  * @see https://mswjs.io/docs/basics/response-resolver
  * @example
+ * mockCreateTodoMutation((req, res, ctx) => {
+ *   const { input } = req.variables;
+ *   return res(
+ *     ctx.data({ createTodo })
+ *   )
+ * })
+ */
+export const mockCreateTodoMutation = (resolver: ResponseResolver<GraphQLRequest<CreateTodoMutationVariables>, GraphQLContext<CreateTodoMutation>, any>) =>
+  graphql.mutation<CreateTodoMutation, CreateTodoMutationVariables>(
+    'createTodo',
+    resolver
+  )
+
+/**
+ * @param resolver a function that accepts a captured request and may return a mocked response.
+ * @see https://mswjs.io/docs/basics/response-resolver
+ * @example
+ * mockDeleteTodoMutation((req, res, ctx) => {
+ *   const { id } = req.variables;
+ *   return res(
+ *     ctx.data({ deleteTodo })
+ *   )
+ * })
+ */
+export const mockDeleteTodoMutation = (resolver: ResponseResolver<GraphQLRequest<DeleteTodoMutationVariables>, GraphQLContext<DeleteTodoMutation>, any>) =>
+  graphql.mutation<DeleteTodoMutation, DeleteTodoMutationVariables>(
+    'deleteTodo',
+    resolver
+  )
+
+/**
+ * @param resolver a function that accepts a captured request and may return a mocked response.
+ * @see https://mswjs.io/docs/basics/response-resolver
+ * @example
+ * mockUpdateTodoMutation((req, res, ctx) => {
+ *   const { id, input } = req.variables;
+ *   return res(
+ *     ctx.data({ updateTodo })
+ *   )
+ * })
+ */
+export const mockUpdateTodoMutation = (resolver: ResponseResolver<GraphQLRequest<UpdateTodoMutationVariables>, GraphQLContext<UpdateTodoMutation>, any>) =>
+  graphql.mutation<UpdateTodoMutation, UpdateTodoMutationVariables>(
+    'updateTodo',
+    resolver
+  )
+
+/**
+ * @param resolver a function that accepts a captured request and may return a mocked response.
+ * @see https://mswjs.io/docs/basics/response-resolver
+ * @example
  * mockTodosQuery((req, res, ctx) => {
+ *   const { page, limit, input, sort, direction } = req.variables;
  *   return res(
  *     ctx.data({ todos })
  *   )

@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'https://fakeql.com/graphql/4f25a174ecbddf03ebb05e5ddb88ee9a'
+schema: 'https://fakeql.com/graphql/a84889379bf38e69400ee9ba6ad07c58'
 documents: 'src/**/*.gql'
 generates:
   src/generated/index.ts:
@@ -12,7 +12,7 @@ generates:
       - typescript-msw
     config:
       fetcher:
-        endpoint: 'https://fakeql.com/graphql/4f25a174ecbddf03ebb05e5ddb88ee9a'
+        endpoint: 'https://fakeql.com/graphql/a84889379bf38e69400ee9ba6ad07c58'
         fetchParams:
           headers:
             # MSW does not intercept unless this header is explicitly specified

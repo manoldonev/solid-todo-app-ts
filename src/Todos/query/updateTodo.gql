@@ -1,0 +1,7 @@
+mutation updateTodo($id: ID!, $input: UpdateTodoInput!) {
+  updateTodo(id: $id, input: $input) {
+    id
+    task
+    done
+  }
+}
