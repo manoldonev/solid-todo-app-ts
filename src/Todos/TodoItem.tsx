@@ -1,9 +1,13 @@
 import type { Component } from 'solid-js';
+import { useUpdateTodo } from './query/useUpdateTodo';
 
 const TodoItem: Component<{
   data: { id: string; task: string; done: boolean };
 }> = (props) => {
-  const toggleItem = (): void => {};
+  const { mutate: updateTodo } = useUpdateTodo();
+  const toggleItem = (): void => {
+    updateTodo({ id: props.data.id, input: { done: !props.data.done } });
+  };
 
   return (
     <li class="group mb-3 w-full last:mb-20 xs:w-56 md:w-60">
