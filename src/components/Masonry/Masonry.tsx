@@ -31,12 +31,11 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
     records.forEach((record) => {
       // NOTE: we assume nodes are either prepended, or appended -- no inserts
       if (record.addedNodes.length > 0) {
-        if (record.previousSibling != null) {
-          appended.push(...([...record.addedNodes] as Element[]));
-        } else if (record.nextSibling != null) {
+        if (record.previousSibling == null) {
           prepended.push(...([...record.addedNodes] as Element[]));
         } else {
-          throw new Error(`Adding nodes without previous or next sibling is not supported.`);
+          // assume everything else is appended
+          appended.push(...([...record.addedNodes] as Element[]));
         }
       } else if (record.removedNodes.length > 0) {
         removed.push(...([...record.removedNodes] as Element[]));
@@ -62,24 +61,18 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
   };
 
   const performLayout = (records: MutationRecord[]): void => {
-    const { prepended, appended, removed, shouldReloadItems } = diffDomChildren(records);
+    const { prepended, appended, shouldReloadItems } = diffDomChildren(records);
 
-    if (shouldReloadItems) {
-      masonry.reloadItems?.();
-      masonry.layout?.();
-      return;
+    if (appended.length > 0) {
+      masonry.appended?.(appended);
     }
 
     if (prepended.length > 0) {
       masonry.prepended?.(prepended);
     }
 
-    if (appended.length > 0) {
-      masonry.appended?.(appended);
-    }
-
-    if (removed.length > 0) {
-      masonry.remove?.(removed);
+    if (shouldReloadItems) {
+      masonry.reloadItems?.();
     }
 
     masonry.layout?.();

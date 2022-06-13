@@ -3,7 +3,7 @@ import { For, Switch, Match } from 'solid-js';
 import { Masonry } from '../components/Masonry';
 import { convertRemToPixels } from '../utils';
 import { TodoItem } from './TodoItem';
-import { useTodos } from './query/useTodos';
+import { useTodos } from './query';
 import { infiniteScroll } from './directives';
 import { NoItems } from './NoItems';
 import { LoadingItems } from './LoadingItems';
@@ -36,7 +36,7 @@ const Todos: Component = () => {
         >
           <>
             <Masonry elementType="ul" options={masonryOptions}>
-              <For each={query.data!.pages}>{(page) => page.todos?.map((todo) => <TodoItem data={todo!} />)}</For>
+              <For each={query.data!.pages.flatMap((page) => page.todos)}>{(todo) => <TodoItem data={todo!} />}</For>
             </Masonry>
             {query.hasNextPage === true && (
               <div
