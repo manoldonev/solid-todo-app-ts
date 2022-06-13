@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { UseQueryOptions, UseInfiniteQueryOptions } from 'react-query';
-import {useQuery, useInfiniteQuery } from '../solid-query'
+import { UseQueryOptions, UseInfiniteQueryOptions, UseMutationOptions } from 'react-query/types';
+import {useQuery, useInfiniteQuery, useMutation } from '../solid-query'
 import { graphql, ResponseResolver, GraphQLRequest, GraphQLContext } from 'msw'
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
