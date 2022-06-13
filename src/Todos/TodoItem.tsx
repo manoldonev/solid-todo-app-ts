@@ -1,17 +1,24 @@
 import type { Component } from 'solid-js';
-import { useUpdateTodo } from './query/useUpdateTodo';
+import { ActionBar } from './ActionBar';
+import { useUpdateTodo, useDeleteTodo } from './query';
 
 const TodoItem: Component<{
   data: { id: string; task: string; done: boolean };
 }> = (props) => {
   const { mutate: updateTodo } = useUpdateTodo();
-  const toggleItem = (): void => {
+  const { mutate: deleteTodo } = useDeleteTodo();
+
+  const toggleItem: VoidFunction = () => {
     updateTodo({ id: props.data.id, input: { done: !props.data.done } });
+  };
+
+  const deleteItem: VoidFunction = () => {
+    deleteTodo({ id: props.data.id });
   };
 
   return (
     <li class="group mb-3 w-full last:mb-20 xs:w-56 md:w-60">
-      <div class="rounded-lg border border-outline bg-primary-container px-3 pb-3 text-on-primary-container transition-colors">
+      <div class="rounded-lg border border-outline bg-primary-container px-3 text-on-primary-container transition-colors">
         <h2
           class={`${props.data.done ? 'text-on-primary-container/75 line-through' : ''}`}
         >{`Lorem Ipsum #${props.data.id}`}</h2>
@@ -28,6 +35,10 @@ const TodoItem: Component<{
           />
           {props.data.task}
         </label>
+        <ActionBar
+          class="my-1 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
+          onDelete={deleteItem}
+        />
       </div>
     </li>
   );

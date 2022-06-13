@@ -18,9 +18,11 @@ import 'whatwg-fetch';
 
 jest.mock('solid-icons/hi', () => {
   return {
-    HiOutlineEmojiSad: () => {
-      return null;
-    },
+    HiOutlineEmojiSad: () => null,
+    HiOutlineBell: () => null,
+    HiOutlineColorSwatch: () => null,
+    HiOutlinePencilAlt: () => null,
+    HiOutlineTrash: () => null,
   };
 });
 
