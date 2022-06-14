@@ -10,5 +10,18 @@
     ],
     "babel-preset-solid",
     "@babel/preset-typescript"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "babel-preset-vite",
+          {
+            "env": true,
+            "glob": false
+          }
+        ],
+      ]
+    }
+  }
 }

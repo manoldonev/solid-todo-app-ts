@@ -1,12 +1,12 @@
 import type { Component } from 'solid-js';
 import { For, Switch, Match } from 'solid-js';
-import { Masonry } from '../components/Masonry';
-import { convertRemToPixels } from '../utils';
+import { Masonry } from '../../../components/Masonry';
+import { convertRemToPixels } from '../../../utils';
 import { TodoItem } from './TodoItem';
 import { useTodos } from './query';
 import { infiniteScroll } from './directives';
 import { NoItems } from './NoItems';
-import { LoadingItems } from './LoadingItems';
+import { LoadingIndicator } from '../../../components/LoadingIndicator';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const directiveNoTreeShake = infiniteScroll;
@@ -24,7 +24,7 @@ const Todos: Component = () => {
     <div class="min-h-screen bg-background p-2.5 transition-colors">
       <Switch fallback={<NoItems />}>
         <Match when={query.isLoading}>
-          <LoadingItems />
+          <LoadingIndicator class="text-on-background" />
         </Match>
         <Match
           when={

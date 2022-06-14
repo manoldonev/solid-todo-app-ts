@@ -60,7 +60,7 @@ jobs:
         run: tsc --project tsconfig.json --noEmit
 
       - name: test
-        run: pnpm test -- --watchAll=false
+        run: pnpm test -- --run
 
       - name: build
         run: pnpm run --if-present build

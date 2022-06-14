@@ -1,4 +1,6 @@
+import { describe, expect, test } from 'vitest';
 import { QueryClient, setLogger } from 'react-query/core';
+import { Router } from 'solid-app-router';
 import { render, screen } from 'solid-testing-library';
 import { QueryClientProvider } from '../solid-query';
 import { App } from './App';
@@ -24,7 +26,9 @@ describe('Todo App', () => {
   test('renders correctly', async () => {
     const { unmount } = render(() => (
       <QueryClientProvider client={queryClient}>
-        <App />
+        <Router base={import.meta.env.BASE_URL}>
+          <App />
+        </Router>
       </QueryClientProvider>
     ));
 

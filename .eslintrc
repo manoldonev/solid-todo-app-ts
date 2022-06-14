@@ -27,10 +27,16 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "solid", "jsx-a11y"],
+  "plugins": [
+    "@typescript-eslint",
+    "solid",
+    "jsx-a11y"
+  ],
   "root": true, // For configuration cascading
   "rules": {
-    "import/extensions": ["off"],
+    "import/extensions": [
+      "off"
+    ],
     "@typescript-eslint/array-type": [
       "error",
       {
@@ -73,12 +79,20 @@
       "error",
       {
         "props": true,
-        "ignorePropertyModificationsForRegex": ["^draft", "keys"]
+        "ignorePropertyModificationsForRegex": [
+          "^draft",
+          "keys"
+        ]
       }
     ],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
-    "jsx-a11y/label-has-associated-control": ["error", { "assert": "either" }],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "assert": "either"
+      }
+    ],
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
@@ -89,10 +103,10 @@
   },
   "overrides": [
     {
-      "files": ["src/**/*.test.{ts,tsx}"],
+      "files": [
+        "src/**/*.test.{ts,tsx}"
+      ],
       "extends": [
-        "plugin:jest/recommended",
-        "plugin:jest/style",
         "plugin:jest-dom/recommended",
         "plugin:testing-library/dom"
       ],
@@ -103,8 +117,7 @@
         "testing-library/prefer-explicit-assert": "error",
         "testing-library/prefer-wait-for": "error",
         "testing-library/prefer-user-event": "error",
-        "testing-library/no-debugging-utils": "warn",
-        "jest/no-focused-tests": "warn"
+        "testing-library/no-debugging-utils": "warn"
       }
     }
   ]

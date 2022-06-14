@@ -1,5 +1,4 @@
 {
-  "types": ["jest", "@testing-library/jest-dom"],
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
@@ -9,11 +8,16 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "types": [
+      "vite/client",
+      "@testing-library/jest-dom"
+    ],
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true
   },
   // only compile the production TS files
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
