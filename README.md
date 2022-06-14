@@ -29,6 +29,6 @@ Based on the standard SolidJS TypeScript [template](https://github.com/solidjs/t
 
 ## Testing
 
-- [WIP] Unit & Integration testing: Jest with Solid Testing Library setup
+- [WIP] Unit & Integration testing: Vitest with Solid Testing Library setup
 - Static Analysis: TypeScript & ESLint
 - [MSW](https://mswjs.io/) (Mock Service Worker) API mocking (intercepting requests on the network level)
