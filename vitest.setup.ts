@@ -16,20 +16,20 @@ import 'whatwg-fetch';
 // // Clean up after the tests are finished.
 // afterAll(() => server.close());
 
-jest.mock('solid-icons/hi', () => {
-  return {
-    HiOutlineEmojiSad: () => null,
-    HiOutlineBell: () => null,
-    HiOutlineColorSwatch: () => null,
-    HiOutlinePencilAlt: () => null,
-    HiOutlineTrash: () => null,
-  };
-});
+// jest.mock('solid-icons/hi', () => {
+//   return {
+//     HiOutlineEmojiSad: () => null,
+//     HiOutlineBell: () => null,
+//     HiOutlineColorSwatch: () => null,
+//     HiOutlinePencilAlt: () => null,
+//     HiOutlineTrash: () => null,
+//   };
+// });
 
-jest.mock('solid-icons/ai', () => {
-  return {
-    AiOutlineLoading: () => {
-      return null;
-    },
-  };
-});
+// jest.mock('solid-icons/ai', () => {
+//   return {
+//     AiOutlineLoading: () => {
+//       return null;
+//     },
+//   };
+// });

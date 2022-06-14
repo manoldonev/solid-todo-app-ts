@@ -1,3 +1,5 @@
 /src/generated/**/*.ts
 *.config.ts
 *.config.js
+*.setup.ts
+*.mjs
