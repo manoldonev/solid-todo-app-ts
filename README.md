@@ -1,6 +1,6 @@
-![license](https://img.shields.io/github/license/manoldonev/todo-app-solid-ts?style=plastic) ![ci workflow](https://github.com/manoldonev/todo-app-solid-ts/workflows/ci/badge.svg) ![deploy workflow](https://github.com/manoldonev/todo-app-solid-ts/workflows/deploy/badge.svg)
+![license](https://img.shields.io/github/license/manoldonev/solid-todo-app-ts?style=plastic) ![ci workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/ci/badge.svg) ![deploy workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/deploy/badge.svg)
 
-Latest deployment available at https://manoldonev.github.io/todo-app-solid-ts/
+Latest deployment available at https://manoldonev.github.io/solid-todo-app-ts/
 
 # SolidJS Todo App
 

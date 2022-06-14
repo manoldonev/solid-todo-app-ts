@@ -4,7 +4,7 @@ import { undestructurePlugin } from 'babel-plugin-solid-undestructure';
 
 export default defineConfig({
   plugins: [...undestructurePlugin('ts'), solidPlugin()],
-  base: '/todo-app-solid-ts/',
+  base: '/solid-todo-app-ts/',
   publicDir: './public',
   build: {
     target: 'esnext',
