@@ -1,4 +1,5 @@
 /* @refresh reload */
+import { Router } from 'solid-app-router';
 import { render } from 'solid-js/web';
 import { Toaster } from 'solid-toast';
 import { App } from './App';
@@ -31,7 +32,9 @@ const main = async (): Promise<void> => {
   render(
     () => (
       <QueryClientProvider client={queryClient}>
-        <App />
+        <Router base={import.meta.env.BASE_URL}>
+          <App />
+        </Router>
         <Toaster position="top-center" />
       </QueryClientProvider>
     ),

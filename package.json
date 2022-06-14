@@ -47,6 +47,7 @@
     "babel-plugin-solid-undestructure": "^0.0.15",
     "babel-preset-jest": "^28.0.2",
     "babel-preset-solid": "^1.4.2",
+    "babel-preset-vite": "^1.0.4",
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -84,6 +85,7 @@
     "masonry-layout": "^4.2.2",
     "msw": "^0.42.0",
     "react-query": "^3.39.1",
+    "solid-app-router": "^0.3.3",
     "solid-icons": "^0.4.13",
     "solid-js": "^1.4.2",
     "solid-toast": "^0.1.4"

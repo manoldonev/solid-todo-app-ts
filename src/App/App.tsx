@@ -1,12 +1,31 @@
 import type { Component } from 'solid-js';
-import { Todos } from '../Todos';
+import { Suspense, ErrorBoundary, lazy } from 'solid-js';
+import { Navigate, Route, Routes } from 'solid-app-router';
+import { Layout, NotFound } from '../routes';
+import { LoadingIndicator } from '../components/LoadingIndicator';
+import { ErrorFallback } from './ErrorFallback';
+
+const Tasks = lazy(async () => import('../routes/tasks').then((module) => ({ default: module.Tasks })));
 
 const App: Component = () => {
   return (
-    <div class="min-h-screen bg-background mx-auto">
-      <h1 class="text-on-background text-center">Todo App</h1>
-      <Todos />
-    </div>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+    <ErrorBoundary fallback={(error, reset) => <ErrorFallback error={error.toString()} resetErrorBoundary={reset} />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="" element={<Navigate href="tasks" />} />
+          <Route
+            path="tasks"
+            element={
+              <Suspense fallback={<LoadingIndicator class="bg-background text-on-background" />}>
+                <Tasks />
+              </Suspense>
+            }
+          />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </ErrorBoundary>
   );
 };
 
