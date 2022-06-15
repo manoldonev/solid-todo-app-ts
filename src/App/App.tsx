@@ -7,6 +7,10 @@ import { ErrorFallback } from './ErrorFallback';
 
 const Tasks = lazy(async () => import('../routes/tasks').then((module) => ({ default: module.Tasks })));
 
+const Analytics = lazy(async () => import('../routes/analytics').then((module) => ({ default: module.Analytics })));
+
+const Settings = lazy(async () => import('../routes/settings').then((module) => ({ default: module.Settings })));
+
 const App: Component = () => {
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
@@ -19,6 +23,22 @@ const App: Component = () => {
             element={
               <Suspense fallback={<LoadingIndicator class="bg-background text-on-background" />}>
                 <Tasks />
+              </Suspense>
+            }
+          />
+          <Route
+            path="analytics"
+            element={
+              <Suspense fallback={<LoadingIndicator class="bg-background text-on-background" />}>
+                <Analytics />
+              </Suspense>
+            }
+          />
+          <Route
+            path="settings"
+            element={
+              <Suspense fallback={<LoadingIndicator class="bg-background text-on-background" />}>
+                <Settings />
               </Suspense>
             }
           />

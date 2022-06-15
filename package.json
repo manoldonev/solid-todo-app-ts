@@ -12,7 +12,7 @@
     "lint": "pnpm run lint:src && pnpm run lint:jest",
     "lint:fix": "pnpm run lint:src --fix && pnpm run lint:jest --fix",
     "test": "vitest",
-    "test:related": "vitest related /src/**/*.{tsx,ts} --run --passWithNoTests",
+    "test:related": "vitest related '/src/**/*.{ts,tsx}' --run --passWithNoTests",
     "prettier": "prettier --check src",
     "prepare": "husky install",
     "predeploy": "npm run build",

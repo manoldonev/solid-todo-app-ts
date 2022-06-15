@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
-import { QueryClient, setLogger } from 'react-query/core';
-import { Router } from 'solid-app-router';
 import { render, screen } from 'solid-testing-library';
+import { Router } from 'solid-app-router';
+import { QueryClient, setLogger } from 'react-query/core';
 import { QueryClientProvider } from '../solid-query';
 import { App } from './App';
 

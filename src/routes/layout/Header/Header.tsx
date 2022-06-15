@@ -1,5 +1,6 @@
 import { Link } from 'solid-app-router';
 import type { Component } from 'solid-js';
+import { Navigation } from '../Navigation';
 
 const Header: Component = () => {
   return (
@@ -12,6 +13,8 @@ const Header: Component = () => {
             </Link>
           </div>
         </div>
+
+        <Navigation class="hidden md:flex" />
       </div>
     </header>
   );
