@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */
 import type { Accessor } from 'solid-js';
 import { onMount, onCleanup } from 'solid-js';
 import Headroom from 'headroom.js';
@@ -51,10 +51,19 @@ const hideOnScroll = (element: HTMLElement, accessor: Accessor<HideOnScrollOptio
 
   const headroom = new Headroom(element, options);
 
+  // HACK: init/destroy race condition upon test execution
+  // see https://github.com/WickyNilliams/headroom.js/issues/367
+  const unsafeHeadroom = <any>headroom;
+  if (unsafeHeadroom.scrollTracker == null) {
+    unsafeHeadroom.scrollTracker = {
+      destroy: () => {},
+    };
+  }
+
   onMount(() => headroom.init());
 
   onCleanup(() => headroom.destroy());
 };
 
 export { hideOnScroll };
-/* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access */
+/* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */
