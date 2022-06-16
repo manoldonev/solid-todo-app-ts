@@ -18,6 +18,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.0
   '@testing-library/jest-dom': ^5.16.4
   '@types/babel__core': ^7.1.19
+  '@types/headroom.js': ^0.12.2
   '@types/jest': ^28.0.0
   '@types/masonry-layout': ^4.2.5
   '@types/testing-library__jest-dom': ^5.14.3
@@ -43,6 +44,7 @@ specifiers:
   eslint-plugin-testing-library: ^5.5.1
   gh-pages: ^4.0.0
   graphql: ^16.5.0
+  headroom.js: ^0.12.0
   husky: ^8.0.1
   jsdom: ^19.0.0
   lint-staged: ^13.0.0
@@ -68,6 +70,7 @@ specifiers:
 dependencies:
   '@solid-primitives/intersection-observer': 1.3.0_solid-js@1.4.2
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.4.2
+  headroom.js: 0.12.0
   masonry-layout: 4.2.2
   msw: 0.42.0_typescript@4.6.4
   react-query: 3.39.1
@@ -92,6 +95,7 @@ devDependencies:
   '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@testing-library/jest-dom': 5.16.4
   '@types/babel__core': 7.1.19
+  '@types/headroom.js': 0.12.2
   '@types/jest': 28.1.1
   '@types/masonry-layout': 4.2.5
   '@types/testing-library__jest-dom': 5.14.3
@@ -2491,6 +2495,10 @@ packages:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
     dependencies:
       '@types/node': 17.0.36
+    dev: true
+
+  /@types/headroom.js/0.12.2:
+    resolution: {integrity: sha512-dsor/R8cScrFMYfOeZHvRzemQdorA02OBS2ROVPkpCzMovsiws96mMIxOtGpFgme9QrL7zOOBfRosg6lHwg2vg==}
     dev: true
 
   /@types/istanbul-lib-coverage/2.0.4:
@@ -5485,6 +5493,10 @@ packages:
 
   /headers-polyfill/3.0.7:
     resolution: {integrity: sha512-JoLCAdCEab58+2/yEmSnOlficyHFpIl0XJqwu3l+Unkm1gXpFUYsThz6Yha3D6tNhocWkCPfyW0YVIGWFqTi7w==}
+    dev: false
+
+  /headroom.js/0.12.0:
+    resolution: {integrity: sha512-iXnAafUm3FdzfJ91uixLws2hkKI1jC8bAKK/pt7XYr8Ie1jO7xbK48Ycpl9tUPyBgkzuj1p/PhJS0fy4E/5anA==}
     dev: false
 
   /home-or-tmp/2.0.0:
