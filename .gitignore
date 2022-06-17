@@ -4,3 +4,6 @@ dist
 # misc
 .DS_Store
 *.tsbuildinfo
+
+# test files
+/src/generated/output.css

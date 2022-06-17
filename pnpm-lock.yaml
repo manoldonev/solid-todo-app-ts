@@ -17,6 +17,7 @@ specifiers:
   '@solid-primitives/mutation-observer': ^1.1.0
   '@tailwindcss/line-clamp': ^0.4.0
   '@testing-library/jest-dom': ^5.16.4
+  '@testing-library/user-event': ^14.2.0
   '@types/babel__core': ^7.1.19
   '@types/headroom.js': ^0.12.2
   '@types/jest': ^28.0.0
@@ -94,6 +95,7 @@ devDependencies:
   '@graphql-codegen/typescript-react-query': 3.5.12_graphql@16.5.0
   '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.0.24
   '@testing-library/jest-dom': 5.16.4
+  '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
   '@types/babel__core': 7.1.19
   '@types/headroom.js': 0.12.2
   '@types/jest': 28.1.1
@@ -2417,6 +2419,15 @@ packages:
       dom-accessibility-api: 0.5.14
       lodash: 4.17.21
       redent: 3.0.0
+    dev: true
+
+  /@testing-library/user-event/14.2.0_tlwynutqiyp5mns3woioasuxnq:
+    resolution: {integrity: sha512-+hIlG4nJS6ivZrKnOP7OGsDu9Fxmryj9vCl8x0ZINtTJcCHs2zLsYif5GzuRiBF2ck5GZG2aQr7Msg+EHlnYVQ==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 8.13.0
     dev: true
 
   /@tootallnate/once/2.0.0:

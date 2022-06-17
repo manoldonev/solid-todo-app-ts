@@ -90,7 +90,11 @@
         "checksVoidReturn": false
       }
     ],
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["src/**/*.test.{tsx,ts}", "src/mocks/**/*.ts"] }
+    ]
   },
   "overrides": [
     {
