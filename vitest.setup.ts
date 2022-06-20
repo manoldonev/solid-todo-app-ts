@@ -8,6 +8,7 @@ import './src/mocks/IntersectionObserver';
 import './src/mocks/windowScrollTo';
 import './src/mocks/SVGAElement';
 import { injectTailwindCss } from './src/mocks/utils';
+import MatchMediaMock from './src/mocks/windowMatchMedia';
 
 beforeAll(async () => injectTailwindCss());
 
@@ -20,3 +21,8 @@ afterEach(() => server.resetHandlers());
 
 // Clean up after the tests are finished.
 afterAll(() => server.close());
+
+// eslint-disable-next-line no-new
+const matchMedia = new MatchMediaMock();
+
+export { matchMedia };
