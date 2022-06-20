@@ -1,1 +1,0 @@
-import{I as t}from"./index.b0c59ec7.js";const e=t('<div data-testid="settings" class="min-h-screen bg-background p-2 text-on-background transition-colors md:p-4"><p>Settings</p></div>',4);var o=()=>e.cloneNode(!0);export{o as Settings};
