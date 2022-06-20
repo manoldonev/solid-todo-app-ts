@@ -6,9 +6,9 @@ const DEFAULT_ROOT_MARGIN = '0px 0px 0px 0px';
 const DEFAULT_THRESHOLD = 0;
 
 interface InfiniteScrollOptions {
-  isLoading: Accessor<boolean>;
-  isDisabled?: Accessor<boolean>;
-  hasNextPage: Accessor<boolean>;
+  isLoading: boolean;
+  isDisabled?: boolean;
+  hasNextPage: boolean;
   fetchNextPage: VoidFunction;
   rootMargin?: string;
   threshold?: number | number[];
@@ -31,7 +31,7 @@ const infiniteScroll = (element: Element, accessor: Accessor<InfiniteScrollOptio
   });
 
   createEffect(() => {
-    if (isSentryVisible() && !options.isLoading() && options.isDisabled?.() === false && options.hasNextPage()) {
+    if (isSentryVisible() && !options.isLoading && options.isDisabled === false && options.hasNextPage) {
       options.fetchNextPage();
     }
   });

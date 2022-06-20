@@ -12,15 +12,22 @@ const pageSize = 10;
 const sortField = 'id';
 const sortDirection = SortDirection.Descending;
 
-const useTodos = (): Readonly<UseInfiniteQueryResult<TodosQuery>> => {
+const useTodos = (search?: string): Readonly<UseInfiniteQueryResult<TodosQuery>> => {
+  let input = null;
+  if (search != null) {
+    // TODO: case-insensitive search
+    input = { task_contains: search };
+  }
+
   const queryVariables = {
     page: pageIndex,
     limit: pageSize,
+    input,
     sort: sortField,
     direction: sortDirection,
   };
 
-  const query = useInfiniteTodosQuery('page', queryVariables, {
+  return useInfiniteTodosQuery('page', queryVariables, {
     getNextPageParam: (lastPage, allPages) => {
       if (lastPage.todos == null || lastPage.todos.length < pageSize) {
         return null;
@@ -30,8 +37,6 @@ const useTodos = (): Readonly<UseInfiniteQueryResult<TodosQuery>> => {
     },
     keepPreviousData: true,
   });
-
-  return query;
 };
 
 export { useTodos };
