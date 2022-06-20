@@ -27,10 +27,16 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "solid", "jsx-a11y"],
+  "plugins": [
+    "@typescript-eslint",
+    "solid",
+    "jsx-a11y"
+  ],
   "root": true, // For configuration cascading
   "rules": {
-    "import/extensions": ["off"],
+    "import/extensions": [
+      "off"
+    ],
     "@typescript-eslint/array-type": [
       "error",
       {
@@ -73,16 +79,16 @@
       "error",
       {
         "props": true,
-        "ignorePropertyModificationsForRegex": ["^draft", "keys"]
+        "ignorePropertyModificationsForRegex": [
+          "^draft",
+          "keys"
+        ]
       }
     ],
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        "assert": "either"
-      }
+      "off"
     ],
     "@typescript-eslint/no-misused-promises": [
       "error",
@@ -93,13 +99,23 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "import/no-extraneous-dependencies": [
       "error",
-      { "devDependencies": ["src/**/*.test.{tsx,ts}", "src/mocks/**/*.ts"] }
+      {
+        "devDependencies": [
+          "src/**/*.test.{tsx,ts}",
+          "src/mocks/**/*.ts"
+        ]
+      }
     ]
   },
   "overrides": [
     {
-      "files": ["src/**/*.test.{ts,tsx}"],
-      "extends": ["plugin:jest-dom/recommended", "plugin:testing-library/dom"],
+      "files": [
+        "src/**/*.test.{ts,tsx}"
+      ],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/dom"
+      ],
       "rules": {
         "testing-library/no-await-sync-events": "error",
         "testing-library/no-manual-cleanup": "error",
