@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from 'solid-app-router';
 import type { Component } from 'solid-js';
 import { SearchBox } from '../../../components/SearchBox';
+import { ThemeToggle } from '../../../components/ThemeToggle';
 import { useQuerySignal } from '../../../signals';
 import { Navigation } from '../Navigation';
 
@@ -42,6 +43,8 @@ const Header: Component = () => {
         </div>
 
         <Navigation class="hidden md:flex" />
+
+        <ThemeToggle class="hidden md:block" />
       </div>
     </header>
   );

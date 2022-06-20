@@ -10,7 +10,7 @@ import type {
 
 import type { UseQueryReturnType } from './useBaseQuery';
 import { useBaseQuery } from './useBaseQuery';
-import { parseQueryArgs } from './utils';
+import { parseQueryArgs } from '../utils';
 
 export function useInfiniteQuery<TQueryFnData = unknown, TError = unknown, TData = TQueryFnData>(
   options: UseInfiniteQueryOptions<TQueryFnData, TError, TData>,

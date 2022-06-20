@@ -3,8 +3,8 @@ import type { UseMutateFunction, UseMutationOptions, UseMutationResult } from 'r
 import type { MutationKey, MutationFunction } from 'react-query/core';
 import { onCleanup, onMount } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
-import { useQueryClient } from './QueryClientProvider';
-import { noop, parseMutationArgs } from './utils';
+import { useQueryClient } from '../QueryClientProvider';
+import { noop, parseMutationArgs } from '../utils';
 
 export function useMutation<TData = unknown, TError = unknown, TVariables = void, TContext = unknown>(
   options: UseMutationOptions<TData, TError, TVariables, TContext>,
