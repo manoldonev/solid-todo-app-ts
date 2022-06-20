@@ -3,7 +3,7 @@ import type { UseBaseQueryOptions, UseQueryResult } from 'react-query/types';
 
 import { onMount, onCleanup } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
-import { useQueryClient } from './QueryClientProvider';
+import { useQueryClient } from '../QueryClientProvider';
 
 export type UseQueryReturnType<TData, TError, Result = UseQueryResult<TData, TError>> = Readonly<Result>;
 

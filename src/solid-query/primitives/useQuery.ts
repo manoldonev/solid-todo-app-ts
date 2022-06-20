@@ -2,7 +2,7 @@ import { QueryObserver } from 'react-query/core';
 import type { QueryFunction, QueryKey, UseQueryOptions } from 'react-query/types';
 import type { UseQueryReturnType } from './useBaseQuery';
 import { useBaseQuery } from './useBaseQuery';
-import { parseQueryArgs } from './utils';
+import { parseQueryArgs } from '../utils';
 
 export function useQuery<TQueryFnData = unknown, TError = unknown, TData = TQueryFnData>(
   options: UseQueryOptions<TQueryFnData, TError, TData>,
