@@ -1,5 +1,6 @@
 /* @refresh reload */
 import { Router } from 'solid-app-router';
+import { HopeProvider } from '@hope-ui/solid';
 import { render } from 'solid-js/web';
 import { Toaster } from 'solid-toast';
 import { App } from './App';
@@ -33,7 +34,9 @@ const main = async (): Promise<void> => {
     () => (
       <QueryClientProvider client={queryClient}>
         <Router base={import.meta.env.BASE_URL}>
-          <App />
+          <HopeProvider>
+            <App />
+          </HopeProvider>
         </Router>
         <Toaster position="top-center" />
       </QueryClientProvider>
