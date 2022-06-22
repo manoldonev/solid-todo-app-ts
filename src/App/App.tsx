@@ -19,7 +19,7 @@ const App: Component = () => {
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Navigate href="tasks" />} />
           <Route
-            path="tasks"
+            path="tasks/*"
             element={
               <Suspense fallback={<LoadingIndicator class="bg-background text-on-background" />}>
                 <Tasks />

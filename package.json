@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "graphql:codegen": "graphql-codegen --config .graphqlrc.yml",
-    "postinstall": "node ./fix-jest-dom.mjs"
+    "postinstall": "patch-package && node ./fix-jest-dom.mjs"
   },
   "license": "MIT",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "@graphql-codegen/typescript-msw": "^1.0.10",
     "@graphql-codegen/typescript-operations": "^2.4.0",
     "@graphql-codegen/typescript-react-query": "^3.5.12",
+    "@milahu/patch-package-with-pnpm-support": "^6.4.10",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/user-event": "^14.2.0",
@@ -82,10 +83,12 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
+    "@hope-ui/solid": "^0.6.2",
     "@solid-primitives/intersection-observer": "^1.3.0",
     "@solid-primitives/media": "^1.3.0",
     "@solid-primitives/mutation-observer": "^1.1.0",
     "@solid-primitives/storage": "^1.3.1",
+    "@stitches/core": "^1.2.8",
     "headroom.js": "^0.12.0",
     "masonry-layout": "^4.2.2",
     "msw": "^0.42.0",
@@ -93,7 +96,10 @@
     "solid-app-router": "^0.3.3",
     "solid-icons": "^0.4.13",
     "solid-js": "^1.4.2",
-    "solid-toast": "^0.1.4"
+    "solid-js-form": "0.1.5",
+    "solid-toast": "^0.1.4",
+    "solid-transition-group": "^0.0.10",
+    "yup": "^0.32.11"
   },
   "pnpm": {
     "peerDependencyRules": {
