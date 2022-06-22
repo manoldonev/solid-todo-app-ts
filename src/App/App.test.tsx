@@ -51,7 +51,8 @@ const TestApp: Component = () => {
   however, the latter is a bigger and [currently] unsolvable problem. Mocking 
   media query support (window.matchMedia) is possible but this only patches scenarios where the component under test actually calls window.matchMedia(...) programmatically. In our [tailwind] scenario we are dynamically injecting the css (including the @media statements for sm/md/lg/etc. screen modifiers) but jsdom does not trigger media query computation hence the screen modifiers remain inactive. As tailwind is a mobile-first library this effectively means we are stuck with the mobile view for testing).
 */
-describe('on mobile screen', () => {
+// NOTE: hope-ui has some issues with modules resolution that break vitest tests, see https://github.com/fabien-ml/hope-ui/issues/172; temporarily disable tests until hope-ui rewrite (pending) or custom modal dialog implementation.
+describe.skip('on mobile screen', () => {
   beforeEach(() => {
     vi.resetAllMocks();
   });
