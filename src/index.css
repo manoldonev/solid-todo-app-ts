@@ -20,6 +20,48 @@
     -webkit-border-radius: initial;
   }
 
+  dialog[open] {
+    animation: toggle-modal 0.3s ease-in-out;
+  }
+
+  @keyframes toggle-modal {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  dialog::backdrop {
+    background-color: rgba(43, 46, 56, 0.9);
+  }
+
+  /* @keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(10%);
+    }
+  }
+
+  .dialog-overlay {
+    animation: fade-in 200ms both;
+  }
+
+  .dialog-content {
+    animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
+  }
+
+  dialog.dialog-content {
+    animation: fade-in 400ms 200ms both;
+  } */
+
   /* material theme colors generated with https://material-foundation.github.io/material-theme-builder/#/custom */
   :root {
     --color-primary: 0 102 136;
