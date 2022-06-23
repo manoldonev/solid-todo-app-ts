@@ -13,10 +13,10 @@ export default defineConfig({
       web: [/\.[jt]sx?$/],
     },
     setupFiles: './vitest.setup.ts',
-    // solid needs to be inline to work around
-    // a resolution issue in vitest:
+    // solid-js needs to be inline to work around
+    // a resolution issue in vitest (same for scroll-lock):
     deps: {
-      inline: [/solid-js/],
+      inline: [/solid-js/, /scroll-lock/],
     },
     // if you have few tests, try commenting one
     // or both out to improve performance:
