@@ -1,4 +1,4 @@
-![license](https://img.shields.io/github/license/manoldonev/solid-todo-app-ts?style=plastic) ![ci workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/ci/badge.svg) ![deploy workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/deploy/badge.svg)
+![license](https://img.shields.io/github/license/manoldonev/solid-todo-app-ts?style=plastic) ![ci workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/ci/badge.svg) ![deploy workflow](https://github.com/manoldonev/solid-todo-app-ts/workflows/deploy/badge.svg) ![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-cc00ff.svg?logo=pnpm)
 
 Latest deployment available at https://manoldonev.github.io/solid-todo-app-ts/
 
