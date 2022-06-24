@@ -63,7 +63,7 @@
     "eslint-plugin-jest-dom": "^4.0.2",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-solid": "^0.6.0",
+    "eslint-plugin-solid": "^0.7.0",
     "eslint-plugin-testing-library": "^5.5.1",
     "gh-pages": "^4.0.0",
     "graphql": "^16.5.0",
@@ -79,7 +79,7 @@
     "typescript": "^4.6.4",
     "vite": "^2.9.9",
     "vite-plugin-solid": "^2.2.6",
-    "vitest": "^0.14.2",
+    "vitest": "^0.15.0",
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
@@ -93,7 +93,7 @@
     "masonry-layout": "^4.2.2",
     "msw": "^0.42.0",
     "react-query": "^3.39.1",
-    "solid-app-router": "^0.3.3",
+    "solid-app-router": "^0.4.0",
     "solid-icons": "^0.4.13",
     "solid-js": "^1.4.2",
     "solid-js-form": "0.1.5",
@@ -112,7 +112,7 @@
       }
     }
   },
-  "packageManager": "pnpm@7.1.9",
+  "packageManager": "pnpm@7.3.0",
   "msw": {
     "workerDirectory": "public"
   }
