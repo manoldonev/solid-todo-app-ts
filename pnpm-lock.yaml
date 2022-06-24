@@ -46,7 +46,7 @@ specifiers:
   eslint-plugin-jest-dom: ^4.0.2
   eslint-plugin-jsx-a11y: ^6.5.1
   eslint-plugin-prettier: ^4.0.0
-  eslint-plugin-solid: ^0.6.0
+  eslint-plugin-solid: ^0.7.0
   eslint-plugin-testing-library: ^5.5.1
   gh-pages: ^4.0.0
   graphql: ^16.5.0
@@ -60,7 +60,7 @@ specifiers:
   prettier: ^2.6.2
   react-query: ^3.39.1
   regenerator-runtime: ^0.13.9
-  solid-app-router: ^0.3.3
+  solid-app-router: ^0.4.0
   solid-icons: ^0.4.13
   solid-js: ^1.4.2
   solid-js-form: 0.1.5
@@ -72,7 +72,7 @@ specifiers:
   typescript: ^4.6.4
   vite: ^2.9.9
   vite-plugin-solid: ^2.2.6
-  vitest: ^0.14.2
+  vitest: ^0.15.0
   whatwg-fetch: ^3.6.2
   yup: ^0.32.11
 
@@ -87,7 +87,7 @@ dependencies:
   masonry-layout: 4.2.2
   msw: 0.42.0_typescript@4.6.4
   react-query: 3.39.1
-  solid-app-router: 0.3.3_solid-js@1.4.2
+  solid-app-router: 0.4.1_solid-js@1.4.2
   solid-icons: 0.4.13_solid-js@1.4.2
   solid-js: 1.4.2
   solid-js-form: 0.1.5
@@ -135,7 +135,7 @@ devDependencies:
   eslint-plugin-jest-dom: 4.0.2_eslint@8.16.0
   eslint-plugin-jsx-a11y: 6.5.1_eslint@8.16.0
   eslint-plugin-prettier: 4.0.0_j7rsahgqtkecno6yauhsgsglf4
-  eslint-plugin-solid: 0.6.1_utdtartgf6fqqgkivzeynh76la
+  eslint-plugin-solid: 0.7.0_utdtartgf6fqqgkivzeynh76la
   eslint-plugin-testing-library: 5.5.1_utdtartgf6fqqgkivzeynh76la
   gh-pages: 4.0.0
   graphql: 16.5.0
@@ -151,7 +151,7 @@ devDependencies:
   typescript: 4.6.4
   vite: 2.9.9
   vite-plugin-solid: 2.2.6
-  vitest: 0.14.2_jsdom@20.0.0
+  vitest: 0.15.2_jsdom@20.0.0
   whatwg-fetch: 3.6.2
 
 packages:
@@ -4854,8 +4854,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-solid/0.6.1_utdtartgf6fqqgkivzeynh76la:
-    resolution: {integrity: sha512-zThVPpmVPzESBpLyzNoYo8/UViTDfE6j6RxQGzQUE81uF33lHL5g5rrgqkON/KbDLCKMOLYJEBc34AbgK2rcxw==}
+  /eslint-plugin-solid/0.7.0_utdtartgf6fqqgkivzeynh76la:
+    resolution: {integrity: sha512-mITYmBMraIWiUEAUR+toMH3Y0t/vThRcyQ7UkJR0zk8S8AIjB2DuWSuUoTm1Xjf0FyB4+xDlr+lttqlQi4xGlA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -8054,8 +8054,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /solid-app-router/0.3.3_solid-js@1.4.2:
-    resolution: {integrity: sha512-JEn0gi6q8Pq9M2Ml3CLeNzenxuBrOrQg4aQyeIZTNjOAeEil/9YiaAJk+US78sIdVcqflTneN5KZgJMIGJ0rFQ==}
+  /solid-app-router/0.4.1_solid-js@1.4.2:
+    resolution: {integrity: sha512-RKHyFQ+J5lXyE/SoyJVHgTBeBck2etYVJn1/9F7ehlzyD2pIOMqLpNXD1GfWQljHqNdXZBSyE+xB/Cck5l9Q/g==}
     peerDependencies:
       solid-js: ^1.3.5
     dependencies:
@@ -8842,6 +8842,30 @@ packages:
       - supports-color
     dev: true
 
+  /vite/2.9.12:
+    resolution: {integrity: sha512-suxC36dQo9Rq1qMB2qiRorNJtJAdxguu5TMvBHOc/F370KvqAe9t48vYp+/TbPKRNrMh/J55tOUmkuIqstZaew==}
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+    dependencies:
+      esbuild: 0.14.39
+      postcss: 8.4.14
+      resolve: 1.22.0
+      rollup: 2.74.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /vite/2.9.9:
     resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
     engines: {node: '>=12.2.0'}
@@ -8866,8 +8890,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.14.2_jsdom@20.0.0:
-    resolution: {integrity: sha512-vXQUl8OUCqHmxKWscMGL+6Xl1pBJmYHZ8N85iNpLGrirAC2vhspu7b73ShRcLonmZT44BYZW+LBAVvn0L4jyVA==}
+  /vitest/0.15.2_jsdom@20.0.0:
+    resolution: {integrity: sha512-cMabuUqu+nNHafkdN7H8Z20+UZTrrUfqjGwAoLwUwrqFGWBz3gXwxndjbLf6mgSFs9lF/JWjKeNM1CXKwtk26w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -8887,13 +8911,14 @@ packages:
     dependencies:
       '@types/chai': 4.3.1
       '@types/chai-subset': 1.3.3
+      '@types/node': 17.0.36
       chai: 4.3.6
       debug: 4.3.4
       jsdom: 20.0.0
       local-pkg: 0.4.1
       tinypool: 0.1.3
       tinyspy: 0.3.3
-      vite: 2.9.9
+      vite: 2.9.12
     transitivePeerDependencies:
       - less
       - sass
