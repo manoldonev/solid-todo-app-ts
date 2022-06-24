@@ -66,7 +66,10 @@ describe('on mobile screen', () => {
     const linkElement = screen.getByText(/todo app/i);
     expect(linkElement).toBeVisible();
 
-    const listElement = await screen.findByRole('list');
+    const searchFormElement = screen.getByRole('search');
+    expect(searchFormElement).toBeVisible();
+
+    const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
 
     const listScope = within(listElement);
