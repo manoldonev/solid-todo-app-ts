@@ -14,6 +14,7 @@ specifiers:
   '@graphql-codegen/typescript-operations': ^2.4.0
   '@graphql-codegen/typescript-react-query': ^3.5.12
   '@milahu/patch-package-with-pnpm-support': ^6.4.10
+  '@motionone/solid': ^10.10.2
   '@solid-primitives/intersection-observer': ^1.3.0
   '@solid-primitives/media': ^1.3.0
   '@solid-primitives/mutation-observer': ^1.1.0
@@ -60,7 +61,7 @@ specifiers:
   react-query: ^3.39.1
   regenerator-runtime: ^0.13.9
   scroll-lock: ^2.1.5
-  solid-app-router: ^0.3.3
+  solid-app-router: ^0.4.0
   solid-icons: ^0.4.13
   solid-js: ^1.4.2
   solid-js-form: 0.1.5
@@ -76,6 +77,7 @@ specifiers:
   yup: ^0.32.11
 
 dependencies:
+  '@motionone/solid': 10.10.2_solid-js@1.4.2
   '@solid-primitives/intersection-observer': 1.3.0_solid-js@1.4.2
   '@solid-primitives/media': 1.3.0_solid-js@1.4.2
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.4.2
@@ -85,7 +87,7 @@ dependencies:
   msw: 0.42.0_typescript@4.6.4
   react-query: 3.39.1
   scroll-lock: 2.1.5
-  solid-app-router: 0.3.3_solid-js@1.4.2
+  solid-app-router: 0.4.1_solid-js@1.4.2
   solid-icons: 0.4.13_solid-js@1.4.2
   solid-js: 1.4.2
   solid-js-form: 0.1.5
@@ -2262,6 +2264,64 @@ packages:
       tmp: 0.2.1
     dev: true
 
+  /@motionone/animation/10.10.1:
+    resolution: {integrity: sha512-iX839/Ir5wT7hVX0yCZYjcDhHAOkVR5hIhVBTf37qEUD693uVwrxC2i1BI9vMVPc1rIoFtftYjOtwoO9Oq/aog==}
+    dependencies:
+      '@motionone/easing': 10.9.0
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/dom/10.10.2:
+    resolution: {integrity: sha512-GWdauAz0/n3OzoKcDDCjOGBnxEIJyKOH8eaB1eANuSk8DVT1unZQdkGpOTCBAS9lC317mj5dvBSwO5AX1ugz8w==}
+    dependencies:
+      '@motionone/animation': 10.10.1
+      '@motionone/generators': 10.9.0
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/easing/10.9.0:
+    resolution: {integrity: sha512-FYIr3HlQEb7aE5LOpY6BPQUaPyKeJt6VfGA+npy73+JIGqoVOjbrdZ1ZQxzTXqO76mG3UZvv1+twrDamRQsxFw==}
+    dependencies:
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/generators/10.9.0:
+    resolution: {integrity: sha512-BOkHx4qQswJV+z/6k05qdvRENE4hG606NI5cIPTsLtSuksnRn83utuj/15VTNoFeYHuTdhwzxvIPvlPVayIGTg==}
+    dependencies:
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/solid/10.10.2_solid-js@1.4.2:
+    resolution: {integrity: sha512-wRdFQoRyrSu4JJRBRkqIHVSb78HmxIxfTdgXC5bR2v98TytgXOt6b0I1wlLALNsvPzAu+mz6PrsZz22sNK9lag==}
+    peerDependencies:
+      solid-js: ^1.4.1
+    dependencies:
+      '@motionone/dom': 10.10.2
+      '@solid-primitives/props': 2.1.7_solid-js@1.4.2
+      solid-js: 1.4.2
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/types/10.9.0:
+    resolution: {integrity: sha512-ZcEDfsrS2ym9+vExV7+59avkzEO/PLkNj16uaDvbWhi0Q/vOZ72j2LQTrtDLWVyZRIeUaB/i8DJP017Gj6UYQw==}
+    dev: false
+
+  /@motionone/utils/10.9.0:
+    resolution: {integrity: sha512-5IgmwQ8TdH1HsQ9d2QZeBCu9+HkqjoYRYItRpmusoyiedPMZaKdU3pr3qFP5nbAj68Ww2sTUxgEZEOF20qJA6w==}
+    dependencies:
+      '@motionone/types': 10.9.0
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+    dev: false
+
   /@mswjs/cookies/0.2.1:
     resolution: {integrity: sha512-0tDfcPw5/s7QsNQqS3knAvAD5w5PF1nNPagRhKO/yECY+sMbJxoC2sLWnH7Lzmh52mTSVLKDhd1r92Q3kfljnQ==}
     engines: {node: '>=14'}
@@ -2400,6 +2460,15 @@ packages:
       solid-js: 1.4.2
     dev: false
 
+  /@solid-primitives/props/2.1.7_solid-js@1.4.2:
+    resolution: {integrity: sha512-Sg+JUK+v43x4fe5yNYgKS0IkXG0pkLeCrO7SGKEaOtXSH2NZXthY/OQCSiv5rhM17Z7NoA6E9Q8CjQDrcFUblg==}
+    peerDependencies:
+      solid-js: ^1.3.0
+    dependencies:
+      '@solid-primitives/utils': 2.1.1_solid-js@1.4.2
+      solid-js: 1.4.2
+    dev: false
+
   /@solid-primitives/storage/1.3.1_solid-js@1.4.2:
     resolution: {integrity: sha512-3By9cxqCGGkXrw3gYj7h2c5SCWxiDIYc2C3O6GLVyzN4JCIKzcMlm3HLK0gKMUbR/MzAs265XyAc3rqsMq1ixw==}
     peerDependencies:
@@ -2412,6 +2481,14 @@ packages:
     resolution: {integrity: sha512-dZUHjzasuqS2lDO+PQCY1+jFmtWHlaP3tUvkX1Jr06LI/Ipa2P/ZNVSvuIoqQ0Bg+Ny27LvtrXxflZNeGtptvA==}
     peerDependencies:
       solid-js: ^1.3.1
+    dependencies:
+      solid-js: 1.4.2
+    dev: false
+
+  /@solid-primitives/utils/2.1.1_solid-js@1.4.2:
+    resolution: {integrity: sha512-im/WJDgLnJgjuEhB2a46RgDU/ODoc4g+FMySjJ8erPTFrhyTwIe5wv9MSUf7SYsguLe4rfQirNEKLSSyLPETkw==}
+    peerDependencies:
+      solid-js: ^1.4.1
     dependencies:
       solid-js: 1.4.2
     dev: false
@@ -5607,6 +5684,10 @@ packages:
     resolution: {integrity: sha512-iXnAafUm3FdzfJ91uixLws2hkKI1jC8bAKK/pt7XYr8Ie1jO7xbK48Ycpl9tUPyBgkzuj1p/PhJS0fy4E/5anA==}
     dev: false
 
+  /hey-listen/1.0.8:
+    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
+    dev: false
+
   /home-or-tmp/2.0.0:
     resolution: {integrity: sha512-ycURW7oUxE2sNiPVw1HVEFsW+ecOpJ5zaj7eC0RlwhibhRBod20muUN8qu/gzx956YrLolVvs1MTXwKgC2rVEg==}
     engines: {node: '>=0.10.0'}
@@ -8016,8 +8097,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /solid-app-router/0.3.3_solid-js@1.4.2:
-    resolution: {integrity: sha512-JEn0gi6q8Pq9M2Ml3CLeNzenxuBrOrQg4aQyeIZTNjOAeEil/9YiaAJk+US78sIdVcqflTneN5KZgJMIGJ0rFQ==}
+  /solid-app-router/0.4.1_solid-js@1.4.2:
+    resolution: {integrity: sha512-RKHyFQ+J5lXyE/SoyJVHgTBeBck2etYVJn1/9F7ehlzyD2pIOMqLpNXD1GfWQljHqNdXZBSyE+xB/Cck5l9Q/g==}
     peerDependencies:
       solid-js: ^1.3.5
     dependencies:
