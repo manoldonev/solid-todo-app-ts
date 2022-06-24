@@ -27,7 +27,7 @@ const validationSchema = yup.object().shape(
   [['title', 'note']],
 );
 
-const AddNewForm: Component<{ onSubmitted: () => void; onCancel: () => void }> = (props) => {
+const AddNewForm: Component<{ class?: string; onSubmitted: () => void; onCancel: () => void }> = (props) => {
   const { mutateAsync: createTodo } = useCreateTodo();
 
   const onSubmit = async (form: {
@@ -40,7 +40,7 @@ const AddNewForm: Component<{ onSubmitted: () => void; onCancel: () => void }> =
   };
 
   return (
-    <div class="bg-background">
+    <div class={`bg-background ${props.class ?? ''}`}>
       <Form
         data-testid="add-new-form"
         initialValues={{ title: '', note: '' }}

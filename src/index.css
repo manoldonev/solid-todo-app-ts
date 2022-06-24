@@ -20,6 +20,10 @@
     -webkit-border-radius: initial;
   }
 
+  dialog::backdrop {
+    background-color: rgba(43, 46, 56, 0.4);
+  }
+
   /* material theme colors generated with https://material-foundation.github.io/material-theme-builder/#/custom */
   :root {
     --color-primary: 0 102 136;

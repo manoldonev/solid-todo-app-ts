@@ -13,13 +13,12 @@ specifiers:
   '@graphql-codegen/typescript-msw': ^1.0.10
   '@graphql-codegen/typescript-operations': ^2.4.0
   '@graphql-codegen/typescript-react-query': ^3.5.12
-  '@hope-ui/solid': ^0.6.2
   '@milahu/patch-package-with-pnpm-support': ^6.4.10
+  '@motionone/solid': ^10.10.2
   '@solid-primitives/intersection-observer': ^1.3.0
   '@solid-primitives/media': ^1.3.0
   '@solid-primitives/mutation-observer': ^1.1.0
   '@solid-primitives/storage': ^1.3.1
-  '@stitches/core': ^1.2.8
   '@tailwindcss/line-clamp': ^0.4.0
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/user-event': ^14.2.0
@@ -27,6 +26,7 @@ specifiers:
   '@types/headroom.js': ^0.12.2
   '@types/jest': ^28.0.0
   '@types/masonry-layout': ^4.2.5
+  '@types/scroll-lock': ^2.1.0
   '@types/testing-library__jest-dom': ^5.14.3
   '@typescript-eslint/eslint-plugin': ^5.26.0
   '@typescript-eslint/parser': ^5.26.0
@@ -60,13 +60,13 @@ specifiers:
   prettier: ^2.6.2
   react-query: ^3.39.1
   regenerator-runtime: ^0.13.9
+  scroll-lock: ^2.1.5
   solid-app-router: ^0.4.0
   solid-icons: ^0.4.13
   solid-js: ^1.4.2
   solid-js-form: 0.1.5
   solid-testing-library: ^0.3.0
   solid-toast: ^0.1.4
-  solid-transition-group: ^0.0.10
   tailwindcss: ^3.0.24
   tsc-files: ^1.1.3
   typescript: ^4.6.4
@@ -77,22 +77,21 @@ specifiers:
   yup: ^0.32.11
 
 dependencies:
-  '@hope-ui/solid': 0.6.2_edavwlyd5jabdmps4672dxwe6q
+  '@motionone/solid': 10.10.2_solid-js@1.4.2
   '@solid-primitives/intersection-observer': 1.3.0_solid-js@1.4.2
   '@solid-primitives/media': 1.3.0_solid-js@1.4.2
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.4.2
   '@solid-primitives/storage': 1.3.1_solid-js@1.4.2
-  '@stitches/core': 1.2.8
   headroom.js: 0.12.0
   masonry-layout: 4.2.2
   msw: 0.42.0_typescript@4.6.4
   react-query: 3.39.1
+  scroll-lock: 2.1.5
   solid-app-router: 0.4.1_solid-js@1.4.2
   solid-icons: 0.4.13_solid-js@1.4.2
   solid-js: 1.4.2
   solid-js-form: 0.1.5
   solid-toast: 0.1.4_fepjxluhrcpibqwliludvf76qu
-  solid-transition-group: 0.0.10_solid-js@1.4.2
   yup: 0.32.11
 
 devDependencies:
@@ -116,6 +115,7 @@ devDependencies:
   '@types/headroom.js': 0.12.2
   '@types/jest': 28.1.1
   '@types/masonry-layout': 4.2.5
+  '@types/scroll-lock': 2.1.0
   '@types/testing-library__jest-dom': 5.14.3
   '@typescript-eslint/eslint-plugin': 5.26.0_gu4clceiw6ditaem5r577qrdpi
   '@typescript-eslint/parser': 5.26.0_utdtartgf6fqqgkivzeynh76la
@@ -1643,16 +1643,6 @@ packages:
       - supports-color
     dev: true
 
-  /@floating-ui/core/0.6.2:
-    resolution: {integrity: sha512-jktYRmZwmau63adUG3GKOAVCofBXkk55S/zQ94XOorAHhwqFIOFAy1rSp2N0Wp6/tGbe9V3u/ExlGZypyY17rg==}
-    dev: false
-
-  /@floating-ui/dom/0.4.4:
-    resolution: {integrity: sha512-0Ulu3B/dqQplUUSqnTx0foSrlYuMN+GTtlJWvNJwt6Fr7/PqmlR/Y08o6/+bxDWr6p3roBJRaQ51MDZsNmEhhw==}
-    dependencies:
-      '@floating-ui/core': 0.6.2
-    dev: false
-
   /@graphql-codegen/add/3.1.1_graphql@16.5.0:
     resolution: {integrity: sha512-XkVwcqosa0CVBlL1HaQT0gp+EUfhuQE3LzrEpzMQLwchxaj/NPVYtOJL6MUHaYDsHzLqxWrufjfbeB3y2NQgRw==}
     peerDependencies:
@@ -2133,23 +2123,6 @@ packages:
       value-or-promise: 1.0.11
     dev: true
 
-  /@hope-ui/solid/0.6.2_edavwlyd5jabdmps4672dxwe6q:
-    resolution: {integrity: sha512-hqblx2JJU3UuWjspCwr7dTClr/l+j9eXa+2f4uljvTiogLcH1sgtD3BDLk62A+cAuEA0oOekUSL68TbjF/c4DA==}
-    peerDependencies:
-      '@stitches/core': ^1.2.8
-      solid-js: ^1.4.0
-      solid-transition-group: ^0.0.10
-    dependencies:
-      '@floating-ui/dom': 0.4.4
-      '@stitches/core': 1.2.8
-      csstype: 3.0.11
-      focus-trap: 6.7.3
-      lodash.merge: 4.6.2
-      scroll-lock: 2.1.5
-      solid-js: 1.4.2
-      solid-transition-group: 0.0.10_solid-js@1.4.2
-    dev: false
-
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
     engines: {node: '>=10.10.0'}
@@ -2291,6 +2264,64 @@ packages:
       tmp: 0.2.1
     dev: true
 
+  /@motionone/animation/10.10.1:
+    resolution: {integrity: sha512-iX839/Ir5wT7hVX0yCZYjcDhHAOkVR5hIhVBTf37qEUD693uVwrxC2i1BI9vMVPc1rIoFtftYjOtwoO9Oq/aog==}
+    dependencies:
+      '@motionone/easing': 10.9.0
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/dom/10.10.2:
+    resolution: {integrity: sha512-GWdauAz0/n3OzoKcDDCjOGBnxEIJyKOH8eaB1eANuSk8DVT1unZQdkGpOTCBAS9lC317mj5dvBSwO5AX1ugz8w==}
+    dependencies:
+      '@motionone/animation': 10.10.1
+      '@motionone/generators': 10.9.0
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/easing/10.9.0:
+    resolution: {integrity: sha512-FYIr3HlQEb7aE5LOpY6BPQUaPyKeJt6VfGA+npy73+JIGqoVOjbrdZ1ZQxzTXqO76mG3UZvv1+twrDamRQsxFw==}
+    dependencies:
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/generators/10.9.0:
+    resolution: {integrity: sha512-BOkHx4qQswJV+z/6k05qdvRENE4hG606NI5cIPTsLtSuksnRn83utuj/15VTNoFeYHuTdhwzxvIPvlPVayIGTg==}
+    dependencies:
+      '@motionone/types': 10.9.0
+      '@motionone/utils': 10.9.0
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/solid/10.10.2_solid-js@1.4.2:
+    resolution: {integrity: sha512-wRdFQoRyrSu4JJRBRkqIHVSb78HmxIxfTdgXC5bR2v98TytgXOt6b0I1wlLALNsvPzAu+mz6PrsZz22sNK9lag==}
+    peerDependencies:
+      solid-js: ^1.4.1
+    dependencies:
+      '@motionone/dom': 10.10.2
+      '@solid-primitives/props': 2.1.7_solid-js@1.4.2
+      solid-js: 1.4.2
+      tslib: 2.4.0
+    dev: false
+
+  /@motionone/types/10.9.0:
+    resolution: {integrity: sha512-ZcEDfsrS2ym9+vExV7+59avkzEO/PLkNj16uaDvbWhi0Q/vOZ72j2LQTrtDLWVyZRIeUaB/i8DJP017Gj6UYQw==}
+    dev: false
+
+  /@motionone/utils/10.9.0:
+    resolution: {integrity: sha512-5IgmwQ8TdH1HsQ9d2QZeBCu9+HkqjoYRYItRpmusoyiedPMZaKdU3pr3qFP5nbAj68Ww2sTUxgEZEOF20qJA6w==}
+    dependencies:
+      '@motionone/types': 10.9.0
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+    dev: false
+
   /@mswjs/cookies/0.2.1:
     resolution: {integrity: sha512-0tDfcPw5/s7QsNQqS3knAvAD5w5PF1nNPagRhKO/yECY+sMbJxoC2sLWnH7Lzmh52mTSVLKDhd1r92Q3kfljnQ==}
     engines: {node: '>=14'}
@@ -2429,6 +2460,15 @@ packages:
       solid-js: 1.4.2
     dev: false
 
+  /@solid-primitives/props/2.1.7_solid-js@1.4.2:
+    resolution: {integrity: sha512-Sg+JUK+v43x4fe5yNYgKS0IkXG0pkLeCrO7SGKEaOtXSH2NZXthY/OQCSiv5rhM17Z7NoA6E9Q8CjQDrcFUblg==}
+    peerDependencies:
+      solid-js: ^1.3.0
+    dependencies:
+      '@solid-primitives/utils': 2.1.1_solid-js@1.4.2
+      solid-js: 1.4.2
+    dev: false
+
   /@solid-primitives/storage/1.3.1_solid-js@1.4.2:
     resolution: {integrity: sha512-3By9cxqCGGkXrw3gYj7h2c5SCWxiDIYc2C3O6GLVyzN4JCIKzcMlm3HLK0gKMUbR/MzAs265XyAc3rqsMq1ixw==}
     peerDependencies:
@@ -2445,8 +2485,12 @@ packages:
       solid-js: 1.4.2
     dev: false
 
-  /@stitches/core/1.2.8:
-    resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
+  /@solid-primitives/utils/2.1.1_solid-js@1.4.2:
+    resolution: {integrity: sha512-im/WJDgLnJgjuEhB2a46RgDU/ODoc4g+FMySjJ8erPTFrhyTwIe5wv9MSUf7SYsguLe4rfQirNEKLSSyLPETkw==}
+    peerDependencies:
+      solid-js: ^1.4.1
+    dependencies:
+      solid-js: 1.4.2
     dev: false
 
   /@szmarczak/http-timer/1.1.2:
@@ -2692,6 +2736,10 @@ packages:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
       '@types/node': 17.0.36
+    dev: true
+
+  /@types/scroll-lock/2.1.0:
+    resolution: {integrity: sha512-KG4pu+bD/s7Tlzv3274suczLNKrATi+9pB1G+kWSgzs55s5Lz9SZSvj2m56XGbFq9HxRV1gdxqZ0wnlq82uj2w==}
     dev: true
 
   /@types/set-cookie-parser/2.4.2:
@@ -4096,10 +4144,6 @@ packages:
       cssom: 0.3.8
     dev: true
 
-  /csstype/3.0.11:
-    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
-    dev: false
-
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
     dev: false
@@ -5236,12 +5280,6 @@ packages:
     resolution: {integrity: sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==}
     dev: true
 
-  /focus-trap/6.7.3:
-    resolution: {integrity: sha512-8xCEKndV4KrseGhFKKKmczVA14yx1/hnmFICPOjcFjToxCJYj/NHH43tPc3YE/PLnLRNZoFug0EcWkGQde/miQ==}
-    dependencies:
-      tabbable: 5.3.3
-    dev: false
-
   /form-data-encoder/1.7.2:
     resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
     dev: true
@@ -5644,6 +5682,10 @@ packages:
 
   /headroom.js/0.12.0:
     resolution: {integrity: sha512-iXnAafUm3FdzfJ91uixLws2hkKI1jC8bAKK/pt7XYr8Ie1jO7xbK48Ycpl9tUPyBgkzuj1p/PhJS0fy4E/5anA==}
+    dev: false
+
+  /hey-listen/1.0.8:
+    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
     dev: false
 
   /home-or-tmp/2.0.0:
@@ -6619,6 +6661,7 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
 
   /lodash.once/4.1.1:
     resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
@@ -8112,14 +8155,6 @@ packages:
       - csstype
     dev: false
 
-  /solid-transition-group/0.0.10_solid-js@1.4.2:
-    resolution: {integrity: sha512-b3O9z6BUP60CG1WnTdqFuvHms0reDNYwQF+eAEEaSaoDEmiOu9+Lu7zQgWGySJjaAdSAClhmFCmx/eAjQgfIoA==}
-    peerDependencies:
-      solid-js: ^1.0.0
-    dependencies:
-      solid-js: 1.4.2
-    dev: false
-
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -8400,10 +8435,6 @@ packages:
     transitivePeerDependencies:
       - encoding
     dev: true
-
-  /tabbable/5.3.3:
-    resolution: {integrity: sha512-QD9qKY3StfbZqWOPLp0++pOrAVb/HbUi5xCc8cUo4XjP19808oaMiDzn0leBY5mCespIBM0CIZePzZjgzR83kA==}
-    dev: false
 
   /tailwindcss/3.0.24:
     resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}

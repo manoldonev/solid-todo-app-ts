@@ -4,7 +4,6 @@ import { render, screen, waitFor, within } from 'solid-testing-library';
 import { Router } from 'solid-app-router';
 import { QueryCache, QueryClient, setLogger } from 'react-query/core';
 import userEvent from '@testing-library/user-event';
-import { HopeProvider } from '@hope-ui/solid';
 import { QueryClientProvider } from '../solid-query';
 import { App } from './App';
 import { server } from '../mocks/msw/server';
@@ -38,9 +37,7 @@ const TestApp: Component = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Router base={import.meta.env.BASE_URL}>
-        <HopeProvider>
-          <App />
-        </HopeProvider>
+        <App />
       </Router>
     </QueryClientProvider>
   );
@@ -69,7 +66,10 @@ describe('on mobile screen', () => {
     const linkElement = screen.getByText(/todo app/i);
     expect(linkElement).toBeVisible();
 
-    const listElement = await screen.findByRole('list');
+    const searchFormElement = screen.getByRole('search');
+    expect(searchFormElement).toBeVisible();
+
+    const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
 
     const listScope = within(listElement);
