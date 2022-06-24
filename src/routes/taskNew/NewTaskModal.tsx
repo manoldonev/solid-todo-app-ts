@@ -5,20 +5,24 @@ import { HiOutlineX as XIcon } from 'solid-icons/hi';
 import { Portal } from 'solid-js/web';
 import { enablePageScroll, disablePageScroll } from 'scroll-lock';
 import { AddNewForm } from './AddNewForm';
-import { clickOutside } from '../../directives/clickOutside';
+import { clickOutside, keydown } from '../../directives';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const directiveNoTreeShake = clickOutside;
+const clickOutsideNoTreeShake = clickOutside;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const keydownNoTreeShake = keydown;
 
 const NewTaskModal: Component = () => {
   let dialogElement: HTMLDialogElement | null;
   let titleElement: HTMLParagraphElement | null;
   const navigate = useNavigate();
 
+  const goBack = (): void => navigate('/tasks');
+
   const closeAndGoBack = (): void => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     dialogElement?.close();
-    navigate('/tasks');
+    goBack();
   };
 
   onMount(() => {
@@ -35,7 +39,13 @@ const NewTaskModal: Component = () => {
     <Portal>
       <dialog
         ref={dialogElement!}
-        class="z-10 flex m-auto min-h-screen md:min-h-fit w-full max-w-3xl md:w-2/3 md:my-20 p-0"
+        use:keydown={(event) => {
+          // the default Escape action is triggered on keydown as well
+          if (event.key === 'Escape') {
+            goBack();
+          }
+        }}
+        class="flex m-auto min-h-screen md:min-h-fit w-full max-w-3xl md:w-2/3 md:my-20 p-0"
       >
         <div use:clickOutside={closeAndGoBack} role="document" class="flex flex-col flex-1">
           <div class="flex-none flex items-center bg-primary px-8 pt-6 pb-4">
