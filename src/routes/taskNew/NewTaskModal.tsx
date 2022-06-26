@@ -42,7 +42,7 @@ const NewTaskModal: Component = () => {
     <Portal>
       <dialog
         ref={dialogElement!}
-        class="flex m-auto min-h-screen md:min-h-fit w-full max-w-3xl md:w-2/3  p-0"
+        class="backdrop:bg-[#2b2e38]/70 flex m-auto min-h-screen md:min-h-fit w-full max-w-3xl md:w-2/3 p-0"
         use:motion={{
           animate: isLargeScreen() ? { opacity: [0, 1] } : undefined,
           transition: { duration: 0.3, easing: 'ease-in-out' },

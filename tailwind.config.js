@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 const withOpacityValue = (variable) => {
   return ({ opacityValue }) => {
@@ -48,5 +49,11 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    plugin(({ addVariant, e }) => {
+      // NOTE: should not be necessary but for some reason the default backdrop variant that comes with tailwind does not apply (this is exact copy of it and works)
+      addVariant('backdrop', '&::backdrop');
+    }),
+  ],
 };
