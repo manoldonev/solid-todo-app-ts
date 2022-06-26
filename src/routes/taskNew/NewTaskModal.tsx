@@ -1,6 +1,5 @@
 import type { Component } from 'solid-js';
 import { onCleanup, onMount } from 'solid-js';
-import { useNavigate } from 'solid-app-router';
 import { HiOutlineX as XIcon } from 'solid-icons/hi';
 import { Portal } from 'solid-js/web';
 import { enablePageScroll, disablePageScroll } from 'scroll-lock';
@@ -16,16 +15,14 @@ const keydownNoTreeShake = keydown;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const motionNoTreeShake = motion;
 
-const NewTaskModal: Component = () => {
+const NewTaskModal: Component<{ onClose?: () => void }> = (props) => {
   let dialogElement: HTMLDialogElement | null;
   let titleElement: HTMLParagraphElement | null;
   const isLargeScreen = createMediaQuery('(min-width: 768px)');
-  const navigate = useNavigate();
-  const goBack = (): void => navigate('/tasks');
-  const closeAndGoBack = (): void => {
+  const close = (): void => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     dialogElement?.close();
-    goBack();
+    props.onClose?.();
   };
 
   onMount(() => {
@@ -53,11 +50,11 @@ const NewTaskModal: Component = () => {
         <div
           role="document"
           class="flex flex-col flex-1"
-          use:clickOutside={closeAndGoBack}
+          use:clickOutside={close}
           use:keydown={(event) => {
             // the default Escape action is triggered on keydown as well
             if (event.key === 'Escape') {
-              goBack();
+              close();
             }
           }}
         >
@@ -71,12 +68,12 @@ const NewTaskModal: Component = () => {
             >
               Add New Item
             </p>
-            <button type="button" onClick={closeAndGoBack} aria-label="Close">
+            <button type="button" onClick={close} aria-label="Close">
               <XIcon class="h-10 w-10 text-on-primary" aria-hidden />
             </button>
           </div>
 
-          <AddNewForm class="flex-grow md:flex-none px-8 py-8" onSubmitted={closeAndGoBack} onCancel={closeAndGoBack} />
+          <AddNewForm class="flex-grow md:flex-none px-8 py-8" onSubmitted={close} onCancel={close} />
         </div>
       </dialog>
     </Portal>
