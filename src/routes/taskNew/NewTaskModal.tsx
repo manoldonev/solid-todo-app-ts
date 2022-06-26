@@ -5,7 +5,7 @@ import { HiOutlineX as XIcon } from 'solid-icons/hi';
 import { Portal } from 'solid-js/web';
 import { enablePageScroll, disablePageScroll } from 'scroll-lock';
 import { motion } from '@motionone/solid';
-import createMediaQuery from '@solid-primitives/media';
+import { createMediaQuery } from '@solid-primitives/media';
 import { AddNewForm } from './AddNewForm';
 import { clickOutside, keydown } from '../../directives';
 
