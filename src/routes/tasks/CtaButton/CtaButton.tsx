@@ -1,14 +1,19 @@
 import type { Component } from 'solid-js';
-import { useNavigate } from 'solid-app-router';
 import { HiOutlinePlus as PlusIcon } from 'solid-icons/hi';
 import { hideOnScroll } from '../../../components/Headroom';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const directiveNoTreeShake = hideOnScroll;
 
-const CtaButton: Component<{ class?: string }> = (props) => {
-  const navigate = useNavigate();
-
+const CtaButton: Component<{
+  class?: string;
+  onClick: (
+    event: MouseEvent & {
+      currentTarget: HTMLButtonElement;
+      target: Element;
+    },
+  ) => void;
+}> = (props) => {
   return (
     <button
       data-testid="cta-button"
@@ -23,7 +28,7 @@ const CtaButton: Component<{ class?: string }> = (props) => {
       }}
       type="button"
       aria-label="Add new item"
-      onClick={() => navigate('/tasks/new')}
+      onClick={(e) => props.onClick(e)}
       class={`h-14 w-14 rounded-full bg-secondary text-on-secondary shadow transition duration-200 ease-in hover:bg-secondary-variant focus:outline-none active:shadow-lg ${
         props.class ?? ''
       }`}
