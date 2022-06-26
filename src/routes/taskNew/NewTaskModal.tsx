@@ -47,6 +47,8 @@ const NewTaskModal: Component = () => {
           animate: isLargeScreen() ? { opacity: [0, 1] } : undefined,
           transition: { duration: 0.3, easing: 'ease-in-out' },
         }}
+        aria-labelledby={titleElement!.id}
+        aria-modal={true}
       >
         <div
           role="document"
