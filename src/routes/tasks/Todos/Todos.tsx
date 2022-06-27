@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 import { createMemo, For, Switch, Match } from 'solid-js';
 import { Masonry } from '../../../components/Masonry';
 import { convertRemToPixels } from '../../../utils';
-import { TodoItem } from './TodoItem';
+import { TodoItem } from '../TodoItem';
 import { useTodos } from './query';
 import { infiniteScroll } from './directives';
 import { NoItems } from './NoItems';
