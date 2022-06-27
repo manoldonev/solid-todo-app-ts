@@ -25,7 +25,6 @@ specifiers:
   '@types/babel__core': ^7.1.19
   '@types/hammerjs': ^2.0.41
   '@types/headroom.js': ^0.12.2
-  '@types/jest': ^28.0.0
   '@types/masonry-layout': ^4.2.5
   '@types/scroll-lock': ^2.1.0
   '@types/testing-library__jest-dom': ^5.14.3
@@ -118,7 +117,6 @@ devDependencies:
   '@testing-library/user-event': 14.2.0_tlwynutqiyp5mns3woioasuxnq
   '@types/babel__core': 7.1.19
   '@types/headroom.js': 0.12.2
-  '@types/jest': 28.1.1
   '@types/masonry-layout': 4.2.5
   '@types/scroll-lock': 2.1.0
   '@types/testing-library__jest-dom': 5.14.3
