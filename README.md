@@ -27,6 +27,10 @@ Based on the standard SolidJS TypeScript [template](https://github.com/solidjs/t
 - GraphQL
 - [WIP] `solid-query` (custom PoC port of [react-query](https://react-query.tanstack.com/) with semi-automatic query generation based on the GraphQL schema (currently using the React [codegen utilities](https://www.graphql-code-generator.com/) hence the semi-automatic part)
 
+## Navigation
+
+- Solid App Router (with routes code-splitting)
+
 ## Testing
 
 - Unit & Integration testing: Vitest with Solid Testing Library setup
