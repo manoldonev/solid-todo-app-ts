@@ -1,19 +1,21 @@
 import type { Component } from 'solid-js';
 import { HiOutlinePlus as PlusIcon } from 'solid-icons/hi';
 import { hideOnScroll } from '../../../components/Headroom';
+import type { ClassProps } from '../../../types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const directiveNoTreeShake = hideOnScroll;
 
-const CtaButton: Component<{
-  class?: string;
+export interface CtaButtonProps extends ClassProps {
   onClick: (
     event: MouseEvent & {
       currentTarget: HTMLButtonElement;
       target: Element;
     },
   ) => void;
-}> = (props) => {
+}
+
+const CtaButton: Component<CtaButtonProps> = (props) => {
   return (
     <button
       data-testid="cta-button"

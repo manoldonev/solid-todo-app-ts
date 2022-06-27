@@ -5,9 +5,9 @@ import {
   HiOutlineTrash as TrashIcon,
 } from 'solid-icons/hi';
 import type { Component } from 'solid-js';
+import type { ClassProps } from '../../../types';
 
-export interface ActionBarProps {
-  class?: string;
+export interface ActionBarProps extends ClassProps {
   onDelete: VoidFunction;
 }
 

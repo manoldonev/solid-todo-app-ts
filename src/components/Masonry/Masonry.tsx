@@ -3,11 +3,11 @@ import { Dynamic } from 'solid-js/web';
 import { onMount, onCleanup } from 'solid-js';
 import Masonry from 'masonry-layout';
 import { createMutationObserver } from '@solid-primitives/mutation-observer';
+import type { ClassProps } from '../../types';
 
-interface MasonryProps {
+export interface MasonryProps extends ClassProps {
   options?: Masonry.Options;
   elementType?: string;
-  class?: string;
 }
 
 const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
