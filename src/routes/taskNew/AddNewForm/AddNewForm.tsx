@@ -27,7 +27,11 @@ const validationSchema = yup.object().shape(
   [['title', 'note']],
 );
 
-const AddNewForm: Component<{ class?: string; onSubmitted: () => void; onCancel: () => void }> = (props) => {
+const AddNewForm: Component<{
+  class?: string;
+  onSubmit?: () => void;
+  onCancel?: () => void;
+}> = (props) => {
   const { mutateAsync: createTodo } = useCreateTodo();
 
   const onSubmit = async (form: {
@@ -36,11 +40,12 @@ const AddNewForm: Component<{ class?: string; onSubmitted: () => void; onCancel:
     // TODO: extend db schema with real 'title' field
     // TODO: user management (auth)
     await createTodo({ input: { task: form.values.note || form.values.title, done: false, user_id: '1' } });
-    props.onSubmitted();
+    props.onSubmit?.();
   };
 
   return (
     <div class={`bg-background ${props.class ?? ''}`}>
+      {/* TODO: better SolidJS form library needed -- currently "patch-packaging" solid-js-form because of broken yup validation support; also it does not support "dialog" forms and generally you cannot control the form.method attribute. */}
       <Form
         data-testid="add-new-form"
         initialValues={{ title: '', note: '' }}
@@ -59,7 +64,7 @@ const AddNewForm: Component<{ class?: string; onSubmitted: () => void; onCancel:
           </button>
           <button
             type="button"
-            onClick={() => props.onCancel()}
+            onClick={() => props.onCancel?.()}
             class="h-12 w-24 rounded-lg border border-primary bg-background/50 px-5 py-2.5 text-center text-sm font-medium uppercase text-primary outline-none hover:border-primary-variant hover:bg-primary-variant hover:text-on-primary focus:ring-4 focus:ring-primary/50"
           >
             Cancel

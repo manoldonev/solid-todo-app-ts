@@ -11,7 +11,7 @@ const NewTask: Component = () => {
       <h1 id="label" class="py-4 text-on-surface">
         Add New Item
       </h1>
-      <AddNewForm onSubmitted={onDismiss} onCancel={onDismiss} />
+      <AddNewForm onSubmit={onDismiss} onCancel={onDismiss} />
     </div>
   );
 };
