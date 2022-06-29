@@ -61,7 +61,8 @@ const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
   };
 
   onMount(() => {
-    const hammer = new Hammer(foregroundRef);
+    // TODO: hammerjs recognizers should not trigger if standard vertical scroll is in progress
+    const hammer = new Hammer(foregroundRef, { touchAction: 'pan-y', inputClass: Hammer.TouchInput });
     hammer.on('tap', (eventData) => props.onTap?.(eventData));
     hammer.on('pan', (eventData) => {
       if (eventData.isFirst) {
