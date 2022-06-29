@@ -38,6 +38,7 @@ specifiers:
   babel-preset-solid: ^1.4.2
   babel-preset-vite: ^1.0.4
   cssnano: ^5.1.12
+  dialog-polyfill: ^0.5.6
   eslint: ^8.16.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-airbnb-typescript: ^17.0.0
@@ -85,6 +86,7 @@ dependencies:
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.4.2
   '@solid-primitives/storage': 1.3.1_solid-js@1.4.2
   '@types/hammerjs': 2.0.41
+  dialog-polyfill: 0.5.6
   hammerjs: 2.0.8
   headroom.js: 0.12.0
   masonry-layout: 4.2.2
@@ -4482,6 +4484,10 @@ packages:
       defined: 1.0.0
       minimist: 1.2.6
     dev: true
+
+  /dialog-polyfill/0.5.6:
+    resolution: {integrity: sha512-ZbVDJI9uvxPAKze6z146rmfUZjBqNEwcnFTVamQzXH+svluiV7swmVIGr7miwADgfgt1G2JQIytypM9fbyhX4w==}
+    dev: false
 
   /didyoumean/1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}

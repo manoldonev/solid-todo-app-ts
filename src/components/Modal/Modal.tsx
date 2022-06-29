@@ -5,6 +5,7 @@ import { createUniqueId, onCleanup, onMount } from 'solid-js';
 import { motion } from '@motionone/solid';
 import { createStore } from 'solid-js/store';
 import { Portal } from 'solid-js/web';
+import dialogPolyfill from 'dialog-polyfill';
 import { clickOutside, keydown } from '../../directives';
 import type { ModalContextValue, ModalState } from './ModalProvider';
 import { ModalProvider } from './ModalProvider';
@@ -16,13 +17,16 @@ const keydownNoTreeShake = keydown;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const motionNoTreeShake = motion;
 
-const Modal: ParentComponent<{
+export interface ModalProps {
   id?: string;
   ref?: (element: HTMLDialogElement) => void;
   onClose?: () => void;
   lockScrollOnMount?: boolean;
   closeOnBackdropClick?: boolean;
-}> = (props) => {
+}
+
+// TODO: focus restore, see https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1
+const Modal: ParentComponent<ModalProps> = (props) => {
   let dialogElement: HTMLDialogElement;
   const isLargeScreen = createMediaQuery('(min-width: 768px)');
   const closeModal = (): void => {
@@ -39,9 +43,13 @@ const Modal: ParentComponent<{
     props.ref?.(dialogElement);
   };
 
-  onMount(() => {
+  onMount(async () => {
+    // NOTE: dialog polyfill primarily for testing as neither jsdom, nor happy-dom support the HTMLDialogElment API properly
+    dialogPolyfill.registerDialog(dialogElement);
+
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     dialogElement.showModal();
+
     if (props.lockScrollOnMount ?? true) {
       disablePageScroll();
     }

@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
-import { render, screen, waitFor, within } from 'solid-testing-library';
+import { render, screen, waitFor, waitForElementToBeRemoved, within } from 'solid-testing-library';
 import { Router } from 'solid-app-router';
 import { QueryCache, QueryClient, setLogger } from 'react-query/core';
 import userEvent from '@testing-library/user-event';
@@ -43,12 +43,12 @@ const TestApp: Component = () => {
   );
 };
 
-/* 
-  NOTE: it is not possible to properly test tailwind responsive ui behavior 
-  with jsdom(jest or vitest, does not matter). Generally jsdom neither loads the application css files, 
-  nor does it support media queries. We can address the former by manually 
-  assembling and injecting the tailwind css styles (see vitest.setup.ts), 
-  however, the latter is a bigger and [currently] unsolvable problem. Mocking 
+/*
+  NOTE: it is not possible to properly test tailwind responsive ui behavior
+  with jsdom(jest or vitest, does not matter). Generally jsdom neither loads the application css files,
+  nor does it support media queries. We can address the former by manually
+  assembling and injecting the tailwind css styles (see vitest.setup.ts),
+  however, the latter is a bigger and [currently] unsolvable problem. Mocking
   media query support (window.matchMedia) is possible but this only patches scenarios where the component under test actually calls window.matchMedia(...) programmatically. In our [tailwind] scenario we are dynamically injecting the css (including the @media statements for sm/md/lg/etc. screen modifiers) but jsdom does not trigger media query computation hence the screen modifiers remain inactive. As tailwind is a mobile-first library this effectively means we are stuck with the mobile view for testing).
 */
 describe('on mobile screen', () => {
@@ -179,6 +179,132 @@ describe('on mobile screen', () => {
     expect(listElement).toBeVisible();
     expect(analyticsTabElement).not.toBeVisible();
     expect(settingsTabElement).not.toBeVisible();
+
+    unmount();
+  });
+
+  test('create todo item', async () => {
+    const { unmount } = render(() => <TestApp />);
+
+    const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
+    expect(listElement).toBeVisible();
+    const listScope = within(listElement);
+
+    let itemElements = await listScope.findAllByRole('listitem');
+    expect(itemElements).toHaveLength(10);
+
+    const fabElement = screen.getByTestId('cta-button');
+    expect(fabElement).toBeVisible();
+
+    const user = userEvent.setup();
+    await user.click(fabElement);
+
+    const modalElement = screen.getByRole('dialog');
+    expect(modalElement).toBeVisible();
+
+    const modalScope = within(modalElement);
+    const inputElements = modalScope.getAllByRole('textbox');
+    expect(inputElements).toHaveLength(2);
+
+    const noteElement = modalScope.getByPlaceholderText(/note/i);
+    const testValue = 'Add the qwerty!';
+
+    await user.type(noteElement, testValue);
+
+    const saveButton = modalScope.getByText(/save/i);
+    expect(saveButton).toBeVisible();
+
+    await user.click(saveButton);
+    await waitForElementToBeRemoved(() => screen.queryByRole('dialog'));
+
+    expect(await listScope.findByText(testValue)).toBeVisible();
+
+    itemElements = listScope.getAllByRole('listitem');
+    expect(itemElements[0]).toHaveTextContent(testValue);
+
+    unmount();
+  });
+
+  test('create todo item validation', async () => {
+    const { unmount } = render(() => <TestApp />);
+
+    const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
+    expect(listElement).toBeVisible();
+    const listScope = within(listElement);
+
+    let itemElements = await listScope.findAllByRole('listitem');
+    expect(itemElements).toHaveLength(10);
+
+    const fabElement = screen.getByTestId('cta-button');
+    expect(fabElement).toBeVisible();
+
+    const user = userEvent.setup();
+    await user.click(fabElement);
+
+    const modalElement = screen.getByRole('dialog');
+    expect(modalElement).toBeVisible();
+
+    const modalScope = within(modalElement);
+    const saveButton = modalScope.getByText(/save/i);
+    expect(saveButton).toBeVisible();
+
+    await user.click(saveButton);
+
+    const errorElements = await modalScope.findAllByText(/at least one of the fields is required/i);
+
+    expect(errorElements).toHaveLength(2);
+    errorElements.forEach((errorElement) => expect(errorElement).toBeVisible());
+
+    const inputElements = modalScope.getAllByRole('textbox');
+    expect(inputElements).toHaveLength(2);
+
+    const titleElement = modalScope.getByPlaceholderText(/title/i);
+    const testValue = 'Add the deadbeef!';
+
+    await user.type(titleElement, testValue);
+
+    await user.click(saveButton);
+
+    await waitForElementToBeRemoved(() => screen.queryByRole('dialog'));
+
+    expect(await listScope.findByText(testValue)).toBeVisible();
+
+    itemElements = listScope.getAllByRole('listitem');
+    expect(itemElements[0]).toHaveTextContent(testValue);
+
+    unmount();
+  });
+
+  test('cancel create todo item should have no side effects', async () => {
+    const { unmount } = render(() => <TestApp />);
+
+    const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
+    expect(listElement).toBeVisible();
+    const listScope = within(listElement);
+
+    let itemElements = await listScope.findAllByRole('listitem');
+    expect(itemElements).toHaveLength(10);
+    const firstElement = itemElements[0];
+
+    const fabElement = screen.getByTestId('cta-button');
+    expect(fabElement).toBeVisible();
+
+    const user = userEvent.setup();
+    await user.click(fabElement);
+
+    const modalElement = screen.getByRole('dialog');
+    expect(modalElement).toBeVisible();
+
+    const modalScope = within(modalElement);
+    const closeButton = modalScope.getByLabelText(/close/i);
+    expect(closeButton).toBeVisible();
+
+    await user.click(closeButton);
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    itemElements = listScope.getAllByRole('listitem');
+    expect(itemElements[0]).toEqual(firstElement);
 
     unmount();
   });
