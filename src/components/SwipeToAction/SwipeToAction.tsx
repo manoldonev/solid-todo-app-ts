@@ -34,7 +34,7 @@ const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
     foregroundRef.style.transform = '';
   };
 
-  const onPanning = (): void => {
+  const onPanMove = (): void => {
     if (gesture.swipingDirection !== 'horizontal' && gesture.swipingDirection !== 'pre-horizontal') {
       return;
     }
@@ -49,23 +49,29 @@ const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
     backgroundRef.style.opacity = opacity.toFixed(2);
   };
 
-  const onPanned = (eventData: MouseEvent | TouchEvent): void => {
-    if (gesture.swipingDirection !== 'horizontal' && gesture.swipingDirection !== 'pre-horizontal') {
+  const onPanEnd = (eventData: MouseEvent | TouchEvent): void => {
+    if (gesture.touchMoveX == null) {
       return;
     }
 
-    let left = gesture.touchMoveX!;
-    const { offsetWidth } = foregroundRef;
-    const isLeftPan = gesture.touchMoveX! < 0;
-    if (Math.abs(left) >= offsetWidth * (props.threshold ?? 0.3)) {
-      left = isLeftPan ? -offsetWidth * 2 : offsetWidth;
+    let left = gesture.touchMoveX;
+    // consider "swipe" only if gesture was predominantly horizontal
+    if (gesture.swipingDirection === 'horizontal' || gesture.swipingDirection === 'pre-horizontal') {
+      const { offsetWidth } = foregroundRef;
+      const isLeftPan = gesture.touchMoveX < 0;
+      if (Math.abs(left) >= offsetWidth * (props.threshold ?? 0.3)) {
+        left = isLeftPan ? -offsetWidth * 2 : offsetWidth;
 
-      if (isLeftPan) {
-        props.onSwipedLeft?.(eventData as TouchEvent);
+        if (isLeftPan) {
+          props.onSwipedLeft?.(eventData as TouchEvent);
+        } else {
+          props.onSwipedRight?.(eventData as TouchEvent);
+        }
       } else {
-        props.onSwipedRight?.(eventData as TouchEvent);
+        left = 0;
       }
     } else {
+      /* clean up any "residual" horizontal movement */
       left = 0;
     }
 
@@ -77,8 +83,8 @@ const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
     gesture = new TinyGesture(foregroundRef, { mouseSupport: false });
     gesture.on('tap', onTap);
     gesture.on('panstart', onPanStart);
-    gesture.on('panmove', onPanning);
-    gesture.on('panend', onPanned);
+    gesture.on('panmove', onPanMove);
+    gesture.on('panend', onPanEnd);
 
     onCleanup(() => gesture.destroy());
   });
