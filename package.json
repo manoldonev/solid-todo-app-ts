@@ -89,9 +89,7 @@
     "@solid-primitives/media": "^2.0.0",
     "@solid-primitives/mutation-observer": "^1.1.0",
     "@solid-primitives/storage": "^1.3.1",
-    "@types/hammerjs": "^2.0.41",
     "dialog-polyfill": "^0.5.6",
-    "hammerjs": "^2.0.8",
     "headroom.js": "^0.12.0",
     "masonry-layout": "^4.2.2",
     "msw": "^0.42.0",
@@ -102,6 +100,7 @@
     "solid-js": "^1.4.2",
     "solid-js-form": "0.1.5",
     "solid-toast": "^0.1.4",
+    "tinygesture": "^2.0.0",
     "yup": "^0.32.11"
   },
   "pnpm": {
