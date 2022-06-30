@@ -1,6 +1,6 @@
-import Hammer from 'hammerjs';
 import type { ParentComponent, JSXElement } from 'solid-js';
 import { onCleanup, onMount, createSignal } from 'solid-js';
+import TinyGesture from 'tinygesture';
 import type { ClassProps } from '../../types';
 import { BackgroundLayer } from './BackgroundLayer';
 import { ForegroundLayer } from './ForegroundLayer';
@@ -12,45 +12,58 @@ export interface SwipeToActionProps extends ClassProps {
   rightChildrenClass?: string;
   leftChildren?: JSXElement;
   rightChildren?: JSXElement;
-  onSwipedLeft?: (eventData: HammerInput) => void;
-  onSwipedRight?: (eventData: HammerInput) => void;
-  onTap?: (eventData: HammerInput) => void;
+  onSwipedLeft?: (eventData: TouchEvent) => void;
+  onSwipedRight?: (eventData: TouchEvent) => void;
+  onTap?: (eventData: TouchEvent) => void;
   threshold?: number;
 }
 
 const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
   let backgroundRef: HTMLDivElement;
   let foregroundRef: HTMLDivElement;
+  let gesture: TinyGesture;
 
   const [swipeDirection, setSwipeDirection] = createSignal<SwipeDirection>(LEFT);
+
+  const onTap = (eventData: MouseEvent | TouchEvent): void => {
+    props.onTap?.(eventData as TouchEvent);
+  };
 
   const onPanStart = (): void => {
     foregroundRef.style.transition = '';
     foregroundRef.style.transform = '';
   };
 
-  const onPanning = (eventData: HammerInput): void => {
-    const isLeftPan = eventData.offsetDirection === Hammer.DIRECTION_LEFT;
+  const onPanning = (): void => {
+    if (gesture.swipingDirection !== 'horizontal' && gesture.swipingDirection !== 'pre-horizontal') {
+      return;
+    }
+
+    const isLeftPan = gesture.touchMoveX! < 0;
     setSwipeDirection(isLeftPan ? LEFT : RIGHT);
 
-    const transform = `translateX(${eventData.deltaX}px)`;
+    const transform = `translateX(${gesture.touchMoveX!}px)`;
     foregroundRef.style.transform = transform;
 
-    const opacity = Math.min(Math.abs(eventData.deltaX) / 100, 1);
+    const opacity = Math.min(Math.abs(gesture.touchMoveX!) / 100, 1);
     backgroundRef.style.opacity = opacity.toFixed(2);
   };
 
-  const onPanned = (eventData: HammerInput): void => {
-    let left = eventData.deltaX;
+  const onPanned = (eventData: MouseEvent | TouchEvent): void => {
+    if (gesture.swipingDirection !== 'horizontal' && gesture.swipingDirection !== 'pre-horizontal') {
+      return;
+    }
+
+    let left = gesture.touchMoveX!;
     const { offsetWidth } = foregroundRef;
-    const isLeftPan = eventData.offsetDirection === Hammer.DIRECTION_LEFT;
+    const isLeftPan = gesture.touchMoveX! < 0;
     if (Math.abs(left) >= offsetWidth * (props.threshold ?? 0.3)) {
       left = isLeftPan ? -offsetWidth * 2 : offsetWidth;
 
       if (isLeftPan) {
-        props.onSwipedLeft?.(eventData);
+        props.onSwipedLeft?.(eventData as TouchEvent);
       } else {
-        props.onSwipedRight?.(eventData);
+        props.onSwipedRight?.(eventData as TouchEvent);
       }
     } else {
       left = 0;
@@ -61,24 +74,13 @@ const SwipeToAction: ParentComponent<SwipeToActionProps> = (props) => {
   };
 
   onMount(() => {
-    // TODO: hammerjs recognizers should not trigger if standard vertical scroll is in progress
-    const hammer = new Hammer(foregroundRef, { touchAction: 'pan-y', inputClass: Hammer.TouchInput });
-    hammer.on('tap', (eventData) => props.onTap?.(eventData));
-    hammer.on('pan', (eventData) => {
-      if (eventData.isFirst) {
-        onPanStart();
-        return;
-      }
+    gesture = new TinyGesture(foregroundRef, { mouseSupport: false });
+    gesture.on('tap', onTap);
+    gesture.on('panstart', onPanStart);
+    gesture.on('panmove', onPanning);
+    gesture.on('panend', onPanned);
 
-      if (eventData.isFinal) {
-        onPanned(eventData);
-        return;
-      }
-
-      onPanning(eventData);
-    });
-
-    onCleanup(() => hammer.destroy());
+    onCleanup(() => gesture.destroy());
   });
 
   return (
