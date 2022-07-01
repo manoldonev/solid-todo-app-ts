@@ -1,7 +1,7 @@
 import { createMediaQuery } from '@solid-primitives/media';
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import type { ParentComponent } from 'solid-js';
-import { createUniqueId, onCleanup, onMount } from 'solid-js';
+import { createEffect, createUniqueId, onCleanup, onMount } from 'solid-js';
 import { motion } from '@motionone/solid';
 import { createStore } from 'solid-js/store';
 import { Portal } from 'solid-js/web';
@@ -20,9 +20,10 @@ const motionNoTreeShake = motion;
 export interface ModalProps {
   id?: string;
   ref?: (element: HTMLDialogElement) => void;
+  open: boolean;
   onClose?: () => void;
-  lockScrollOnMount?: boolean;
-  closeOnBackdropClick?: boolean;
+  'aria-labelledby'?: string;
+  'aria-describedby'?: string;
 }
 
 // TODO: focus restore, see https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1
@@ -34,35 +35,36 @@ const Modal: ParentComponent<ModalProps> = (props) => {
     dialogElement!.close();
   };
 
-  const onClose = (): void => {
-    props.onClose?.();
-  };
-
   const refPassthrough = (element: HTMLElement): void => {
     dialogElement = element as HTMLDialogElement;
+
     props.ref?.(dialogElement);
+  };
+
+  const onClose = (): void => {
+    enablePageScroll();
+
+    props.onClose?.();
   };
 
   onMount(async () => {
     // NOTE: dialog polyfill primarily for testing as neither jsdom, nor happy-dom support the HTMLDialogElment API properly
     dialogPolyfill.registerDialog(dialogElement);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    dialogElement.showModal();
-
-    if (props.lockScrollOnMount ?? true) {
-      disablePageScroll();
-    }
-
     dialogElement.addEventListener('close', onClose);
   });
 
   onCleanup(() => {
-    if (props.lockScrollOnMount ?? true) {
-      enablePageScroll();
-    }
-
     dialogElement.removeEventListener('close', onClose);
+  });
+
+  createEffect(() => {
+    if (props.open) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      dialogElement.showModal();
+
+      disablePageScroll();
+    }
   });
 
   const [state] = createStore<ModalState>({
@@ -90,16 +92,15 @@ const Modal: ParentComponent<ModalProps> = (props) => {
             animate: isLargeScreen() ? { opacity: [0, 1] } : undefined,
             transition: { duration: 0.3, easing: 'ease-in-out' },
           }}
-          aria-labelledby={state.titleId}
+          aria-labelledby={props['aria-labelledby'] ?? state.titleId}
+          aria-describedby={props['aria-describedby']}
           aria-modal={true}
         >
           <div
             role="document"
             class="flex flex-col flex-1"
             use:clickOutside={() => {
-              if (props.closeOnBackdropClick ?? true) {
-                closeModal();
-              }
+              closeModal();
             }}
           >
             {props.children}
