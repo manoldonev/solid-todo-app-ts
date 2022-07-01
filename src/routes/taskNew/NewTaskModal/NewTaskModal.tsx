@@ -3,9 +3,9 @@ import { Modal } from '../../../components/Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalForm } from './ModalForm';
 
-const NewTaskModal: Component<{ onClose?: () => void }> = (props) => {
+const NewTaskModal: Component<{ open: boolean; onClose?: () => void }> = (props) => {
   return (
-    <Modal onClose={() => props.onClose?.()}>
+    <Modal open={props.open} onClose={() => props.onClose?.()}>
       <ModalHeader title="Add New Item" />
       <ModalForm />
     </Modal>
