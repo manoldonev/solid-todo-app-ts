@@ -1,4 +1,4 @@
-import { createMediaQuery } from '@solid-primitives/media';
+import { usePrefersDark } from '@solid-primitives/media';
 import { createStorageSignal } from '@solid-primitives/storage';
 import type { Signal } from 'solid-js';
 import { createEffect } from 'solid-js';
@@ -9,10 +9,10 @@ enum ColorMode {
 }
 
 const useColorMode = (): Signal<ColorMode | null> => {
-  const isDarkModePreferred = createMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDark = usePrefersDark();
   const [colorMode, setColorMode] = createStorageSignal(
     's-color-mode',
-    isDarkModePreferred() ? ColorMode.Dark : ColorMode.Light,
+    prefersDark() ? ColorMode.Dark : ColorMode.Light,
   );
 
   createEffect(() => {
