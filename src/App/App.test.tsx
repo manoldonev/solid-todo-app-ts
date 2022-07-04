@@ -1,5 +1,4 @@
 import type { Component } from 'solid-js';
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { render, screen, waitFor, waitForElementToBeRemoved, within } from 'solid-testing-library';
 import { Router } from 'solid-app-router';
 import { QueryCache, QueryClient, setLogger } from 'react-query/core';
@@ -45,7 +44,7 @@ const TestApp: Component = () => {
 
 /*
   NOTE: it is not possible to properly test tailwind responsive ui behavior
-  with jsdom(jest or vitest, does not matter). Generally jsdom neither loads the application css files,
+  with jsdom. Generally jsdom neither loads the application css files,
   nor does it support media queries. We can address the former by manually
   assembling and injecting the tailwind css styles (see vitest.setup.ts),
   however, the latter is a bigger and [currently] unsolvable problem. Mocking
@@ -61,7 +60,7 @@ describe('on mobile screen', () => {
   });
 
   test('renders without crashing', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     const linkElement = screen.getByText(/todo app/i);
     expect(linkElement).toBeVisible();
@@ -83,8 +82,6 @@ describe('on mobile screen', () => {
     expect(bottomNavElement).toBeVisible();
 
     expect(queryErrorHandler).not.toHaveBeenCalled();
-
-    unmount();
   });
 
   test('handles server error gracefully', async () => {
@@ -94,7 +91,7 @@ describe('on mobile screen', () => {
       }),
     );
 
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     await waitFor(() => expect(queryErrorHandler).toHaveBeenCalledTimes(1));
 
@@ -111,12 +108,10 @@ describe('on mobile screen', () => {
 
     const bottomNavElement = screen.getByTestId('bottom-navigation');
     expect(bottomNavElement).toBeVisible();
-
-    unmount();
   });
 
   test('renders correct bottom navigation items', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list');
     expect(listElement).toBeVisible();
@@ -140,12 +135,10 @@ describe('on mobile screen', () => {
     expect(settingsElement).toBeVisible();
     expect(settingsElement).toHaveTextContent(/settings/);
     expect(settingsElement).not.toHaveClass('bg-primary-variant');
-
-    unmount();
   });
 
   test('switches tabs through bottom navigation', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     let listElement = await screen.findByRole('list');
     expect(listElement).toBeVisible();
@@ -179,12 +172,10 @@ describe('on mobile screen', () => {
     expect(listElement).toBeVisible();
     expect(analyticsTabElement).not.toBeVisible();
     expect(settingsTabElement).not.toBeVisible();
-
-    unmount();
   });
 
   test('create todo item', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -221,12 +212,10 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toHaveTextContent(testValue);
-
-    unmount();
   });
 
   test('create todo item validation', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -271,12 +260,10 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toHaveTextContent(testValue);
-
-    unmount();
   });
 
   test('cancel create todo item should have no side effects', async () => {
-    const { unmount } = render(() => <TestApp />);
+    render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -305,7 +292,5 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toEqual(firstElement);
-
-    unmount();
   });
 });

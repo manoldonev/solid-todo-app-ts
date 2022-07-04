@@ -4,7 +4,7 @@
   ],
   "src/**/*.test.{ts,tsx}": [
     "prettier --write",
-    "pnpm run lint:jest --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
+    "pnpm run lint:vitest --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
   ],
   "src/**/*.!(test).{ts,tsx}": [
     "prettier --write",
