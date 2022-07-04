@@ -1,14 +1,13 @@
-import { afterAll, afterEach, beforeAll } from 'vitest';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import 'whatwg-fetch';
-import { server } from './src/mocks/msw/server';
-import './src/mocks/IntersectionObserver';
-import './src/mocks/windowScrollTo';
-import './src/mocks/SVGAElement';
-import { injectTailwindCss } from './src/mocks/utils';
-import MatchMediaMock from './src/mocks/windowMatchMedia';
+import { server } from './mocks/msw/server';
+import './mocks/IntersectionObserver';
+import './mocks/windowScrollTo';
+import './mocks/SVGAElement';
+import { injectTailwindCss } from './mocks/utils';
+import MatchMediaMock from './mocks/windowMatchMedia';
 
 beforeAll(async () => injectTailwindCss());
 

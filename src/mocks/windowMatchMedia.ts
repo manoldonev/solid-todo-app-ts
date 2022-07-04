@@ -1,7 +1,6 @@
 // https://github.com/dyakovk/jest-matchmedia-mock
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { vi } from 'vitest';
 
 interface MediaQueryList {
   readonly matches: boolean;

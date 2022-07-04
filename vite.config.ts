@@ -12,7 +12,7 @@ export default defineConfig({
     transformMode: {
       web: [/\.[jt]sx?$/],
     },
-    setupFiles: './vitest.setup.ts',
+    setupFiles: './src/vitest.setup.ts',
     // solid-js needs to be inline to work around
     // a resolution issue in vitest (same for scroll-lock):
     deps: {
