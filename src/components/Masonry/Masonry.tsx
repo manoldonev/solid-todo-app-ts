@@ -7,7 +7,7 @@ import type { ClassProps } from '../../types';
 
 export interface MasonryProps extends ClassProps {
   options?: Masonry.Options;
-  elementType?: string;
+  as?: string;
 }
 
 const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
@@ -15,7 +15,7 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
   let containerRef: HTMLElement;
 
   const diffDomChildren = (
-    records: MutationRecord[],
+    mutations: MutationRecord[],
   ): {
     prepended: Element[];
     appended: Element[];
@@ -28,20 +28,20 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
     const prepended: Element[] = [];
     const appended: Element[] = [];
     const removed: Element[] = [];
-    records.forEach((record) => {
+    mutations.forEach((mutation) => {
       // NOTE: we assume nodes are either prepended, or appended -- no inserts
-      if (record.addedNodes.length > 0) {
-        if (record.previousSibling == null) {
-          prepended.push(...([...record.addedNodes] as Element[]));
+      if (mutation.addedNodes.length > 0) {
+        if (mutation.previousSibling == null) {
+          prepended.push(...([...mutation.addedNodes] as Element[]));
         } else {
           // assume everything else is appended
-          appended.push(...([...record.addedNodes] as Element[]));
+          appended.push(...([...mutation.addedNodes] as Element[]));
         }
-      } else if (record.removedNodes.length > 0) {
-        removed.push(...([...record.removedNodes] as Element[]));
+      } else if (mutation.removedNodes.length > 0) {
+        removed.push(...([...mutation.removedNodes] as Element[]));
 
         // force items reload to notify Masonry of removed items if removing any other item(s) but the last one(s)
-        if (record.nextSibling != null) {
+        if (mutation.nextSibling != null) {
           shouldReloadItems = true;
         }
       }
@@ -60,8 +60,8 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
     };
   };
 
-  const performLayout = (records: MutationRecord[]): void => {
-    const { prepended, appended, shouldReloadItems } = diffDomChildren(records);
+  const performLayout = (mutations: MutationRecord[]): void => {
+    const { prepended, appended, shouldReloadItems } = diffDomChildren(mutations);
 
     if (appended.length > 0) {
       masonry.appended?.(appended);
@@ -89,11 +89,11 @@ const MasonryComponent: ParentComponent<MasonryProps> = (props) => {
   createMutationObserver(
     () => containerRef,
     { childList: true },
-    (records) => performLayout(records),
+    (mutations) => performLayout(mutations),
   );
 
   return (
-    <Dynamic component={props.elementType ?? 'div'} class={props.class} ref={containerRef!}>
+    <Dynamic component={props.as ?? 'div'} class={props.class} ref={containerRef!}>
       {props.children}
     </Dynamic>
   );

@@ -12,6 +12,12 @@ import { useQuerySignal } from '../../../signals';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const directiveNoTreeShake = infiniteScroll;
 
+const masonryOptions = {
+  gutter: convertRemToPixels(0.75),
+  stagger: '0.03s',
+  horizontalOrder: false,
+};
+
 const Todos: Component = () => {
   const [search] = useQuerySignal();
   const query = createMemo(() => useTodos(search()));
@@ -28,12 +34,6 @@ const Todos: Component = () => {
     return query().data!.pages.flatMap((page) => page.todos);
   });
 
-  const masonryOptions = {
-    gutter: convertRemToPixels(0.75),
-    stagger: '0.03s',
-    horizontalOrder: false,
-  };
-
   return (
     <div class="min-h-screen bg-background p-2.5 transition-colors">
       <Switch fallback={<NoItems />}>
@@ -42,7 +42,7 @@ const Todos: Component = () => {
         </Match>
         <Match when={todos() != null}>
           <>
-            <Masonry elementType="ul" options={masonryOptions}>
+            <Masonry as="ul" options={masonryOptions}>
               <For each={todos()}>{(todo) => <TodoItem data={todo!} />}</For>
             </Masonry>
             {query().hasNextPage === true && (
