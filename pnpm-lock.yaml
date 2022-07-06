@@ -63,7 +63,7 @@ specifiers:
   regenerator-runtime: ^0.13.9
   scroll-lock: ^2.1.5
   solid-app-router: ^0.4.0
-  solid-icons: ^0.4.13
+  solid-icons: ^0.5.0
   solid-js: ^1.4.2
   solid-js-form: 0.1.5
   solid-testing-library: ^0.3.0
@@ -91,7 +91,7 @@ dependencies:
   react-query: 3.39.1
   scroll-lock: 2.1.5
   solid-app-router: 0.4.1_solid-js@1.4.2
-  solid-icons: 0.4.13_solid-js@1.4.2
+  solid-icons: 0.5.0_solid-js@1.4.2
   solid-js: 1.4.2
   solid-js-form: 0.1.5
   solid-toast: 0.1.4_fepjxluhrcpibqwliludvf76qu
@@ -8595,10 +8595,10 @@ packages:
       solid-js: 1.4.2
     dev: false
 
-  /solid-icons/0.4.13_solid-js@1.4.2:
-    resolution: {integrity: sha512-1ZbXaR0XEeI0wluWm1k5ziI/OrWqGN6DxAnvJXqi5ZXSmDwlNtLzf1rgyHxprbGbyybvO1uj7vozaCmoAgZBlg==}
+  /solid-icons/0.5.0_solid-js@1.4.2:
+    resolution: {integrity: sha512-diDMdtV2loH0LDbAPHAQiQNcxw2lXtzlw1qBDYtmZKSY1vedOdBk/aVylmVhzTYP12SQYeJdcg25MY6CHnkn8w==}
     peerDependencies:
-      solid-js: '*'
+      solid-js: ^1.3.0
     dependencies:
       solid-js: 1.4.2
     dev: false
