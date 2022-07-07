@@ -56,7 +56,7 @@ specifiers:
   jsdom: ^20.0.0
   lint-staged: ^13.0.0
   masonry-layout: ^4.2.2
-  msw: ^0.42.0
+  msw: ^0.43.0
   postcss: ^8.4.14
   prettier: ^2.6.2
   react-query: ^3.39.1
@@ -87,7 +87,7 @@ dependencies:
   dialog-polyfill: 0.5.6
   headroom.js: 0.12.0
   masonry-layout: 4.2.2
-  msw: 0.42.0_typescript@4.6.4
+  msw: 0.43.0_typescript@4.6.4
   react-query: 3.39.1
   scroll-lock: 2.1.5
   solid-app-router: 0.4.1_solid-js@1.4.2
@@ -7132,8 +7132,8 @@ packages:
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
-  /msw/0.42.0_typescript@4.6.4:
-    resolution: {integrity: sha512-vB9rzgiGHoQGfkKpp3QZHxobzfuuQOJk+0bff0wtbK8k3P3CaUSt8bCwvExours682AY4mUfTjIkCsxy0JoS3w==}
+  /msw/0.43.0_typescript@4.6.4:
+    resolution: {integrity: sha512-XJylZP0qW3D5WUGWh9FFefJEl3MGG4y1I+/8a833d0eedm6B+GaPm6wPVZNcnlS2YVTagvEgShVJ7ZtY66tTRQ==}
     engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
@@ -8376,7 +8376,7 @@ packages:
     dev: true
 
   /restore-cursor/2.0.0:
-    resolution: {integrity: sha1-n37ih/gv0ybU/RYpI9YhKe7g368=}
+    resolution: {integrity: sha512-6IzJLuGi4+R14vwagDHX+JrXmPVtPpn4mffDJ1UdR7/Edm87fl6yi8mMBIVvFtJaNTUvjughmW4hwLhRG7gC1Q==}
     engines: {node: '>=4'}
     dependencies:
       onetime: 2.0.1
@@ -8750,7 +8750,7 @@ packages:
     dev: true
 
   /string-width/1.0.2:
-    resolution: {integrity: sha1-EYvfW4zcUaKn5w0hHgfisLmxB9M=}
+    resolution: {integrity: sha512-0XsVpQLnVCXHJfyEs8tC0zpTVIr5PKKsQtkT29IwupnPTjtPmQ3xT/4yCREF9hYkV/3M3kzcUTSAZT6a6h81tw==}
     engines: {node: '>=0.10.0'}
     dependencies:
       code-point-at: 1.1.0
@@ -8805,14 +8805,14 @@ packages:
       safe-buffer: 5.2.1
 
   /strip-ansi/3.0.1:
-    resolution: {integrity: sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=}
+    resolution: {integrity: sha512-VhumSSbBqDTP8p2ZLKj40UjBCV4+v8bUSEpUb4KjRgWk9pbqGF4REFj6KEagidb2f/M6AzC0EmFyDNGaw9OCzg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       ansi-regex: 2.1.1
     dev: true
 
   /strip-ansi/4.0.0:
-    resolution: {integrity: sha1-qEeQIusaw2iocTibY1JixQXuNo8=}
+    resolution: {integrity: sha512-4XaJ2zQdCzROZDivEVIDPkcQn8LMFSa8kj8Gxb/Lnwzv9A8VctNZ+lfivC/sV3ivW8ElJTERXZoPBRrZKkNKow==}
     engines: {node: '>=4'}
     dependencies:
       ansi-regex: 3.0.1
@@ -9504,7 +9504,7 @@ packages:
     dev: true
 
   /wcwidth/1.0.1:
-    resolution: {integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=}
+    resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
       defaults: 1.0.3
 
@@ -9584,7 +9584,7 @@ packages:
     dev: true
 
   /wrap-ansi/3.0.1:
-    resolution: {integrity: sha1-KIoE2H7aXChuBg3+jxNc6NAH+Lo=}
+    resolution: {integrity: sha512-iXR3tDXpbnTpzjKSylUJRkLuOrEC7hwEB221cgn6wtF8wpmz28puFXAEfPT5zrjM3wahygB//VuWEr1vTkDcNQ==}
     engines: {node: '>=4'}
     dependencies:
       string-width: 2.1.1
