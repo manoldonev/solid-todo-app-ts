@@ -12,5 +12,12 @@
     ":semanticCommitScopeDisabled",
     "npm:unpublishSafe"
   ],
-  "prCreation": "not-pending"
+  "prCreation": "not-pending",
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^msw"],
+      "matchUpdateTypes": ["major", "minor"],
+      "dependencyDashboardApproval": true
+    }
+  ]
 }
