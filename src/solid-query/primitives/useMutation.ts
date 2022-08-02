@@ -1,8 +1,8 @@
-import { MutationObserver } from 'react-query/core';
-import type { UseMutateFunction, UseMutationOptions, UseMutationResult } from 'react-query/types';
-import type { MutationKey, MutationFunction } from 'react-query/core';
+import { MutationObserver } from '@tanstack/query-core';
+import type { MutationKey, MutationFunction } from '@tanstack/query-core';
 import { onCleanup, onMount } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
+import type { UseMutateFunction, UseMutationOptions, UseMutationResult } from '../types';
 import { useQueryClient } from '../QueryClientProvider';
 import { noop, parseMutationArgs } from '../utils';
 
@@ -17,7 +17,11 @@ export function useMutation<TData = unknown, TError = unknown, TVariables = void
   mutationKey: MutationKey,
   options?: Omit<UseMutationOptions<TData, TError, TVariables, TContext>, 'mutationKey'>,
 ): UseMutationResult<TData, TError, TVariables, TContext>;
-
+export function useMutation<TData = unknown, TError = unknown, TVariables = void, TContext = unknown>(
+  mutationKey: MutationKey,
+  mutationFn?: MutationFunction<TData, TVariables>,
+  options?: Omit<UseMutationOptions<TData, TError, TVariables, TContext>, 'mutationKey' | 'mutationFn'>,
+): UseMutationResult<TData, TError, TVariables, TContext>;
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function useMutation<TData = unknown, TError = unknown, TVariables = void, TContext = unknown>(
   arg1: MutationKey | MutationFunction<TData, TVariables> | UseMutationOptions<TData, TError, TVariables, TContext>,

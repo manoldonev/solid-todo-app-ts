@@ -5,7 +5,7 @@ import type {
   MutationOptions,
   MutationKey,
   MutationFunction,
-} from 'react-query/types';
+} from '@tanstack/query-core';
 
 export function isQueryKey(value: unknown): value is QueryKey {
   return typeof value === 'string' || Array.isArray(value);

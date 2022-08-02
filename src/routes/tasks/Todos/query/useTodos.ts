@@ -1,4 +1,4 @@
-import type { UseInfiniteQueryResult } from 'react-query/types';
+import type { UseInfiniteQueryResult } from '../../../../solid-query';
 import type { TodosQuery } from '../../../../generated';
 import { useInfiniteTodosQuery } from '../../../../generated';
 

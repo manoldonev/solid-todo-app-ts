@@ -1,20 +1,12 @@
 import type { Component } from 'solid-js';
 import { render, screen, waitFor, waitForElementToBeRemoved, within } from 'solid-testing-library';
 import { Router } from 'solid-app-router';
-import { QueryCache, QueryClient, setLogger } from 'react-query/core';
+import { QueryCache, QueryClient } from '@tanstack/query-core';
 import userEvent from '@testing-library/user-event';
 import { QueryClientProvider } from '../solid-query';
 import { App } from './App';
 import { server } from '../mocks/msw/server';
 import { mockTodosQuery } from '../generated';
-
-setLogger({
-  // eslint-disable-next-line no-console
-  log: console.log,
-  // eslint-disable-next-line no-console
-  warn: console.warn,
-  error: () => {},
-});
 
 const queryErrorHandler = vi.fn();
 
@@ -29,6 +21,13 @@ const queryClient = new QueryClient({
       retry: false,
       cacheTime: Infinity,
     },
+  },
+  logger: {
+    // eslint-disable-next-line no-console
+    log: console.log,
+    // eslint-disable-next-line no-console
+    warn: console.warn,
+    error: () => {},
   },
 });
 

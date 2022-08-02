@@ -1,8 +1,8 @@
-import type { QueryObserver, QueryKey, QueryObserverResult } from 'react-query/core';
-import type { UseBaseQueryOptions, UseQueryResult } from 'react-query/types';
+import type { QueryObserver, QueryKey, QueryObserverResult } from '@tanstack/query-core';
 
 import { onMount, onCleanup } from 'solid-js';
 import { createStore, reconcile } from 'solid-js/store';
+import type { UseBaseQueryOptions, UseQueryResult } from '../types';
 import { useQueryClient } from '../QueryClientProvider';
 
 export type UseQueryReturnType<TData, TError, Result = UseQueryResult<TData, TError>> = Readonly<Result>;
@@ -13,10 +13,11 @@ export const useBaseQuery = <TQueryFnData, TError, TData, TQueryData, TQueryKey 
   Observer: typeof QueryObserver,
 ) => {
   const queryClient = useQueryClient();
-  const defaultedOptions = queryClient.defaultQueryObserverOptions(options);
+  const defaultedOptions = queryClient.defaultQueryOptions(options);
 
   // Make sure results are optimistically set in fetching state before subscribing or updating options
-  defaultedOptions.optimisticResults = true;
+  // eslint-disable-next-line no-underscore-dangle
+  defaultedOptions._optimisticResults = 'optimistic';
 
   const observer = new Observer(queryClient, defaultedOptions);
   const [state, setState] = createStore<QueryObserverResult<TData, TError>>(
