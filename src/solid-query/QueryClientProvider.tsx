@@ -1,4 +1,4 @@
-import type { QueryClient } from 'react-query/types';
+import type { QueryClient } from '@tanstack/query-core';
 import type { ParentComponent } from 'solid-js';
 import { createContext, onMount, onCleanup, useContext } from 'solid-js';
 

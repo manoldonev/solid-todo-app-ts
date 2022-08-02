@@ -1,8 +1,9 @@
-import { QueryObserver } from 'react-query/core';
-import type { QueryFunction, QueryKey, UseQueryOptions } from 'react-query/types';
+import { QueryObserver } from '@tanstack/query-core';
+import type { QueryFunction, QueryKey } from '@tanstack/query-core';
 import type { UseQueryReturnType } from './useBaseQuery';
 import { useBaseQuery } from './useBaseQuery';
 import { parseQueryArgs } from '../utils';
+import type { UseQueryOptions } from '../types';
 
 export function useQuery<TQueryFnData = unknown, TError = unknown, TData = TQueryFnData>(
   options: UseQueryOptions<TQueryFnData, TError, TData>,

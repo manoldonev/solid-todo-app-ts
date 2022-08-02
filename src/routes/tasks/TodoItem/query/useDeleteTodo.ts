@@ -1,4 +1,4 @@
-import type { UseMutationResult } from 'react-query/types';
+import type { UseMutationResult } from '../../../../solid-query';
 import type { DeleteTodoMutation, DeleteTodoMutationVariables } from '../../../../generated';
 import { useDeleteTodoMutation } from '../../../../generated';
 import { todoKeys } from '../../../../queryKeyFactory';
