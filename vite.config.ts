@@ -8,7 +8,6 @@ export default defineConfig({
   publicDir: './public',
   test: {
     environment: 'jsdom',
-    globals: true,
     transformMode: {
       web: [/\.[jt]sx?$/],
     },
@@ -17,6 +16,7 @@ export default defineConfig({
     // a resolution issue in vitest (same for scroll-lock):
     deps: {
       inline: [/solid-js/, /scroll-lock/],
+      registerNodeLoader: false,
     },
     // if you have few tests, try commenting one
     // or both out to improve performance:
