@@ -5,14 +5,16 @@ import { SearchBox } from './SearchBox';
 
 describe('SearchBox', () => {
   test('renders without crashing', async () => {
-    render(() => <SearchBox value="" />);
+    const { unmount } = render(() => <SearchBox value="" />);
 
     const inputElement = screen.getByRole('searchbox');
     expect(inputElement).toBeVisible();
+
+    unmount();
   });
 
   test('is focusable', () => {
-    render(() => <SearchBox value="" />);
+    const { unmount } = render(() => <SearchBox value="" />);
 
     const inputElement = screen.getByRole('searchbox');
     expect(inputElement).toBeVisible();
@@ -20,11 +22,13 @@ describe('SearchBox', () => {
 
     inputElement.focus();
     expect(inputElement).toHaveFocus();
+
+    unmount();
   });
 
   test('change value with event notification', async () => {
     const inputHandler = vi.fn();
-    render(() => <SearchBox value="" onInput={inputHandler} />);
+    const { unmount } = render(() => <SearchBox value="" onInput={inputHandler} />);
 
     const inputElement = screen.getByRole('searchbox');
     expect(inputElement).toHaveValue('');
@@ -52,11 +56,13 @@ describe('SearchBox', () => {
     await user.type(inputElement, rest.join(''));
     expect(inputElement).toHaveValue('test value');
     expect(inputHandler).toHaveBeenCalledTimes('test value'.length);
+
+    unmount();
   });
 
   test('delete value with event notification', async () => {
     const inputHandler = vi.fn();
-    render(() => <SearchBox value="" onInput={inputHandler} />);
+    const { unmount } = render(() => <SearchBox value="" onInput={inputHandler} />);
 
     const inputElement = screen.getByRole('searchbox');
     expect(inputElement).toHaveValue('');
@@ -99,6 +105,8 @@ describe('SearchBox', () => {
     await user.clear(inputElement);
     expect(inputHandler).toHaveBeenCalledTimes(1);
     expect(inputElement).toHaveValue('');
+
+    unmount();
   });
 
   // NOTE: apparently asserting width changes based on

@@ -3,6 +3,7 @@ import { render, screen, waitFor, waitForElementToBeRemoved, within } from 'soli
 import { Router } from 'solid-app-router';
 import { QueryCache, QueryClient } from '@tanstack/query-core';
 import userEvent from '@testing-library/user-event';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { QueryClientProvider } from '../solid-query';
 import { App } from './App';
 import { server } from '../mocks/msw/server';
@@ -59,7 +60,7 @@ describe('on mobile screen', () => {
   });
 
   test('renders without crashing', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     const linkElement = screen.getByText(/todo app/i);
     expect(linkElement).toBeVisible();
@@ -81,6 +82,8 @@ describe('on mobile screen', () => {
     expect(bottomNavElement).toBeVisible();
 
     expect(queryErrorHandler).not.toHaveBeenCalled();
+
+    unmount();
   });
 
   test('handles server error gracefully', async () => {
@@ -90,7 +93,7 @@ describe('on mobile screen', () => {
       }),
     );
 
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     await waitFor(() => expect(queryErrorHandler).toHaveBeenCalledTimes(1));
 
@@ -107,10 +110,12 @@ describe('on mobile screen', () => {
 
     const bottomNavElement = screen.getByTestId('bottom-navigation');
     expect(bottomNavElement).toBeVisible();
+
+    unmount();
   });
 
   test('renders correct bottom navigation items', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list');
     expect(listElement).toBeVisible();
@@ -134,10 +139,12 @@ describe('on mobile screen', () => {
     expect(settingsElement).toBeVisible();
     expect(settingsElement).toHaveTextContent(/settings/);
     expect(settingsElement).not.toHaveClass('bg-primary-variant');
+
+    unmount();
   });
 
   test('switches tabs through bottom navigation', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     let listElement = await screen.findByRole('list');
     expect(listElement).toBeVisible();
@@ -171,10 +178,12 @@ describe('on mobile screen', () => {
     expect(listElement).toBeVisible();
     expect(analyticsTabElement).not.toBeVisible();
     expect(settingsTabElement).not.toBeVisible();
+
+    unmount();
   });
 
   test('create todo item', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -211,10 +220,12 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toHaveTextContent(testValue);
+
+    unmount();
   });
 
   test('create todo item validation', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -259,10 +270,12 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toHaveTextContent(testValue);
+
+    unmount();
   });
 
   test('cancel create todo item should have no side effects', async () => {
-    render(() => <TestApp />);
+    const { unmount } = render(() => <TestApp />);
 
     const listElement = await screen.findByRole('list', undefined, { timeout: 5000 });
     expect(listElement).toBeVisible();
@@ -291,5 +304,7 @@ describe('on mobile screen', () => {
 
     itemElements = listScope.getAllByRole('listitem');
     expect(itemElements[0]).toEqual(firstElement);
+
+    unmount();
   });
 });

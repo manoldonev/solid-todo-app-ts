@@ -1,6 +1,5 @@
 // https://github.com/dyakovk/jest-matchmedia-mock
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
+import { vi } from 'vitest';
 
 interface MediaQueryList {
   readonly matches: boolean;
@@ -144,6 +143,7 @@ export default class MatchMedia {
    */
   public destroy(): void {
     this.clear();
-    delete window.matchMedia;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    delete (<any>window).matchMedia;
   }
 }
