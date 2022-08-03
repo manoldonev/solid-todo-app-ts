@@ -25,10 +25,10 @@ declare module 'solid-js' {
 
 const infiniteScroll = (element: Element, accessor: Accessor<InfiniteScrollOptions>): void => {
   const options = accessor();
-  const [isSentryVisible] = createVisibilityObserver(() => element, {
+  const isSentryVisible = createVisibilityObserver({
     rootMargin: options.rootMargin ?? DEFAULT_ROOT_MARGIN,
     threshold: options.threshold ?? DEFAULT_THRESHOLD,
-  });
+  })(() => element);
 
   createEffect(() => {
     if (isSentryVisible() && !options.isLoading && options.isDisabled === false && options.hasNextPage) {
