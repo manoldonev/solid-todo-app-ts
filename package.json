@@ -38,7 +38,7 @@
     "@graphql-codegen/typescript-msw": "^1.0.10",
     "@graphql-codegen/typescript-operations": "^2.4.0",
     "@graphql-codegen/typescript-react-query": "^4.0.0",
-    "@milahu/patch-package-with-pnpm-support": "^6.4.10",
+    "@milahu/patch-package": "^6.4.14",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/user-event": "^14.2.0",
