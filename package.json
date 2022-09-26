@@ -116,7 +116,7 @@
       }
     }
   },
-  "packageManager": "pnpm@7.11.0",
+  "packageManager": "pnpm@7.12.2",
   "msw": {
     "workerDirectory": "public"
   }
