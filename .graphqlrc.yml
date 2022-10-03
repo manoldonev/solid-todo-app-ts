@@ -8,7 +8,6 @@ generates:
           content: '// @ts-nocheck'
       - typescript
       - typescript-operations
-      - typescript-react-query
       - typescript-msw
     config:
       fetcher:

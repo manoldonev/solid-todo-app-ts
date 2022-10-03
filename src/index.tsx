@@ -1,11 +1,11 @@
 /* @refresh reload */
+import { QueryClientProvider } from '@tanstack/solid-query';
 import { Router } from 'solid-app-router';
 import { render } from 'solid-js/web';
 import { Toaster } from 'solid-toast';
 import { App } from './App';
 import './index.css';
 import { queryClient } from './queryClient';
-import { QueryClientProvider } from './solid-query/QueryClientProvider';
 
 const main = async (): Promise<void> => {
   if (import.meta.env.VITE_API_MOCKING === 'enabled') {

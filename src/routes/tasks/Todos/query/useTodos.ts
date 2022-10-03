@@ -1,4 +1,4 @@
-import type { UseInfiniteQueryResult } from '../../../../solid-query';
+import type { CreateInfiniteQueryResult } from '@tanstack/solid-query';
 import type { TodosQuery } from '../../../../generated';
 import { useInfiniteTodosQuery } from '../../../../generated';
 
@@ -12,7 +12,7 @@ const pageSize = 10;
 const sortField = 'id';
 const sortDirection = SortDirection.Descending;
 
-const useTodos = (search?: string): Readonly<UseInfiniteQueryResult<TodosQuery>> => {
+const useTodos = (search?: string): Readonly<CreateInfiniteQueryResult<TodosQuery>> => {
   let input = null;
   if (search != null) {
     // TODO: case-insensitive search

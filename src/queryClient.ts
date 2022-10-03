@@ -1,4 +1,4 @@
-import { QueryClient, QueryCache } from '@tanstack/query-core';
+import { QueryClient, QueryCache } from '@tanstack/solid-query';
 import toast from 'solid-toast';
 
 const queryClient = new QueryClient({
