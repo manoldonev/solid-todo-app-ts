@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { Outlet } from 'solid-app-router';
+import { Outlet } from '@solidjs/router';
 import { Header } from './Header';
 import { BottomNavigation } from './Navigation';
 import { Headroom, Legroom } from '../../components/Headroom';

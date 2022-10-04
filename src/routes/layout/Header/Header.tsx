@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'solid-app-router';
+import { Link, useLocation, useNavigate } from '@solidjs/router';
 import type { Component } from 'solid-js';
 import { SearchBox } from '../../../components/SearchBox';
 import { ThemeToggle } from '../../../components/ThemeToggle';

@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { render, screen, waitFor, waitForElementToBeRemoved, within } from 'solid-testing-library';
-import { Router } from 'solid-app-router';
+import { Router } from '@solidjs/router';
 import { QueryClientProvider, QueryCache, QueryClient } from '@tanstack/solid-query';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
@@ -34,7 +34,7 @@ const queryClient = new QueryClient({
 const TestApp: Component = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router base={import.meta.env.BASE_URL}>
+      <Router>
         <App />
       </Router>
     </QueryClientProvider>

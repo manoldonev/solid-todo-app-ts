@@ -1,6 +1,6 @@
 /* @refresh reload */
 import { QueryClientProvider } from '@tanstack/solid-query';
-import { Router } from 'solid-app-router';
+import { Router } from '@solidjs/router';
 import { render } from 'solid-js/web';
 import { Toaster } from 'solid-toast';
 import { App } from './App';

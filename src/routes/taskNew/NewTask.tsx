@@ -1,4 +1,4 @@
-import { useNavigate } from 'solid-app-router';
+import { useNavigate } from '@solidjs/router';
 import type { Component } from 'solid-js';
 import { AddNewForm } from './AddNewForm';
 

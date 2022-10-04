@@ -18,6 +18,7 @@ specifiers:
   '@solid-primitives/media': ^2.0.0
   '@solid-primitives/mutation-observer': ^1.1.0
   '@solid-primitives/storage': ^1.3.1
+  '@solidjs/router': ^0.4.3
   '@tailwindcss/line-clamp': ^0.4.0
   '@tanstack/solid-query': 4.9.0
   '@testing-library/jest-dom': ^5.16.5
@@ -60,7 +61,6 @@ specifiers:
   prettier: ^2.6.2
   regenerator-runtime: ^0.13.9
   scroll-lock: ^2.1.5
-  solid-app-router: ^0.4.0
   solid-icons: ^1.0.0
   solid-js: ^1.5.7
   solid-js-form: 0.1.5
@@ -70,9 +70,9 @@ specifiers:
   tinygesture: ^2.0.0
   tsc-files: ^1.1.3
   typescript: ^4.8.2
-  vite: ^3.1.4
-  vite-plugin-solid: ^2.3.9
-  vitest: ^0.23.4
+  vite: 3.1.4
+  vite-plugin-solid: 2.3.9
+  vitest: 0.21.0
   whatwg-fetch: ^3.6.2
   yup: ^0.32.11
 
@@ -82,13 +82,13 @@ dependencies:
   '@solid-primitives/media': 2.0.0_solid-js@1.5.7
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.5.7
   '@solid-primitives/storage': 1.3.1_solid-js@1.5.7
+  '@solidjs/router': 0.4.3_solid-js@1.5.7
   '@tanstack/solid-query': 4.9.0_solid-js@1.5.7
   dialog-polyfill: 0.5.6
   headroom.js: 0.12.0
   masonry-layout: 4.2.2
   msw: 0.47.3_typescript@4.8.4
   scroll-lock: 2.1.5
-  solid-app-router: 0.4.1_solid-js@1.5.7
   solid-icons: 1.0.1_solid-js@1.5.7
   solid-js: 1.5.7
   solid-js-form: 0.1.5
@@ -151,7 +151,7 @@ devDependencies:
   typescript: 4.8.4
   vite: 3.1.4
   vite-plugin-solid: 2.3.9_solid-js@1.5.7+vite@3.1.4
-  vitest: 0.23.4_jsdom@20.0.0
+  vitest: 0.21.0_jsdom@20.0.0
   whatwg-fetch: 3.6.2
 
 packages:
@@ -164,7 +164,7 @@ packages:
     resolution: {integrity: sha512-hoyByceqwKirw7w3Z7gnIIZC3Wx3J484Y3L/cMpXFbr7d9ZQj2mODrirNzcJa+SM3UlpWXYvKV4RlRpFXlWgXg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.9
+      '@jridgewell/trace-mapping': 0.3.15
     dev: true
 
   /@babel/code-frame/7.16.7:
@@ -285,7 +285,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.17.10
       '@babel/core': 7.18.10
-      '@babel/helper-validator-option': 7.16.7
+      '@babel/helper-validator-option': 7.18.6
       browserslist: 4.20.3
       semver: 6.3.0
     dev: true
@@ -298,7 +298,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.17.10
       '@babel/core': 7.18.2
-      '@babel/helper-validator-option': 7.16.7
+      '@babel/helper-validator-option': 7.18.6
       browserslist: 4.20.3
       semver: 6.3.0
     dev: true
@@ -329,42 +329,6 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /@babel/helper-create-class-features-plugin/7.18.0_@babel+core@7.18.10:
-    resolution: {integrity: sha512-Kh8zTGR9de3J63e5nS0rQUdRs/kbtwoeQQ0sriS0lItjC96u8XXZN6lKpuyWd2coKSU13py/y+LTmThLuVX0Pg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/core': 7.18.10
-      '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-environment-visitor': 7.18.9
-      '@babel/helper-function-name': 7.18.9
-      '@babel/helper-member-expression-to-functions': 7.18.9
-      '@babel/helper-optimise-call-expression': 7.18.6
-      '@babel/helper-replace-supers': 7.18.9
-      '@babel/helper-split-export-declaration': 7.18.6
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@babel/helper-create-class-features-plugin/7.18.0_@babel+core@7.18.2:
-    resolution: {integrity: sha512-Kh8zTGR9de3J63e5nS0rQUdRs/kbtwoeQQ0sriS0lItjC96u8XXZN6lKpuyWd2coKSU13py/y+LTmThLuVX0Pg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/core': 7.18.2
-      '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-environment-visitor': 7.18.9
-      '@babel/helper-function-name': 7.18.9
-      '@babel/helper-member-expression-to-functions': 7.18.9
-      '@babel/helper-optimise-call-expression': 7.18.6
-      '@babel/helper-replace-supers': 7.18.9
-      '@babel/helper-split-export-declaration': 7.18.6
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@babel/helper-create-class-features-plugin/7.18.9_@babel+core@7.18.10:
     resolution: {integrity: sha512-WvypNAYaVh23QcjpMR24CwZY2Nz6hqdOcFdPbNpV56hL5H6KiFheO7Xm1aPdlLQ7d5emYZX7VZwPp9x3z+2opw==}
     engines: {node: '>=6.9.0'}
@@ -372,6 +336,24 @@ packages:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.18.10
+      '@babel/helper-annotate-as-pure': 7.18.6
+      '@babel/helper-environment-visitor': 7.18.9
+      '@babel/helper-function-name': 7.18.9
+      '@babel/helper-member-expression-to-functions': 7.18.9
+      '@babel/helper-optimise-call-expression': 7.18.6
+      '@babel/helper-replace-supers': 7.18.9
+      '@babel/helper-split-export-declaration': 7.18.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@babel/helper-create-class-features-plugin/7.18.9_@babel+core@7.18.2:
+    resolution: {integrity: sha512-WvypNAYaVh23QcjpMR24CwZY2Nz6hqdOcFdPbNpV56hL5H6KiFheO7Xm1aPdlLQ7d5emYZX7VZwPp9x3z+2opw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.18.2
       '@babel/helper-annotate-as-pure': 7.18.6
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-function-name': 7.18.9
@@ -747,7 +729,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.10
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.10
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.10
       '@babel/helper-plugin-utils': 7.18.9
     transitivePeerDependencies:
       - supports-color
@@ -760,7 +742,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.2
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.2
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.2
       '@babel/helper-plugin-utils': 7.18.9
     transitivePeerDependencies:
       - supports-color
@@ -773,7 +755,7 @@ packages:
       '@babel/core': ^7.12.0
     dependencies:
       '@babel/core': 7.18.2
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.2
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.2
       '@babel/helper-plugin-utils': 7.18.9
       '@babel/plugin-syntax-class-static-block': 7.14.5_@babel+core@7.18.2
     transitivePeerDependencies:
@@ -904,7 +886,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.2
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.2
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.2
       '@babel/helper-plugin-utils': 7.18.9
     transitivePeerDependencies:
       - supports-color
@@ -918,7 +900,7 @@ packages:
     dependencies:
       '@babel/core': 7.18.2
       '@babel/helper-annotate-as-pure': 7.16.7
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.2
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.2
       '@babel/helper-plugin-utils': 7.18.9
       '@babel/plugin-syntax-private-property-in-object': 7.14.5_@babel+core@7.18.2
     transitivePeerDependencies:
@@ -1141,16 +1123,6 @@ packages:
       '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
-  /@babel/plugin-syntax-typescript/7.17.12_@babel+core@7.18.2:
-    resolution: {integrity: sha512-TYY0SXFiO31YXtNg3HtFwNJHjLsAyIIhAhNWkQ5whPPS7HWUFlg9z0Ta4qAQNjQbP1wsSt/oKkmZ/4/WWdMUpw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.18.2
-      '@babel/helper-plugin-utils': 7.18.9
-    dev: true
-
   /@babel/plugin-syntax-typescript/7.18.6_@babel+core@7.18.10:
     resolution: {integrity: sha512-mAWAuq4rvOepWCBid55JuRNvpTNf2UGVgoz4JV0fXEKolsVZDzsa4NqCef758WZJj/GDu0gVGItjKFiClTAmZA==}
     engines: {node: '>=6.9.0'}
@@ -1158,6 +1130,16 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.10
+      '@babel/helper-plugin-utils': 7.18.9
+    dev: true
+
+  /@babel/plugin-syntax-typescript/7.18.6_@babel+core@7.18.2:
+    resolution: {integrity: sha512-mAWAuq4rvOepWCBid55JuRNvpTNf2UGVgoz4JV0fXEKolsVZDzsa4NqCef758WZJj/GDu0gVGItjKFiClTAmZA==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.18.2
       '@babel/helper-plugin-utils': 7.18.9
     dev: true
 
@@ -1748,9 +1730,9 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.18.2
-      '@babel/helper-create-class-features-plugin': 7.18.0_@babel+core@7.18.2
+      '@babel/helper-create-class-features-plugin': 7.18.9_@babel+core@7.18.2
       '@babel/helper-plugin-utils': 7.18.9
-      '@babel/plugin-syntax-typescript': 7.17.12_@babel+core@7.18.2
+      '@babel/plugin-syntax-typescript': 7.18.6_@babel+core@7.18.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3086,6 +3068,14 @@ packages:
       solid-js: 1.5.7
     dev: false
 
+  /@solidjs/router/0.4.3_solid-js@1.5.7:
+    resolution: {integrity: sha512-mYpd4HxpH/3UZjHGTr2dhvPGXu034Ktxd05CJGA6nRjRGYCgUfhCQHRdEivyqJyb4LhHyDht4ny5xmwEOkUTaQ==}
+    peerDependencies:
+      solid-js: ^1.3.5
+    dependencies:
+      solid-js: 1.5.7
+    dev: false
+
   /@szmarczak/http-timer/1.1.2:
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}
     engines: {node: '>=6'}
@@ -3215,7 +3205,7 @@ packages:
   /@types/babel__template/7.4.1:
     resolution: {integrity: sha512-azBFKemX6kMg5Io+/rdGT0dkGreboUVR0Cdm3fz9QJWpaQGJRQXl7C+6hOTCZcMll7KFyEQpgbYI2lHdsS4U7g==}
     dependencies:
-      '@babel/parser': 7.18.4
+      '@babel/parser': 7.18.10
       '@babel/types': 7.18.10
     dev: true
 
@@ -9126,14 +9116,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /solid-app-router/0.4.1_solid-js@1.5.7:
-    resolution: {integrity: sha512-RKHyFQ+J5lXyE/SoyJVHgTBeBck2etYVJn1/9F7ehlzyD2pIOMqLpNXD1GfWQljHqNdXZBSyE+xB/Cck5l9Q/g==}
-    peerDependencies:
-      solid-js: ^1.3.5
-    dependencies:
-      solid-js: 1.5.7
-    dev: false
-
   /solid-icons/1.0.1_solid-js@1.5.7:
     resolution: {integrity: sha512-9rxPeJ1UDGzWGlksjuXuyK2CdL1vg89inDyOl43koL3zoMgXLzY6LVLuMeuhslHbjq7Fp2h6fSSImj9ygfvleA==}
     engines: {node: '>= 16'}
@@ -9392,12 +9374,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /strip-literal/0.4.2:
-    resolution: {integrity: sha512-pv48ybn4iE1O9RLgCAN0iU4Xv7RlBTiit6DKmMiErbs9x1wH6vXBs45tWc0H5wUIF6TLTrKweqkmYF/iraQKNw==}
-    dependencies:
-      acorn: 8.8.0
-    dev: true
-
   /strip-outer/1.0.1:
     resolution: {integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==}
     engines: {node: '>=0.10.0'}
@@ -9548,16 +9524,12 @@ packages:
       readable-stream: 3.6.0
     dev: true
 
-  /tinybench/2.2.1:
-    resolution: {integrity: sha512-VxB1P8DUhpCC1j2WtKgFYpv3SwU7vtnfmG29cK7hXcqyD7lLiq6SYCVpDceoAT99mvTN+V8Ay4OdtZQbB72+Sw==}
-    dev: true
-
   /tinygesture/2.0.0:
     resolution: {integrity: sha512-Xhpo6tCvUOyVq7BmJh/WDi+9qFh5AtuUqbKoMG5vpG+PT6JLPGE9D5hl9kZlj1ZqsgHuGb1OrNAXoHh8qIDpjA==}
     dev: false
 
-  /tinypool/0.3.0:
-    resolution: {integrity: sha512-NX5KeqHOBZU6Bc0xj9Vr5Szbb1j8tUHIeD18s41aDJaPeC5QTdEhK0SpdpUrZlj2nv5cctNcSjaKNanXlfcVEQ==}
+  /tinypool/0.2.4:
+    resolution: {integrity: sha512-Vs3rhkUH6Qq1t5bqtb816oT+HeJTXfwt2cbPH17sWHIYKTotQIFPk3tf2fgqRrVyMDVOc1EnPgzIxfIulXVzwQ==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -9966,14 +9938,15 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.23.4_jsdom@20.0.0:
-    resolution: {integrity: sha512-iukBNWqQAv8EKDBUNntspLp9SfpaVFbmzmM0sNcnTxASQZMzRw3PsM6DMlsHiI+I6GeO5/sYDg3ecpC+SNFLrQ==}
+  /vitest/0.21.0_jsdom@20.0.0:
+    resolution: {integrity: sha512-+BQB2swk4wQdw5loOoL8esIYh/1ifAliuwj2HWHNE2F8SAl/jF7/aoCJBoXGSf/Ws19k3pH4NrWeVtcSwM0j2w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@vitest/browser': '*'
       '@vitest/ui': '*'
+      c8: '*'
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -9982,6 +9955,8 @@ packages:
       '@vitest/browser':
         optional: true
       '@vitest/ui':
+        optional: true
+      c8:
         optional: true
       happy-dom:
         optional: true
@@ -9995,9 +9970,7 @@ packages:
       debug: 4.3.4
       jsdom: 20.0.0
       local-pkg: 0.4.2
-      strip-literal: 0.4.2
-      tinybench: 2.2.1
-      tinypool: 0.3.0
+      tinypool: 0.2.4
       tinyspy: 1.0.2
       vite: 3.1.4
     transitivePeerDependencies:

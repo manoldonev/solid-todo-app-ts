@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { For } from 'solid-js';
-import { NavLink } from 'solid-app-router';
+import { NavLink } from '@solidjs/router';
 import { navigationItems } from './navigationItems';
 
 const Navigation: Component<{ class?: string }> = (props) => {

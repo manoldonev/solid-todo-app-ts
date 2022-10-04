@@ -13,10 +13,10 @@ export default defineConfig({
     setupFiles: './src/vitest.setup.ts',
     // solid-js needs to be inline to work around
     // a resolution issue in vitest (same for scroll-lock):
-    // deps: {
-    //   inline: [/scroll-lock/],
-    //   registerNodeLoader: false,
-    // },
+    deps: {
+      inline: [/solid-js/, /scroll-lock/],
+      registerNodeLoader: false,
+    },
     // if you have few tests, try commenting one
     // or both out to improve performance:
     // threads: false,

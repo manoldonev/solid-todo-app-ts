@@ -1,4 +1,4 @@
-import { Route, Routes } from 'solid-app-router';
+import { Route, Routes } from '@solidjs/router';
 import type { Component } from 'solid-js';
 import { createSignal, Show } from 'solid-js';
 import { NewTask } from '../taskNew/NewTask';
@@ -26,7 +26,7 @@ const Tasks: Component = () => {
         <Route path="new" element={<NewTask />} />
       </Routes>
 
-      {/* TODO: implement contextual modal navigation to open the modal dialog via route instead, see https://github.com/solidjs/solid-app-router/issues/129 */}
+      {/* TODO: implement contextual modal navigation to open the modal dialog via route instead, see https://github.com/solidjs/@solidjs/router/issues/129 */}
       <Show when={openDialog()}>
         <NewTaskModal open={openDialog()} onClose={() => setOpenDialog(false)} />
       </Show>
