@@ -1,6 +1,6 @@
 import type { Component, JSXElement } from 'solid-js';
 import { Match, For, Switch } from 'solid-js';
-import { NavLink } from 'solid-app-router';
+import { NavLink } from '@solidjs/router';
 import {
   HiOutlineAdjustments as AdjustmentsIcon,
   HiOutlineChartSquareBar as ChartSquareBarIcon,

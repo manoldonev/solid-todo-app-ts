@@ -1,5 +1,5 @@
 // @ts-nocheck
-import {useQuery, useInfiniteQuery, useMutation, UseQueryOptions, UseInfiniteQueryOptions, UseMutationOptions } from '../solid-query'
+import {createQuery, createInfiniteQuery, createMutation, CreateQueryOptions, CreateInfiniteQueryOptions, CreateMutationOptions } from '@tanstack/solid-query'
 import { graphql, ResponseResolver, GraphQLRequest, GraphQLContext } from 'msw'
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -403,8 +403,8 @@ export const CreateTodoDocument = `
 export const useCreateTodoMutation = <
       TError = unknown,
       TContext = unknown
-    >(options?: UseMutationOptions<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>) =>
-    useMutation<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>(
+    >(options?: CreateMutationOptions<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>) =>
+    createMutation<CreateTodoMutation, TError, CreateTodoMutationVariables, TContext>(
       ['createTodo'],
       (variables?: CreateTodoMutationVariables) => fetcher<CreateTodoMutation, CreateTodoMutationVariables>(CreateTodoDocument, variables)(),
       options
@@ -417,8 +417,8 @@ export const DeleteTodoDocument = `
 export const useDeleteTodoMutation = <
       TError = unknown,
       TContext = unknown
-    >(options?: UseMutationOptions<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>) =>
-    useMutation<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>(
+    >(options?: CreateMutationOptions<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>) =>
+    createMutation<DeleteTodoMutation, TError, DeleteTodoMutationVariables, TContext>(
       ['deleteTodo'],
       (variables?: DeleteTodoMutationVariables) => fetcher<DeleteTodoMutation, DeleteTodoMutationVariables>(DeleteTodoDocument, variables)(),
       options
@@ -435,8 +435,8 @@ export const UpdateTodoDocument = `
 export const useUpdateTodoMutation = <
       TError = unknown,
       TContext = unknown
-    >(options?: UseMutationOptions<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>) =>
-    useMutation<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>(
+    >(options?: CreateMutationOptions<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>) =>
+    createMutation<UpdateTodoMutation, TError, UpdateTodoMutationVariables, TContext>(
       ['updateTodo'],
       (variables?: UpdateTodoMutationVariables) => fetcher<UpdateTodoMutation, UpdateTodoMutationVariables>(UpdateTodoDocument, variables)(),
       options
@@ -455,9 +455,9 @@ export const useTodosQuery = <
       TError = unknown
     >(
       variables?: TodosQueryVariables,
-      options?: UseQueryOptions<TodosQuery, TError, TData>
+      options?: CreateQueryOptions<TodosQuery, TError, TData>
     ) =>
-    useQuery<TodosQuery, TError, TData>(
+    createQuery<TodosQuery, TError, TData>(()=>
       variables === undefined ? ['Todos'] : ['Todos', variables],
       fetcher<TodosQuery, TodosQueryVariables>(TodosDocument, variables),
       options
@@ -468,9 +468,9 @@ export const useInfiniteTodosQuery = <
     >(
       pageParamKey: keyof TodosQueryVariables,
       variables?: TodosQueryVariables,
-      options?: UseInfiniteQueryOptions<TodosQuery, TError, TData>
+      options?: CreateInfiniteQueryOptions<TodosQuery, TError, TData>
     ) =>
-    useInfiniteQuery<TodosQuery, TError, TData>(
+    createInfiniteQuery<TodosQuery, TError, TData>(()=>
       variables === undefined ? ['Todos.infinite'] : ['Todos.infinite', variables],
       (metaData) => fetcher<TodosQuery, TodosQueryVariables>(TodosDocument, {...variables, ...(metaData.pageParam ?? {})})(),
       options

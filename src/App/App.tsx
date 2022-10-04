@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { Suspense, ErrorBoundary, lazy } from 'solid-js';
-import { Navigate, Route, Routes } from 'solid-app-router';
+import { Navigate, Route, Routes } from '@solidjs/router';
 import { Layout, NotFound } from '../routes';
 import { LoadingIndicator } from '../components/LoadingIndicator';
 import { ErrorFallback } from './ErrorFallback';

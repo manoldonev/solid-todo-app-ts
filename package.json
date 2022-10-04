@@ -37,11 +37,10 @@
     "@graphql-codegen/typescript": "^2.4.11",
     "@graphql-codegen/typescript-msw": "^1.0.10",
     "@graphql-codegen/typescript-operations": "^2.4.0",
-    "@graphql-codegen/typescript-react-query": "^4.0.0",
     "@milahu/patch-package": "^6.4.14",
     "@tailwindcss/line-clamp": "^0.4.0",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/user-event": "^14.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
     "@types/babel__core": "^7.1.19",
     "@types/headroom.js": "^0.12.2",
     "@types/masonry-layout": "^4.2.5",
@@ -52,9 +51,8 @@
     "autoprefixer": "^10.4.7",
     "babel-core": "^6.26.3",
     "babel-jest": "^29.0.0",
-    "babel-plugin-solid-undestructure": "^0.0.15",
     "babel-preset-jest": "^29.0.0",
-    "babel-preset-solid": "^1.4.2",
+    "babel-preset-solid": "^1.5.7",
     "babel-preset-vite": "^1.0.4",
     "cssnano": "^5.1.12",
     "eslint": "^8.16.0",
@@ -79,10 +77,10 @@
     "solid-testing-library": "^0.3.0",
     "tailwindcss": "^3.0.24",
     "tsc-files": "^1.1.3",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.4",
-    "vite-plugin-solid": "^2.3.0",
-    "vitest": "^0.20.3",
+    "typescript": "^4.8.2",
+    "vite": "3.1.4",
+    "vite-plugin-solid": "2.3.9",
+    "vitest": "0.21.0",
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
@@ -91,15 +89,15 @@
     "@solid-primitives/media": "^2.0.0",
     "@solid-primitives/mutation-observer": "^1.1.0",
     "@solid-primitives/storage": "^1.3.1",
-    "@tanstack/query-core": "^4.0.10",
+    "@solidjs/router": "^0.4.3",
+    "@tanstack/solid-query": "^4.9.0",
     "dialog-polyfill": "^0.5.6",
     "headroom.js": "^0.12.0",
     "masonry-layout": "^4.2.2",
-    "msw": "^0.44.0",
+    "msw": "^0.47.3",
     "scroll-lock": "^2.1.5",
-    "solid-app-router": "^0.4.0",
     "solid-icons": "^1.0.0",
-    "solid-js": "^1.4.8",
+    "solid-js": "^1.5.7",
     "solid-js-form": "0.1.5",
     "solid-toast": "^0.3.0",
     "tinygesture": "^2.0.0",
@@ -107,10 +105,6 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": [
-        "react",
-        "react-dom"
-      ],
       "allowedVersions": {
         "graphql": "16"
       }
