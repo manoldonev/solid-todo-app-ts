@@ -1,1 +1,0 @@
-import{D as t}from"./index.565d2a6d.js";const n=t('<div data-testid="analytics" class="min-h-screen bg-background p-4 text-on-background transition-colors"><p>Analytics</p></div>',4),a=()=>n.cloneNode(!0);export{a as Analytics};
