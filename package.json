@@ -98,7 +98,7 @@
     "scroll-lock": "^2.1.5",
     "solid-icons": "^1.0.0",
     "solid-js": "^1.5.7",
-    "solid-js-form": "0.1.5",
+    "solid-js-form": "0.1.7",
     "solid-toast": "^0.3.0",
     "tinygesture": "^2.0.0",
     "yup": "^0.32.11"
