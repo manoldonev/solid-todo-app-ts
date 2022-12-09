@@ -63,7 +63,7 @@ specifiers:
   scroll-lock: ^2.1.5
   solid-icons: ^1.0.0
   solid-js: ^1.5.7
-  solid-js-form: 0.1.7
+  solid-js-form: 0.1.5
   solid-testing-library: ^0.5.0
   solid-toast: ^0.3.0
   tailwindcss: ^3.0.24
@@ -91,7 +91,7 @@ dependencies:
   scroll-lock: 2.1.5
   solid-icons: 1.0.1_solid-js@1.5.7
   solid-js: 1.5.7
-  solid-js-form: 0.1.7
+  solid-js-form: 0.1.5
   solid-toast: 0.3.2_solid-js@1.5.7
   tinygesture: 2.0.0
   yup: 0.32.11
@@ -9170,8 +9170,8 @@ packages:
       solid-js: 1.5.7
     dev: false
 
-  /solid-js-form/0.1.7:
-    resolution: {integrity: sha512-8Xg8JqAeW6+D1xlJwlAwkiA9TNHeRhUJGVauuIaqpB0CY2T/SVP2t15ODS7JHjJfRQsan1Pg0iLOqO0T0KLXXg==}
+  /solid-js-form/0.1.5:
+    resolution: {integrity: sha512-IxJLlbdJvlFgHDotvLreq6jTk7RXI3lWW6GErqS1jJMjeGWsRNDCuUhIz+zs5xcHrPc4hOBXbY9Wg2hKEKk/BA==}
     dependencies:
       solid-js: 1.5.7
       yup: 0.32.11
