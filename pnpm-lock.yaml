@@ -72,7 +72,7 @@ specifiers:
   typescript: ^4.8.4
   vite: 4.0.0
   vite-plugin-solid: 2.5.0
-  vitest: 0.21.0
+  vitest: 0.22.1
   whatwg-fetch: ^3.6.2
   yup: ^0.32.11
 
@@ -151,7 +151,7 @@ devDependencies:
   typescript: 4.8.4
   vite: 4.0.0_@types+node@17.0.36
   vite-plugin-solid: 2.5.0_solid-js@1.5.7+vite@4.0.0
-  vitest: 0.21.0_jsdom@20.0.0
+  vitest: 0.22.1_jsdom@20.0.0
   whatwg-fetch: 3.6.2
 
 packages:
@@ -10290,15 +10290,14 @@ packages:
       vite: 4.0.0_@types+node@17.0.36
     dev: true
 
-  /vitest/0.21.0_jsdom@20.0.0:
-    resolution: {integrity: sha512-+BQB2swk4wQdw5loOoL8esIYh/1ifAliuwj2HWHNE2F8SAl/jF7/aoCJBoXGSf/Ws19k3pH4NrWeVtcSwM0j2w==}
+  /vitest/0.22.1_jsdom@20.0.0:
+    resolution: {integrity: sha512-+x28YTnSLth4KbXg7MCzoDAzPJlJex7YgiZbUh6YLp0/4PqVZ7q7/zyfdL0OaPtKTpNiQFPpMC8Y2MSzk8F7dw==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@vitest/browser': '*'
       '@vitest/ui': '*'
-      c8: '*'
       happy-dom: '*'
       jsdom: '*'
     peerDependenciesMeta:
@@ -10307,8 +10306,6 @@ packages:
       '@vitest/browser':
         optional: true
       '@vitest/ui':
-        optional: true
-      c8:
         optional: true
       happy-dom:
         optional: true
