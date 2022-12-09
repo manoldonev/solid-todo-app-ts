@@ -18,6 +18,10 @@
       "matchPackagePatterns": ["^msw", "^vitest"],
       "matchUpdateTypes": ["major", "minor"],
       "dependencyDashboardApproval": true
+    },
+    {
+      "matchPackagePatterns": ["solid-js-form"],
+      "enabled": false
     }
   ]
 }
