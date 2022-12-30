@@ -65,7 +65,7 @@ specifiers:
   solid-js: ^1.5.7
   solid-js-form: 0.1.5
   solid-testing-library: ^0.5.0
-  solid-toast: ^0.3.2
+  solid-toast: ^0.4.0
   tailwindcss: ^3.0.24
   tinygesture: ^2.0.0
   tsc-files: ^1.1.3
@@ -92,7 +92,7 @@ dependencies:
   solid-icons: 1.0.1_solid-js@1.5.7
   solid-js: 1.5.7
   solid-js-form: 0.1.5
-  solid-toast: 0.3.2_solid-js@1.5.7
+  solid-toast: 0.4.0_solid-js@1.5.7
   tinygesture: 2.0.0
   yup: 0.32.11
 
@@ -9448,10 +9448,10 @@ packages:
       solid-js: 1.5.7
     dev: true
 
-  /solid-toast/0.3.2_solid-js@1.5.7:
-    resolution: {integrity: sha512-TrdF2kfLdbxnjl8opc4EfbmHpwASMt6Jt0IdlU3OQU3ocIMfBRHghiyaI+llu4IQrlgnE2DgBFggrRyBn1OMdg==}
+  /solid-toast/0.4.0_solid-js@1.5.7:
+    resolution: {integrity: sha512-ciJbj+n+7KbUN6wfwZsW7lqFESLoQ9sXMG4uJWuHrIw2f0GxX3/wLSKs0Q1YwdTZZRxyRJ1Nwc2eBVcJvs91+g==}
     peerDependencies:
-      solid-js: ^1.4.2
+      solid-js: ^1.5.4
     dependencies:
       solid-js: 1.5.7
     dev: false
