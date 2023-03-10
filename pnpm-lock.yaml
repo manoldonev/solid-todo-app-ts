@@ -47,7 +47,7 @@ specifiers:
   eslint-plugin-jest-dom: ^4.0.2
   eslint-plugin-jsx-a11y: ^6.5.1
   eslint-plugin-prettier: ^4.0.0
-  eslint-plugin-solid: ^0.10.0
+  eslint-plugin-solid: ^0.11.0
   eslint-plugin-testing-library: ^5.5.1
   gh-pages: ^4.0.0
   graphql: ^16.5.0
@@ -135,7 +135,7 @@ devDependencies:
   eslint-plugin-jest-dom: 4.0.2_eslint@8.16.0
   eslint-plugin-jsx-a11y: 6.5.1_eslint@8.16.0
   eslint-plugin-prettier: 4.0.0_j7rsahgqtkecno6yauhsgsglf4
-  eslint-plugin-solid: 0.10.0_xlfkn4jejkelnl5fv2yyquzblu
+  eslint-plugin-solid: 0.11.0_xlfkn4jejkelnl5fv2yyquzblu
   eslint-plugin-testing-library: 5.5.1_xlfkn4jejkelnl5fv2yyquzblu
   gh-pages: 4.0.0
   graphql: 16.5.0
@@ -5936,8 +5936,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-solid/0.10.0_xlfkn4jejkelnl5fv2yyquzblu:
-    resolution: {integrity: sha512-x8Jpe1EI44neuMuXG8safkIHWozkjJ2UCi9k6204OYL5sK+1+fSOOHuwd9i6bG2NcHV49SIykG3rbZCuojwtfA==}
+  /eslint-plugin-solid/0.11.0_xlfkn4jejkelnl5fv2yyquzblu:
+    resolution: {integrity: sha512-3ve6IpEtl8nOvJnjaJACqlBmv449l6dMMhMczjQWvvLlRqkzLemgsJ9H+Isu8GLSBTNxDIm5oSKx/lO2j8vKbA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
