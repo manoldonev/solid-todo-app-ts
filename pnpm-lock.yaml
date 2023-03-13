@@ -74,7 +74,7 @@ specifiers:
   vite-plugin-solid: 2.6.1
   vitest: 0.22.1
   whatwg-fetch: ^3.6.2
-  yup: ^0.32.11
+  yup: ^1.0.0
 
 dependencies:
   '@motionone/solid': 10.10.2_solid-js@1.5.7
@@ -94,7 +94,7 @@ dependencies:
   solid-js-form: 0.1.5
   solid-toast: 0.4.0_solid-js@1.5.7
   tinygesture: 2.0.0
-  yup: 0.32.11
+  yup: 1.0.2
 
 devDependencies:
   '@babel/core': 7.18.2
@@ -9832,6 +9832,10 @@ packages:
       readable-stream: 3.6.0
     dev: true
 
+  /tiny-case/1.0.3:
+    resolution: {integrity: sha512-Eet/eeMhkO6TX8mnUteS9zgPbUMQa4I6Kkp5ORiBD5476/m+PIRiumP5tmh5ioJpH7k51Kehawy2UDfsnxxY8Q==}
+    dev: false
+
   /tinygesture/2.0.0:
     resolution: {integrity: sha512-Xhpo6tCvUOyVq7BmJh/WDi+9qFh5AtuUqbKoMG5vpG+PT6JLPGE9D5hl9kZlj1ZqsgHuGb1OrNAXoHh8qIDpjA==}
     dev: false
@@ -10636,4 +10640,13 @@ packages:
       nanoclone: 0.2.1
       property-expr: 2.0.5
       toposort: 2.0.2
+    dev: false
+
+  /yup/1.0.2:
+    resolution: {integrity: sha512-Lpi8nITFKjWtCoK3yQP8MUk78LJmHWqbFd0OOMXTar+yjejlQ4OIIoZgnTW1bnEUKDw6dZBcy3/IdXnt2KDUow==}
+    dependencies:
+      property-expr: 2.0.5
+      tiny-case: 1.0.3
+      toposort: 2.0.2
+      type-fest: 2.19.0
     dev: false
