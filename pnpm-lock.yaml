@@ -49,7 +49,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-solid: ^0.11.0
   eslint-plugin-testing-library: ^5.5.1
-  gh-pages: ^4.0.0
+  gh-pages: ^5.0.0
   graphql: ^16.5.0
   headroom.js: ^0.12.0
   husky: ^8.0.1
@@ -137,7 +137,7 @@ devDependencies:
   eslint-plugin-prettier: 4.0.0_j7rsahgqtkecno6yauhsgsglf4
   eslint-plugin-solid: 0.11.0_xlfkn4jejkelnl5fv2yyquzblu
   eslint-plugin-testing-library: 5.5.1_xlfkn4jejkelnl5fv2yyquzblu
-  gh-pages: 4.0.0
+  gh-pages: 5.0.0
   graphql: 16.5.0
   husky: 8.0.1
   jsdom: 20.0.0
@@ -4053,10 +4053,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /async/2.6.4:
-    resolution: {integrity: sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==}
-    dependencies:
-      lodash: 4.17.21
+  /async/3.2.4:
+    resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
     dev: true
 
   /asynckit/0.4.0:
@@ -5430,8 +5428,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /email-addresses/3.1.0:
-    resolution: {integrity: sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==}
+  /email-addresses/5.0.0:
+    resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -6457,14 +6455,14 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
 
-  /gh-pages/4.0.0:
-    resolution: {integrity: sha512-p8S0T3aGJc68MtwOcZusul5qPSNZCalap3NWbhRUZYu1YOdp+EjZ+4kPmRM8h3NNRdqw00yuevRjlkuSzCn7iQ==}
+  /gh-pages/5.0.0:
+    resolution: {integrity: sha512-Nqp1SjkPIB94Xw/3yYNTUL+G2dxlhjvv1zeN/4kMC1jfViTEqhtVz/Ba1zSXHuvXCN9ADNS1dN4r5/J/nZWEQQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      async: 2.6.4
+      async: 3.2.4
       commander: 2.20.3
-      email-addresses: 3.1.0
+      email-addresses: 5.0.0
       filenamify: 4.3.0
       find-cache-dir: 3.3.2
       fs-extra: 8.1.0
@@ -8492,19 +8490,19 @@ packages:
     dev: true
 
   /pify/2.3.0:
-    resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
+    resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
     dev: true
 
   /pinkie-promise/2.0.1:
-    resolution: {integrity: sha1-ITXW36ejWMBprJsXh3YogihFD/o=}
+    resolution: {integrity: sha512-0Gni6D4UcLTbv9c57DfxDGdr41XfgUjqWZu492f0cIGr16zDU06BWP/RAEvOuo7CQ0CNjHaLlM59YJJFm3NWlw==}
     engines: {node: '>=0.10.0'}
     dependencies:
       pinkie: 2.0.4
     dev: true
 
   /pinkie/2.0.4:
-    resolution: {integrity: sha1-clVrgM+g1IqXToDnckjoDtT3+HA=}
+    resolution: {integrity: sha512-MnUuEycAemtSaeFSjXKW/aroV7akBbY+Sv+RkyqFjgAe73F+MR0TBWKBRDkmfWq/HiFmdavfZ1G7h4SPZXaCSg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -9919,7 +9917,7 @@ packages:
     dev: true
 
   /trim-repeated/1.0.0:
-    resolution: {integrity: sha1-42RqLqTokTEr9+rObPsFOAvAHCE=}
+    resolution: {integrity: sha512-pkonvlKk8/ZuR0D5tLW8ljt5I8kmxp2XKymhepUeOdCEfKpZaktSArkLHZt76OB1ZvO9bssUsDty4SWhLvZpLg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       escape-string-regexp: 1.0.5
