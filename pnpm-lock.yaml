@@ -18,7 +18,7 @@ specifiers:
   '@solid-primitives/media': ^2.0.0
   '@solid-primitives/mutation-observer': ^1.1.0
   '@solid-primitives/storage': ^1.3.1
-  '@solidjs/router': ^0.7.0
+  '@solidjs/router': ^0.8.0
   '@tailwindcss/line-clamp': ^0.4.0
   '@tanstack/solid-query': ^4.9.0
   '@testing-library/jest-dom': ^5.16.5
@@ -82,7 +82,7 @@ dependencies:
   '@solid-primitives/media': 2.0.0_solid-js@1.5.7
   '@solid-primitives/mutation-observer': 1.1.0_solid-js@1.5.7
   '@solid-primitives/storage': 1.3.1_solid-js@1.5.7
-  '@solidjs/router': 0.7.0_solid-js@1.5.7
+  '@solidjs/router': 0.8.0_solid-js@1.5.7
   '@tanstack/solid-query': 4.9.0_solid-js@1.5.7
   dialog-polyfill: 0.5.6
   headroom.js: 0.12.0
@@ -3247,8 +3247,8 @@ packages:
       solid-js: 1.5.7
     dev: false
 
-  /@solidjs/router/0.7.0_solid-js@1.5.7:
-    resolution: {integrity: sha512-8HI84twe5FjYRebSLMAhtkL9bRuTDIlxJK56kjfjU9WKGoUCTaWpCnkuj8Hqde1bWZ0X+GOZxKDfNkn1CjtjxA==}
+  /@solidjs/router/0.8.0_solid-js@1.5.7:
+    resolution: {integrity: sha512-gvKAfYbuq6rpuNM9E7qIRXOrUEHY4AoOiok3xo/Slw5ph+hvJ+gKRhQgW0Et8xcsq2NZcc4AvJF8VTBmXfwEyA==}
     peerDependencies:
       solid-js: ^1.5.3
     dependencies:
