@@ -59,7 +59,7 @@ specifiers:
   msw: ^0.47.3
   postcss: ^8.4.14
   prettier: ^2.6.2
-  regenerator-runtime: ^0.13.9
+  regenerator-runtime: ^0.14.0
   scroll-lock: ^2.1.5
   solid-icons: ^1.0.1
   solid-js: ^1.5.7
@@ -144,7 +144,7 @@ devDependencies:
   lint-staged: 13.0.0
   postcss: 8.4.14
   prettier: 2.6.2
-  regenerator-runtime: 0.13.9
+  regenerator-runtime: 0.14.0
   solid-testing-library: 0.5.0_solid-js@1.5.7
   tailwindcss: 3.0.24_postcss@8.4.14
   tsc-files: 1.1.3_typescript@4.8.4
@@ -9028,6 +9028,10 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+
+  /regenerator-runtime/0.14.0:
+    resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
+    dev: true
 
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
