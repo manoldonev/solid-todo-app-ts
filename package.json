@@ -101,7 +101,7 @@
     "solid-js-form": "0.1.5",
     "solid-toast": "^0.4.0",
     "tinygesture": "^2.0.0",
-    "yup": "^0.32.11"
+    "yup": "^1.0.0"
   },
   "pnpm": {
     "peerDependencyRules": {
